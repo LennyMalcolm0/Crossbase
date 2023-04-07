@@ -10,7 +10,7 @@ const PageAction = ({main, details}: Props) => {
             {details ?
                 <div>
                     <Backtrack />
-                    <div className="mt-[20px] mb-[40px] ">
+                    <div className="mt-[10px] mb-[30px] ">
                         <div className="text-[24px] font-semibold ">{main}</div>
                         <div className="text-[12px] ">{details}</div>
                     </div> 
