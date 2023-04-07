@@ -14,7 +14,7 @@ const Inputs = ({label, placeholder, inputType}: Props) => {
                 placeholder={placeholder}
             />
         </div>
-     );
+    );
 }
  
 export default Inputs;

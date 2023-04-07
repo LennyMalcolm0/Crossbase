@@ -1,6 +1,6 @@
-import ActionButton from "../../Components/ActionButton";
-import Inputs from "../../Components/Inputs";
-import PageAction from "../../Components/PageInfo";
+import ActionButton from "../../../Components/ActionButton";
+import Inputs from "../../../Components/Inputs";
+import PageAction from "../../../Components/PageInfo";
 
 const CompleteProfile = () => {
     const completeProfileInputs = [
@@ -30,12 +30,6 @@ const CompleteProfile = () => {
         },
     ];
 
-    const inputsValueArray: string[] = [];
-    const inputs = document.querySelectorAll("input");
-    inputs.forEach(input => {
-        inputsValueArray.push(input.value);
-    });
-
     return ( 
         <div className="h-full flex flex-col justify-between ">
             <div>
@@ -47,7 +41,7 @@ const CompleteProfile = () => {
                 ))}
             </div>
 
-            <ActionButton buttonText="Continue" link="/set-transaction-pin" inputValues={inputsValueArray} />
+            {/* <ActionButton buttonText="Continue" link="/set-transaction-pin" inputValues={inputsValueArray} /> */}
         </div>
     );
 }

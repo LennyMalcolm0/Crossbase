@@ -1,6 +1,6 @@
-import ActionButton from "../../Components/ActionButton";
-import PageAction from "../../Components/PageInfo";
-import TransactionPin from '../../Components/TransactionPin';
+import ActionButton from "../../../Components/ActionButton";
+import PageAction from "../../../Components/PageInfo";
+import TransactionPin from '../../../Components/TransactionPin';
 
 const SetTransactionPin = () => {
     const inputsValueArray: string[] = [];

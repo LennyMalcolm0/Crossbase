@@ -1,6 +1,6 @@
-import ActionButton from "../../Components/ActionButton";
-import PageAction from "../../Components/PageInfo";
-import TransactionPin from "../../Components/TransactionPin";
+import ActionButton from "../../../Components/ActionButton";
+import PageAction from "../../../Components/PageInfo";
+import TransactionPin from "../../../Components/TransactionPin";
 
 const ConfirmTransactionPin = () => {
     const inputsValueArray: string[] = [];
@@ -15,7 +15,7 @@ const ConfirmTransactionPin = () => {
                 <PageAction main="Confirm Transaction PIN" details="Re-enter your PIN for authorizing a transaction on Crossbase." />
                 <TransactionPin />
             </div>
-            <ActionButton buttonText="Complete" link="/" inputValues={inputsValueArray} />
+            <ActionButton buttonText="Complete" link="/login" inputValues={inputsValueArray} />
         </div>
     );
 }
