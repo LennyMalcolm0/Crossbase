@@ -1,14 +1,17 @@
 import './App.css'
-import LoginInput from './Components/LoginInput'
-import PageAction from './Components/PageInfo'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import CreateAccount from './Pages/Authentication/CreateAccount'
 
 function App() {
 
   return (
-    <div className="App flex justify-center">
-      <div className="h-screen w-screen bg-[#121313] text-[#D9D9D9] px-[20px] py-[40px] ">
-        <PageAction main="Create Account" details="Begin your journey with Crossbase by signing up." />
-        <LoginInput  />
+    <div className="App flex justify-center bg-black">
+      <div className="h-screen w-screen max-w-[400px] bg-[#121313] text-[#D9D9D9] px-[20px] py-[40px] ">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<CreateAccount />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     </div>
   )

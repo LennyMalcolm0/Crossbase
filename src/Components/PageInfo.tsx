@@ -1,10 +1,10 @@
 import Backtrack from './Backtrack';
 
-interface paProps {
+interface Props {
     main: string;
     details?: string;
 }
-const PageAction = ({main, details}: paProps) => {
+const PageAction = ({main, details}: Props) => {
     return ( 
          <div>
             {details ?

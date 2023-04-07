@@ -1,13 +1,15 @@
-interface liProps {
+import './Components.css'
+interface Props {
     label: string;
-    placeholder: string;
+    inputType: string;
+    placeholder?: string;
 }
-const LoginInput = ({label, placeholder}: liProps) => {
+const LoginInput = ({label, placeholder, inputType}: Props) => {
     return ( 
-        <div>
+        <div className="mb-[8px]">
             <label className="text-[12px] text-[#D9D9D9] ">{label}</label>
-            <input type="text" 
-                className="w-full h-[48px] rounded-[10px] border border-[#D9D9D9] text-[#D9D9D9] placeholder:text-[14px] placeholder:opacity-50 " 
+            <input type={inputType} 
+                className="w-full h-[48px] px-[20px] leading-[48px] rounded-[10px] bg-[#1F1F1E] border border-[#D9D9D9] text-[#D9D9D9] placeholder:text-[14px] placeholder:opacity-50 " 
                 placeholder={placeholder}
             />
         </div>
