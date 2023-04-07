@@ -1,5 +1,5 @@
 import ActionButton from "../../Components/ActionButton";
-import LoginInput from "../../Components/LoginInput";
+import Inputs from "../../Components/Inputs";
 import PageAction from "../../Components/PageInfo";
 
 const CompleteProfile = () => {
@@ -30,18 +30,24 @@ const CompleteProfile = () => {
         },
     ];
 
+    const inputsValueArray: string[] = [];
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+        inputsValueArray.push(input.value);
+    });
+
     return ( 
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageAction main="Complete Profile" details="Complete the sign up process by completing your profile." />
                 {completeProfileInputs.map((inputDetail, index) => (
                     <div key={index}>
-                        <LoginInput label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />                 
+                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />                 
                     </div>
                 ))}
             </div>
 
-            <ActionButton buttonText="Continue" link="/set-transaction-pin" />
+            <ActionButton buttonText="Continue" link="/set-transaction-pin" inputValues={inputsValueArray} />
         </div>
     );
 }

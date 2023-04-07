@@ -1,6 +1,7 @@
-import ActionButton from "../../Components/ActionButton";
-import LoginInput from "../../Components/LoginInput";
+import { useEffect } from "react";
+import Inputs from "../../Components/Inputs";
 import PageAction from "../../Components/PageInfo";
+import ActionButton from '../../Components/ActionButton';
 
 const CreateAccount = () => {
     const createAccountInputs = [
@@ -21,13 +22,40 @@ const CreateAccount = () => {
         },
     ];
 
+    let inputsValueArray: string[] = [];
+    const inputs = document.querySelectorAll("input");
+    inputs.forEach(input => {
+        inputsValueArray.push(input.value);
+
+        // Reseting array values as each input value changes
+        input.addEventListener("input", () => {
+            inputsValueArray = [];
+            inputs.forEach(input => {
+                inputsValueArray.push(input.value);
+            });
+        })
+    });
+    // useEffect(() => {
+    //     inputs.forEach(input => {
+    //         inputsValueArray.push(input.value);
+    
+    //         // Reseting array values as each input value changes
+    //         input.addEventListener("input", () => {
+    //             inputsValueArray = [];
+    //             inputs.forEach(input => {
+    //                 inputsValueArray.push(input.value);
+    //             });
+    //         })
+    //     });
+    // }, [])
+
     return ( 
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageAction main="Create Account" details="Begin your journey with Crossbase by signing up." />
                 {createAccountInputs.map((inputDetail, index) => (
                     <div key={index}>
-                        <LoginInput label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
+                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
                     </div>
                 ))}
             </div>
@@ -36,7 +64,7 @@ const CreateAccount = () => {
                 <div className="text-[14px] mb-[55px] ">
                     Already have an account? <span className="text-[#CCFF01] ">Login</span>
                 </div>
-                <ActionButton buttonText="Create Account" link="/complete-profile" />
+                <ActionButton buttonText="Create Account" link="/complete-profile" inputValues={inputsValueArray} />
             </div>
         </div>
     );

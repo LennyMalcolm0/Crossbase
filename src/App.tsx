@@ -2,6 +2,8 @@ import './App.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import CreateAccount from './Pages/Authentication/CreateAccount'
 import CompleteProfile from './Pages/Authentication/CompleteProfile'
+import SetTransactionPin from './Pages/Authentication/SetTransactionPin'
+import ConfirmTransactionPin from './Pages/Authentication/ConfirmTransactionPin'
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
             {/* Authentication Pages */}
             <Route path="/create-account" element={<CreateAccount />} />
             <Route path="/complete-profile" element={<CompleteProfile />} />
+            <Route path="/set-transaction-pin" element={<SetTransactionPin />} />
+            <Route path="/confirm-transaction-pin" element={<ConfirmTransactionPin />} />
           </Routes>
         </BrowserRouter>
       </div>

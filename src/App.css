@@ -12,3 +12,7 @@ body {
   font-family: 'Jost', sans-serif;
   letter-spacing: -2%;
 }
+
+a {
+  text-decoration: none;
+}
