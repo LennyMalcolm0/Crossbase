@@ -1,6 +1,6 @@
-import ActionButton from '../../Components/ActionButton';
 import ActionIcon from '../../Components/ActionIcon';
 import ActivityEvents from '../../Components/ActivityEvents';
+import AppNavigationBar from '../../Components/AppNavigationBar';
 
 const Home = () => {
     const activityEventItemsArray = [
@@ -31,40 +31,42 @@ const Home = () => {
     ]
 
     return (  
-        <div>
-            <div className="w-full flex items-center justify-between ">
-                <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden ">
-                    <img src="OtherImages\profile-pic.svg" alt="" className="" />
+        <div className="h-full flex flex-col justify-between">
+            <div>
+                <div className="w-full flex items-center justify-between ">
+                    <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden ">
+                        <img src="OtherImages\profile-pic.svg" alt="" className="" />
+                    </div>
+                    <ActionIcon imageSource="Icons\notification.svg" />
                 </div>
-                <ActionIcon imageSource="Icons\notification.svg" />
+
+                <div className="w-full p-[15px] rounded-[20px] bg-[#CCFF01] text-center text-[12px] mt-[15px] ">
+                    <div className="text-[#121313] font-bold ">
+                        <div>NGN</div>
+                        <div className="text-[28px] leading-[35px] mt-[5px] ">143,456.00</div>
+                    </div>
+                    <div className="text-[#1F1F1E] mt-[5px]">My Wallet Balance</div>
+                    <div className="w-full flex h-[47px] bg-[#121313] rounded-[10px] py-[8px] mt-[10px] text-white text-[11px] ">
+                        <div className="grow flex items-center justify-center border-r border-white cursor-pointer ">
+                            <img src="Icons\send-money.svg" alt="" className="mr-[5px]" />
+                            <span>Send Money</span>
+                        </div>
+                        <div className="grow flex items-center justify-center border-r border-white cursor-pointer ">
+                            <img src="Icons\top-up-white.svg" alt="" className="mr-[5px]" />
+                            <span>Top Up</span>
+                        </div>
+                        <div className="grow flex items-center justify-center border-white cursor-pointer ">
+                            <img src="Icons\withdraw-white.svg" alt="" className="mr-[5px]" />
+                            <span>Withdraw</span>
+                        </div>
+                    </div>
+                </div>
+
+                <ActivityEvents eventHeader="Recent Activities" viewMore="View all" eventItemsArray={activityEventItemsArray} />
             </div>
 
-            <div className="w-full p-[15px] rounded-[20px] bg-[#CCFF01] text-center text-[12px] mt-[15px] ">
-                <div className="text-[#121313] font-bold ">
-                    <div>NGN</div>
-                    <div className="text-[28px] leading-[35px] mt-[5px] ">143,456.00</div>
-                </div>
-                <div className="text-[#1F1F1E] mt-[5px]">My Wallet Balance</div>
-                <div className="w-full flex h-[47px] bg-[#121313] rounded-[10px] py-[8px] mt-[10px] text-white text-[11px] ">
-                    <div className="grow flex items-center justify-center border-r border-white cursor-pointer ">
-                        <img src="Icons\send-money.svg" alt="" className="mr-[5px]" />
-                        <span>Send Money</span>
-                    </div>
-                    <div className="grow flex items-center justify-center border-r border-white cursor-pointer ">
-                        <img src="Icons\top-up-white.svg" alt="" className="mr-[5px]" />
-                        <span>Top Up</span>
-                    </div>
-                    <div className="grow flex items-center justify-center border-white cursor-pointer ">
-                        <img src="Icons\withdraw-white.svg" alt="" className="mr-[5px]" />
-                        <span>Withdraw</span>
-                    </div>
-                </div>
-            </div>
-
-            <ActivityEvents eventHeader="Recent Activities" viewMore="View all" eventItemsArray={activityEventItemsArray} />
-
-            <div className="mt-[15px] ">
-                <ActionButton buttonText="Create" link="/" />
+            <div>
+                <AppNavigationBar activePage="Home" />
             </div>
         </div>
     );

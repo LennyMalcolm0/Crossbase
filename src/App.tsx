@@ -12,8 +12,8 @@ import Home from './Pages/HomeFlow/Home'
 function App() {
 
   return (
-    <div className="App flex justify-center bg-black">
-      <div className="h-screen w-screen max-w-[400px] bg-[#121313] text-[#D9D9D9] px-[20px] py-[40px] ">
+    <div className="App-background flex justify-center bg-black">
+      <div className="App h-screen w-screen max-w-[400px] bg-[#121313] text-[#D9D9D9] px-[20px] py-[35px] ">
         <BrowserRouter>
           <Routes>
             {/* <Route path="/" element={<Navigate to="/create-account" />} /> */}

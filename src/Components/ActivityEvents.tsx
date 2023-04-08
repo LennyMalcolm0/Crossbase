@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 interface Props {
     eventHeader: string;
     viewMore?: string;
