@@ -7,13 +7,13 @@ const Notifications = () => {
             {
                 imageSource: "Icons/bell-ringing.svg",
                 eventInformation: "Transaction successful",
-                eventDetails: "Your transfer of NGN 54,321 to Prosper Melariri...",
+                eventDetails: "Your transfer of NGN 54,321 to Prosper Melariri was successful.",
                 eventValue: "08:33 PM",  
             },
             {
                 imageSource: "Icons/bell-ringing.svg",
                 eventInformation: "Transaction successful",
-                eventDetails: "Your transfer of NGN 54,321 to Prosper Melariri...",
+                eventDetails: "Your transfer of NGN 54,321 to Prosper Melariri was successful.",
                 eventValue: "08:33 PM",  
             },
             {
@@ -33,7 +33,7 @@ const Notifications = () => {
             {
                 imageSource: "Icons/bell-ringing.svg",
                 eventInformation: "Transaction successful",
-                eventDetails: "Your transfer of NGN 54,321 to Prosper Melariri...",
+                eventDetails: "Your transfer of NGN 54,321 to Prosper Melariri was successful.",
                 eventValue: "08:33 PM",  
             },
             {
@@ -45,7 +45,7 @@ const Notifications = () => {
             {
                 imageSource: "Icons/bell-ringing.svg",
                 eventInformation: "Transaction successful",
-                eventDetails: "Your transfer of NGN 54,321 to Prosper Melariri...",
+                eventDetails: "Your transfer of NGN 54,321 to Prosper Melariri was successful.",
                 eventValue: "08:33 PM",  
             },
         ]

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
+import NotificationInformation from "../Pages/HomeFlow/NotificationInformation";
 
 interface Props {
     eventType: string;
@@ -27,7 +28,7 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
                     {viewMore && viewMoreLink ? <Link to={viewMoreLink} className="text-[12px] uppercase cursor-pointer ">{viewMore}</Link> : <></>}
                 </div>
                 {eventItemsArray.map((eventItem, index) => (
-                    <div key={index}>
+                    <Link to="/notifications-information" key={index}>
                         <div className="icon-container w-full h-[60px] rounded-[10px] bg-[#1F1F1E] px-[15px] flex items-center mb-[10px] cursor-pointer ">
                             <div className={`w-[36px] h-[36px] bg-[#121313] ${imageContainerBorderRadius} flex items-center justify-center `}>
                                 <img src={eventItem.imageSource} alt="" />
@@ -40,9 +41,14 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
                                 <div className="max-w-[180px] text-ellipsis whitespace-nowrap overflow-hidden text-[10px] text-[#D9D9D9] ">{eventItem.eventDetails}</div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
+            {/* <Routes>
+                <Route path="notifications-information/:notificationId" element={
+                    <NotificationInformation notificationInformation={eventItem.eventInformation} />
+                } />
+            </Routes> */}
         </div>
     );
 }

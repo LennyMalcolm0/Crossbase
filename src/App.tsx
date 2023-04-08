@@ -33,6 +33,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="all-activities" element={<AllActivities />} />
               <Route path="notifications" element={<Notifications />} />
+              <Route path="notifications-information/:notificationId" element={<Notifications />} />
             </Routes>
           </BrowserRouter>
         </div>
