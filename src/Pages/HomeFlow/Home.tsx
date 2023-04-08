@@ -1,5 +1,5 @@
 import ActionIcon from '../../Components/ActionIcon';
-import ActivityEvents from '../../Components/ActivityEvents';
+import Events from '../../Components/Events';
 import AppNavigationBar from '../../Components/AppNavigationBar';
 
 const Home = () => {
@@ -7,26 +7,26 @@ const Home = () => {
         {
             imageSource: "Icons/activity-transfer-green.svg",
             eventInformation: "To: Alex Kwesi",
-            eventDate: "08:33 PM - 2/3/2023",
-            eventAmount: "- N56,789", 
+            eventDetails: "08:33 PM - 2/3/2023",
+            eventValue: "- N56,789", 
         },
         {
             imageSource: "Icons/top-up-green.svg",
             eventInformation: "Wallet Top Up",
-            eventDate: "12:35 PM - 2/3/2023",
-            eventAmount: "+ N120,400", 
+            eventDetails: "12:35 PM - 2/3/2023",
+            eventValue: "+ N120,400", 
         },
         {
             imageSource: "Icons/treasury-stake-green.svg",
             eventInformation: "NGN/GHS Treasury Stake",
-            eventDate: "09:14 AM - 28/2/2023",
-            eventAmount: "- N82,000", 
+            eventDetails: "09:14 AM - 28/2/2023",
+            eventValue: "- N82,000", 
         },
         {
             imageSource: "Icons/top-up-green.svg",
             eventInformation: "Wallet Top Up",
-            eventDate: "08:20 PM - 27/2/2023",
-            eventAmount: "+ N68,550", 
+            eventDetails: "08:20 PM - 27/2/2023",
+            eventValue: "+ N68,550", 
         },
     ]
 
@@ -62,7 +62,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <ActivityEvents eventHeader="Recent Activities" viewMore="View all" eventItemsArray={activityEventItemsArray} />
+                <Events eventType="Activity" eventHeader="Recent Activities" viewMore="View all" eventItemsArray={activityEventItemsArray} />
             </div>
 
             <div>

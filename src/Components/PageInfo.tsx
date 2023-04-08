@@ -16,7 +16,7 @@ const PageInfo = ({main, details}: Props) => {
                     </div> 
                 </div>
                 :
-                <div className="flex items-center">
+                <div className="flex items-center mb-[30px] ">
                     <ActionIcon imageSource="Icons\backtrack.svg" />
                     <div className="text-[24px] font-semibold grow text-center ">{main}</div>
                 </div>
