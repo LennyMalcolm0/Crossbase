@@ -24,7 +24,7 @@ const PageInformation = ({main, details}: Props) => {
                     </div> 
                 </div>
                 :
-                <div className="flex items-center mb-[30px] ">
+                <div className="flex items-center mb-[20px] ">
                     <div onClick={returnToPreviousPage}>
                         <ActionIcon imageSource="Icons\backtrack.svg" />
                     </div>

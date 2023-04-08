@@ -1,6 +1,7 @@
 import ActionIcon from '../../Components/ActionIcon';
 import Events from '../../Components/Events';
 import AppNavigationBar from '../../Components/AppNavigationBar';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const activityEventItemsArray = [
@@ -37,7 +38,7 @@ const Home = () => {
                     <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden ">
                         <img src="OtherImages\profile-pic.svg" alt="" className="" />
                     </div>
-                    <ActionIcon imageSource="Icons\notification.svg" />
+                    <Link to="/notifications"><ActionIcon imageSource="Icons\notification.svg" /></Link>
                 </div>
 
                 <div className="w-full p-[15px] rounded-[20px] bg-[#CCFF01] text-center text-[12px] mt-[15px] ">

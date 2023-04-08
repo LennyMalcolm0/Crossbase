@@ -12,7 +12,7 @@ interface Props {
         eventDetails: string;
         eventValue: string;                         
     }[]
-}
+}      
 const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArray }: Props) => {
     const [imageContainerBorderRadius, setImageContainerBorderRadius] = useState("");
     useEffect(() => {
@@ -47,4 +47,4 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
     );
 }
  
-export default Events;            
+export default Events  ;            
