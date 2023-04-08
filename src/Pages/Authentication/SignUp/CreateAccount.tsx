@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Inputs from "../../../Components/Inputs";
-import PageAction from "../../../Components/PageInfo";
+import PageInfo from "../../../Components/PageInfo";
 import ActionButton from '../../../Components/ActionButton';
+import { Link } from "react-router-dom";
 
 const CreateAccount = () => {
     const createAccountInputs = [
@@ -22,29 +23,10 @@ const CreateAccount = () => {
         },
     ];
 
-    const [finalInputsValueArray, setFinalInputsArray] = useState<string[]>([]);
-    let initialInputsValueArray: string[] = [];
-    const inputs = document.querySelectorAll("input");
-    inputs.forEach(input => {
-        initialInputsValueArray.push(input.value);
-        setFinalInputsArray(initialInputsValueArray);
-    });
-    useEffect(() => {
-        inputs.forEach(input => {
-            input.addEventListener("input", () => {
-                initialInputsValueArray = [];
-                inputs.forEach(input => {
-                    initialInputsValueArray.push(input.value);
-                    setFinalInputsArray(initialInputsValueArray);
-                });
-            })
-        });
-    }, [])
-
     return ( 
         <div className="h-full flex flex-col justify-between ">
             <div>
-                <PageAction main="Create Account" details="Begin your journey with Crossbase by signing up." />
+                <PageInfo main="Create Account" details="Begin your journey with Crossbase by signing up." />
                 {createAccountInputs.map((inputDetail, index) => (
                     <div key={index}>
                         <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
@@ -54,9 +36,9 @@ const CreateAccount = () => {
 
             <div>
                 <div className="text-[14px] mb-[55px] ">
-                    Already have an account? <span className="text-[#CCFF01] ">Login</span>
+                    Already have an account? <Link to="/login" className="text-[#CCFF01] ">Login</Link>
                 </div>
-                <ActionButton buttonText="Create Account" link="/complete-profile" inputValues={finalInputsValueArray} />
+                <ActionButton buttonText="Create Account" link="/complete-profile" />               
             </div>
         </div>
     );

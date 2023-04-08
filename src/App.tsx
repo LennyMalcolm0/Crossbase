@@ -7,6 +7,7 @@ import ConfirmTransactionPin from './Pages/Authentication/SignUp/ConfirmTransact
 import LogIn from './Pages/Authentication/SignIn/LogIn'
 import ForgotPassword from './Pages/Authentication/SignIn/ForgotPassword'
 import ResetPassword from './Pages/Authentication/SignIn/ResetPassword'
+import Home from './Pages/HomeFlow/Home'
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
       <div className="h-screen w-screen max-w-[400px] bg-[#121313] text-[#D9D9D9] px-[20px] py-[40px] ">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Navigate to="/create-account" />} />
+            {/* <Route path="/" element={<Navigate to="/create-account" />} /> */}
             {/* Authentication Pages */}
             <Route path="/create-account" element={<CreateAccount />} />
             <Route path="/complete-profile" element={<CompleteProfile />} />
@@ -24,6 +25,9 @@ function App() {
             <Route path="/login" element={<LogIn />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/reset-password" element={<ResetPassword />} />
+
+            {/* Main App Pages */}
+            <Route path="/" element={<Home />} />
           </Routes>
         </BrowserRouter>
       </div>
