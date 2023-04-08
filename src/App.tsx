@@ -8,6 +8,7 @@ import LogIn from './Pages/Authentication/SignIn/LogIn'
 import ForgotPassword from './Pages/Authentication/SignIn/ForgotPassword'
 import ResetPassword from './Pages/Authentication/SignIn/ResetPassword'
 import Home from './Pages/HomeFlow/Home'
+import AllActivities from './Pages/HomeFlow/AllActivites'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
 
             {/* Main App Pages */}
             <Route path="/" element={<Home />} />
+            <Route path="all-activities" element={<AllActivities />} />
           </Routes>
         </BrowserRouter>
       </div>

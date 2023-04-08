@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Inputs from "../../../Components/Inputs";
-import PageInfo from "../../../Components/PageInfo";
+import PageInformation from "../../../Components/PageInformation";
 import ActionButton from '../../../Components/ActionButton';
 import { Link } from "react-router-dom";
 
@@ -26,7 +26,7 @@ const CreateAccount = () => {
     return ( 
         <div className="h-full flex flex-col justify-between ">
             <div>
-                <PageInfo main="Create Account" details="Begin your journey with Crossbase by signing up." />
+                <PageInformation main="Create Account" details="Begin your journey with Crossbase by signing up." />
                 {createAccountInputs.map((inputDetail, index) => (
                     <div key={index}>
                         <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />

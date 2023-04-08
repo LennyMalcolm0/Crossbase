@@ -62,7 +62,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <Events eventType="Activity" eventHeader="Recent Activities" viewMore="View all" eventItemsArray={activityEventItemsArray} />
+                <Events eventType="Activity" eventHeader="Recent Activities" viewMore="View all" viewMoreLink="/all-activities" eventItemsArray={activityEventItemsArray} />
             </div>
 
             <div>

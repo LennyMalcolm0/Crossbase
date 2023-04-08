@@ -1,6 +1,10 @@
+import PageInformation from "../../Components/PageInformation";
+
 const AllActivities = () => {
     return (  
-        <div></div>
+        <div>
+            <PageInformation main="All Activities" />
+        </div>
     );
 }
  

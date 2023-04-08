@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ActionButton from "../../../Components/ActionButton";
 import Inputs from "../../../Components/Inputs";
-import PageInfo from "../../../Components/PageInfo";
+import PageInformation from "../../../Components/PageInformation";
 
 const LogIn = () => {
     const loginInputs = [
@@ -20,7 +20,7 @@ const LogIn = () => {
     return ( 
         <div className="h-full flex flex-col justify-between ">
             <div>
-                <PageInfo main="Login" details="Login to send money or stake to treasury." />
+                <PageInformation main="Login" details="Login to send money or stake to treasury." />
                 {loginInputs.map((inputDetail, index) => (
                     <div key={index}>
                         <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />

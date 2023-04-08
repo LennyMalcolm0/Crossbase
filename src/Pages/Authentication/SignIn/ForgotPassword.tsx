@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import ActionButton from "../../../Components/ActionButton";
 import Inputs from "../../../Components/Inputs";
-import PageInfo from "../../../Components/PageInfo";
+import PageInformation from "../../../Components/PageInformation";
 
 const ForgotPassword = () => {
     const ForgotPasswordInputs = [
@@ -15,7 +15,7 @@ const ForgotPassword = () => {
     return ( 
         <div className="h-full flex flex-col justify-between ">
             <div>
-                <PageInfo main="Forgot Password" details="Enter email address to receive a password reset OTP." />
+                <PageInformation main="Forgot Password" details="Enter email address to receive a password reset OTP." />
                 {ForgotPasswordInputs.map((inputDetail, index) => (
                     <div key={index}>
                         <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
