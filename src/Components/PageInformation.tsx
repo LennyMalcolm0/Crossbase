@@ -4,12 +4,16 @@ import { createBrowserHistory } from 'history';
 interface Props {
     main: string;
     details?: string;
+    dontGoBackInHistory?: boolean
 }
-const PageInformation = ({main, details}: Props) => {
+const PageInformation = ({main, details, dontGoBackInHistory}: Props) => {
     const history = createBrowserHistory();
+
     function returnToPreviousPage() {
-        history.go(-1)
-    };
+        if (!dontGoBackInHistory) {
+            history.go(-1)
+        }
+    }
 
     return ( 
          <div>

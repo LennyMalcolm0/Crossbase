@@ -15,8 +15,8 @@ function App() {
 
   return (
     <div className="App-background h-screen w-screen flex justify-center bg-black">
-      <div className="App h-full max-h-[1000px] w-full max-w-[400px] bg-[#121313] text-[#D9D9D9] px-[20px] py-[35px] ">
-        <div className="h-full w-full overflow-auto relative ">
+      <div className="App h-full max-h-[1000px] w-full max-w-[400px] relative bg-[#121313] text-[#D9D9D9] px-[20px] py-[35px] ">
+        <div className="h-full w-full overflow-auto ">
           <BrowserRouter>
             <Routes>
               {/* <Route path="/" element={<Navigate to="/create-account" />} /> */}
@@ -33,7 +33,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="all-activities" element={<AllActivities />} />
               <Route path="notifications" element={<Notifications />} />
-              <Route path="notifications-information/:notificationId" element={<Notifications />} />
+              {/* <Route path="notifications-information/:notificationId" element={<Notifications />} /> */}
             </Routes>
           </BrowserRouter>
         </div>

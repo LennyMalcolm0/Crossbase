@@ -54,9 +54,9 @@ const Notifications = () => {
     return (  
         <div>
             <PageInformation main="Notifications" />
-            <Events eventType="Activity" eventHeader="Mar 31, 2023" eventItemsArray={notificationArrayForEachDay[0]} />
+            <Events eventType="Notification" eventHeader="Mar 31, 2023" eventItemsArray={notificationArrayForEachDay[0]} />
             <div className="mt-[20px] ">
-                <Events eventType="Activity" eventHeader="Mar 29, 2023" eventItemsArray={notificationArrayForEachDay[1]} />
+                <Events eventType="Notification" eventHeader="Mar 29, 2023" eventItemsArray={notificationArrayForEachDay[1]} />
             </div>
         </div>
     );

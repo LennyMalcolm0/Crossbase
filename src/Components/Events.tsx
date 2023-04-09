@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useParams } from "react-router-dom";
 import NotificationInformation from "../Pages/HomeFlow/NotificationInformation";
 
 interface Props {
@@ -17,7 +17,25 @@ interface Props {
 const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArray }: Props) => {
     const [imageContainerBorderRadius, setImageContainerBorderRadius] = useState("");
     useEffect(() => {
-        eventType.toLowerCase() === "activity" ? setImageContainerBorderRadius("rounded-full") : setImageContainerBorderRadius("rounded-[5px]")
+        eventType.toLowerCase() === "activity" ? setImageContainerBorderRadius("rounded-full") : setImageContainerBorderRadius("rounded-[5px]");
+
+        const events = document.querySelectorAll(".event");
+        events.forEach(event => {
+            event.addEventListener("click", () => {
+                const eventBreakdown = event.nextElementSibling as HTMLElement;
+                eventBreakdown.classList.remove("hidden");
+                eventBreakdown.classList.add("block");
+            })
+        })
+
+        const goBackButton = document.querySelectorAll(".action-icon");
+        goBackButton.forEach(button => {
+            button.addEventListener("click", () => {
+                const eventBreakdown = button.closest('div.event-breakdown') as HTMLElement;
+                eventBreakdown.classList.remove("block");
+                eventBreakdown.classList.add("hidden");
+            })
+        })
     })
 
     return (  
@@ -28,8 +46,8 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
                     {viewMore && viewMoreLink ? <Link to={viewMoreLink} className="text-[12px] uppercase cursor-pointer ">{viewMore}</Link> : <></>}
                 </div>
                 {eventItemsArray.map((eventItem, index) => (
-                    <Link to="/notifications-information" key={index}>
-                        <div className="icon-container w-full h-[60px] rounded-[10px] bg-[#1F1F1E] px-[15px] flex items-center mb-[10px] cursor-pointer ">
+                    <div key={index}>
+                        <div className="event w-full h-[60px] rounded-[10px] bg-[#1F1F1E] px-[15px] flex items-center mb-[10px] cursor-pointer ">
                             <div className={`w-[36px] h-[36px] bg-[#121313] ${imageContainerBorderRadius} flex items-center justify-center `}>
                                 <img src={eventItem.imageSource} alt="" />
                             </div>
@@ -41,14 +59,19 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
                                 <div className="max-w-[180px] text-ellipsis whitespace-nowrap overflow-hidden text-[10px] text-[#D9D9D9] ">{eventItem.eventDetails}</div>
                             </div>
                         </div>
-                    </Link>
+                        {eventType.toLowerCase() === "activity" ? <div></div> :
+                            <div className="event-breakdown hidden">
+                                <NotificationInformation 
+                                    notificationInformation={eventItem.eventInformation} 
+                                    notificationDetails={eventItem.eventDetails} 
+                                    notificationTime={eventItem.eventValue}
+                                    notificationDate={eventHeader}
+                                />
+                            </div>
+                        }
+                    </div>
                 ))}
             </div>
-            {/* <Routes>
-                <Route path="notifications-information/:notificationId" element={
-                    <NotificationInformation notificationInformation={eventItem.eventInformation} />
-                } />
-            </Routes> */}
         </div>
     );
 }
