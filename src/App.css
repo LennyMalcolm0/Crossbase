@@ -29,3 +29,13 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
 display: none;
 }
+
+.search-countries::-webkit-scrollbar {
+  display: block;
+  width: 2px;
+}
+.search-countries::-webkit-scrollbar-thumb {
+  background-color: #1F1F1E;
+}
+.search-countries::-webkit-scrollbar {
+}
