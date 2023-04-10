@@ -48,18 +48,18 @@ const Home = () => {
                     </div>
                     <div className="text-[#1F1F1E] mt-[5px]">My Wallet Balance</div>
                     <div className="w-full flex h-[47px] bg-[#121313] rounded-[10px] py-[8px] mt-[10px] text-white text-[11px] ">
-                        <div className="grow flex items-center justify-center border-r border-white cursor-pointer ">
+                        <Link to="/send-money" className="grow flex items-center justify-center border-r border-white cursor-pointer ">
                             <img src="Icons\send-money.svg" alt="" className="mr-[5px]" />
                             <span>Send Money</span>
-                        </div>
-                        <div className="grow flex items-center justify-center border-r border-white cursor-pointer ">
+                        </Link>
+                        <Link to="/top-up" className="grow flex items-center justify-center border-r border-white cursor-pointer ">
                             <img src="Icons\top-up-white.svg" alt="" className="mr-[5px]" />
                             <span>Top Up</span>
-                        </div>
-                        <div className="grow flex items-center justify-center border-white cursor-pointer ">
+                        </Link>
+                        <Link to="/withdraw-money" className="grow flex items-center justify-center border-white cursor-pointer ">
                             <img src="Icons\withdraw-white.svg" alt="" className="mr-[5px]" />
                             <span>Withdraw</span>
-                        </div>
+                        </Link>
                     </div>
                 </div>
 

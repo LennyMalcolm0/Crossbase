@@ -10,6 +10,7 @@ import ResetPassword from './Pages/Authentication/SignIn/ResetPassword'
 import Home from './Pages/HomeFlow/Home'
 import AllActivities from './Pages/HomeFlow/AllActivites'
 import Notifications from './Pages/HomeFlow/Notifications'
+import TopUp from './Pages/HomeFlow/TopUp'
 
 function App() {
 
@@ -31,9 +32,9 @@ function App() {
 
               {/* Main App Pages */}
               <Route path="/" element={<Home />} />
-              <Route path="all-activities" element={<AllActivities />} />
-              <Route path="notifications" element={<Notifications />} />
-              {/* <Route path="notifications-information/:notificationId" element={<Notifications />} /> */}
+              <Route path="/all-activities" element={<AllActivities />} />
+              <Route path="/notifications" element={<Notifications />} />
+              <Route path="/top-up" element={<TopUp />} />
             </Routes>
           </BrowserRouter>
         </div>
