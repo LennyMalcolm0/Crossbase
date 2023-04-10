@@ -11,6 +11,8 @@ import Home from './Pages/HomeFlow/Home'
 import AllActivities from './Pages/HomeFlow/AllActivites'
 import Notifications from './Pages/HomeFlow/Notifications'
 import TopUp from './Pages/HomeFlow/TopUp'
+import WithdrawMoney from './Pages/HomeFlow/WithdrawMoney'
+import AuthorizeWithdrawal from './Pages/HomeFlow/AuthorizeWithdrawal'
 
 function App() {
 
@@ -35,6 +37,8 @@ function App() {
               <Route path="/all-activities" element={<AllActivities />} />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/top-up" element={<TopUp />} />
+              <Route path="/withdraw-money" element={<WithdrawMoney />} />
+              <Route path="/authorize-withdrawal" element={<AuthorizeWithdrawal />} />
             </Routes>
           </BrowserRouter>
         </div>
