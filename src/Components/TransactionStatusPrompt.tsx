@@ -13,7 +13,7 @@ const TransactionStatusPrompt = ({transactionStatus, transactionResult, transact
 
     return (  
         <div className="h-screen w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[20px] py-[35px] ">
-            <div className="h-full px-[15px] flex items-center">
+            <div className="h-full flex items-center">
                 <div>
                     <div className="flex justify-between mb-[15px] ">
                         <div></div>

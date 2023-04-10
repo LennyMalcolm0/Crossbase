@@ -13,12 +13,12 @@ import Notifications from './Pages/HomeFlow/Notifications'
 import TopUp from './Pages/HomeFlow/TopUp'
 import WithdrawMoney from './Pages/HomeFlow/WithdrawMoney'
 import AuthorizeWithdrawal from './Pages/HomeFlow/AuthorizeWithdrawal'
-import TransactionInformation from './Pages/HomeFlow/TransactionInformation'
+import SelectDestination from './Pages/HomeFlow/SelectDestination'
 
 function App() {
 
   return (
-    <div className="App-background h-screen w-screen flex justify-center bg-black">
+    <div className="App-background h-screen w-screen flex justify-center bg-black transition-all duration-300 ">
       <div className="App h-full max-h-[1000px] w-full max-w-[400px] relative bg-[#121313] text-[#D9D9D9] px-[20px] py-[35px] ">
         <div className="h-full w-full overflow-auto ">
           <BrowserRouter>
@@ -33,13 +33,14 @@ function App() {
               <Route path="/forgot-password" element={<ForgotPassword />} />
               <Route path="/reset-password" element={<ResetPassword />} />
 
-              {/* Main App Pages */}
+              {/* Home Flow Pages*/}
               <Route path="/" element={<Home />} />
               <Route path="/all-activities" element={<AllActivities />} />
               <Route path="/notifications" element={<Notifications />} />
               <Route path="/top-up" element={<TopUp />} />
               <Route path="/withdraw-money" element={<WithdrawMoney />} />
               <Route path="/authorize-withdrawal" element={<AuthorizeWithdrawal />} />
+              <Route path="/select-destination" element={<SelectDestination />} />
             </Routes>
           </BrowserRouter>
         </div>

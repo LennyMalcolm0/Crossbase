@@ -2,6 +2,7 @@ import ActionIcon from '../../Components/ActionIcon';
 import Events from '../../Components/Events';
 import AppNavigationBar from '../../Components/AppNavigationBar';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     const activityEventItemsArray = [
@@ -31,7 +32,12 @@ const Home = () => {
         },
     ]
 
-    return (  
+    return (
+        <> 
+        {/* Make Helmet a component */}
+        <Helmet>
+            <title>Home</title>
+        </Helmet>
         <div className="h-full flex flex-col justify-between">
             <div>
                 <div className="w-full flex items-center justify-between ">
@@ -48,7 +54,7 @@ const Home = () => {
                     </div>
                     <div className="text-[#1F1F1E] mt-[5px]">My Wallet Balance</div>
                     <div className="w-full flex h-[47px] bg-[#121313] rounded-[10px] py-[8px] mt-[10px] text-white text-[11px] ">
-                        <Link to="/send-money" className="grow flex items-center justify-center border-r border-white cursor-pointer ">
+                        <Link to="/select-destination" className="grow flex items-center justify-center border-r border-white cursor-pointer ">
                             <img src="Icons\send-money.svg" alt="" className="mr-[5px]" />
                             <span>Send Money</span>
                         </Link>
@@ -66,10 +72,11 @@ const Home = () => {
                 <Events eventType="Activity" eventHeader="Recent Activities" viewMore="View all" viewMoreLink="/all-activities" eventItemsArray={activityEventItemsArray} />
             </div>
 
-            <div>
+            <div className="w-full sticky bottom-[-1px] ">
                 <AppNavigationBar activePage="Home" />
             </div>
         </div>
+        </> 
     );
 }
  

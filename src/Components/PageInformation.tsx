@@ -19,7 +19,7 @@ const PageInformation = ({main, details, dontGoBackInHistory}: Props) => {
          <div>
             {details ?
                 <div>
-                    <div onClick={returnToPreviousPage}>
+                    <div className="w-fit" onClick={returnToPreviousPage}>
                         <ActionIcon imageSource="Icons\backtrack.svg" />
                     </div>
                     <div className="mt-[10px] mb-[30px] ">
