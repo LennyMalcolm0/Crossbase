@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, Route, Routes, useParams } from "react-router-dom";
 import NotificationInformation from "../Pages/HomeFlow/NotificationInformation";
+import TransactionInformation from "../Pages/HomeFlow/TransactionInformation";
 
 interface Props {
     eventType: string;
@@ -59,16 +60,21 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
                                 <div className="max-w-[180px] text-ellipsis whitespace-nowrap overflow-hidden text-[10px] text-[#D9D9D9] ">{eventItem.eventDetails}</div>
                             </div>
                         </div>
-                        {eventType.toLowerCase() === "activity" ? <div></div> :
-                            <div className="event-breakdown hidden">
+                        
+                        <div className="event-breakdown hidden">
+                            {eventType.toLowerCase() === "activity" ? 
+                                <TransactionInformation 
+                                    transactionInformation={eventItem.eventInformation} 
+                                    transactionDate={eventItem.eventDetails} 
+                                /> :
                                 <NotificationInformation 
                                     notificationInformation={eventItem.eventInformation} 
                                     notificationDetails={eventItem.eventDetails} 
                                     notificationTime={eventItem.eventValue}
                                     notificationDate={eventHeader}
                                 />
-                            </div>
-                        }
+                            }
+                        </div>
                     </div>
                 ))}
             </div>

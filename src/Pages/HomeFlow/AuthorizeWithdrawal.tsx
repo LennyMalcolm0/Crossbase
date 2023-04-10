@@ -26,7 +26,6 @@ const AuthorizeWithdrawal = () => {
             <div className="transaction-status hidden">
                 <TransactionStatusPrompt 
                     transactionStatus={true}
-                    imageSource="Icons\x-close.svg"
                     transactionResult="Transaction Successful" 
                     transactionResultDetails="We'll notify you when the money gets to the receiver's bank account or mobile wallet." 
                     redirectLink="/"

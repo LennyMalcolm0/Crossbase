@@ -5,12 +5,11 @@ import { Link } from "react-router-dom";
 
 interface Props {
     transactionStatus: boolean;
-    imageSource: string;
     transactionResult: string;
     transactionResultDetails: string;
     redirectLink: string;
 }
-const TransactionStatusPrompt = ({transactionStatus, imageSource, transactionResult, transactionResultDetails, redirectLink}: Props) => {
+const TransactionStatusPrompt = ({transactionStatus, transactionResult, transactionResultDetails, redirectLink}: Props) => {
 
     return (  
         <div className="h-screen w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[20px] py-[35px] ">
@@ -18,8 +17,9 @@ const TransactionStatusPrompt = ({transactionStatus, imageSource, transactionRes
                 <div>
                     <div className="flex justify-between mb-[15px] ">
                         <div></div>
-                        <Link to={redirectLink}>
-                            <ActionIcon imageSource={imageSource} />
+                        <Link to={redirectLink} className="cursor-pointer
+                        ">
+                            <ActionIcon imageSource="Icons\x-close.svg" />
                         </Link>
                     </div>
                     <div className="w-full h-[350px] rounded-[20px] bg-[#1F1F1E] px-[30px] pt-[30px] pb-[40px] text-center ">

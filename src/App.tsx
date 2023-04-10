@@ -13,6 +13,7 @@ import Notifications from './Pages/HomeFlow/Notifications'
 import TopUp from './Pages/HomeFlow/TopUp'
 import WithdrawMoney from './Pages/HomeFlow/WithdrawMoney'
 import AuthorizeWithdrawal from './Pages/HomeFlow/AuthorizeWithdrawal'
+import TransactionInformation from './Pages/HomeFlow/TransactionInformation'
 
 function App() {
 
