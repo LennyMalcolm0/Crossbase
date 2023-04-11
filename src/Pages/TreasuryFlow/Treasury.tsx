@@ -2,6 +2,8 @@ import AppNavigationBar from '../../Components/General Components/AppNavigationB
 import { Helmet } from 'react-helmet';
 import { Routes, Route, Link } from 'react-router-dom';
 import MyStakes from './MyStakes';
+import TreasuryMarket from './TreasuryMarket';
+import { useEffect } from 'react';
 
 const Treasury = () => {
 
@@ -22,6 +24,9 @@ const Treasury = () => {
                 </div>
                 <Routes>
                     <Route path="/my-stakes" element={<MyStakes />} />
+                </Routes>
+                <Routes>
+                    <Route path="/treasury-market" element={<TreasuryMarket />} />
                 </Routes>
             </div>
 
