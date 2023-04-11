@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, Route, Routes, useParams } from "react-router-dom";
-import NotificationInformation from "../Pages/HomeFlow/NotificationInformation";
-import TransactionInformation from "../Pages/HomeFlow/TransactionInformation";
+import NotificationInformation from "../../Pages/HomeFlow/NotificationInformation";
+import TransactionInformation from "../../Pages/HomeFlow/TransactionInformation";
 
 interface Props {
     eventType: string;

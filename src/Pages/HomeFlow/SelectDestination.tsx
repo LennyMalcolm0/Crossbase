@@ -1,6 +1,6 @@
 import Inputs from "../../Components/Inputs";
 import PageInformation from "../../Components/PageInformation";
-import SearchCountries from "../../Components/SearchCountries";
+import SearchCountries from "../../Components/HomeFlow Components/SearchCountries";
 import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 

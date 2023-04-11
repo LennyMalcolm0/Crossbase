@@ -1,5 +1,5 @@
 import ActionIcon from '../../Components/ActionIcon';
-import Events from '../../Components/Events';
+import Events from '../../Components/HomeFlow Components/Events';
 import AppNavigationBar from '../../Components/AppNavigationBar';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -33,8 +33,7 @@ const Home = () => {
     ]
 
     return (
-        <> 
-        {/* Make Helmet a component */}
+        <>
         <Helmet>
             <title>Home</title>
         </Helmet>

@@ -1,4 +1,4 @@
-import CopyToClipboard from '../../Components/CopyToClipboard';
+import CopyToClipboard from '../../Components/HomeFlow Components/CopyToClipboard';
 import PageInformation from "../../Components/PageInformation";
 import { Helmet } from 'react-helmet';
 
