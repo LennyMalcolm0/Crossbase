@@ -60,7 +60,7 @@ const SelectDestination = () => {
         <div className="h-full">
             <div className="h-[30%] ">
                 <PageInformation main="Select Destination" details="Select the country you're sending money to." /> 
-                <Inputs inputType="text" placeholder="Search Country" imageAfterPlaceholderSource="Icons\search-sm.svg"  />
+                <Inputs inputType="text" placeholder="Search Country" imageBeforePlaceholderSource="Icons\search-sm.svg"  />
             </div>
             <div className="search-countries h-[70%] overflow-auto ">
                 <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
