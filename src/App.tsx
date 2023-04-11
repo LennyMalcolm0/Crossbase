@@ -14,6 +14,10 @@ import TopUp from './Pages/HomeFlow/TopUp'
 import WithdrawMoney from './Pages/HomeFlow/WithdrawMoney'
 import AuthorizeWithdrawal from './Pages/HomeFlow/AuthorizeWithdrawal'
 import SelectDestination from './Pages/HomeFlow/SelectDestination'
+import TransferAmount from './Pages/HomeFlow/TransferAmount'
+import RecieverDetails from './Pages/HomeFlow/RecieverDetails'
+import AuthorizeTransaction from './Pages/HomeFlow/AuthorizeTransaction'
+import TreasuryDefault from './Pages/TreasuryFlow/TreasuryDefault'
 
 function App() {
 
@@ -41,6 +45,12 @@ function App() {
               <Route path="/withdraw-money" element={<WithdrawMoney />} />
               <Route path="/authorize-withdrawal" element={<AuthorizeWithdrawal />} />
               <Route path="/select-destination" element={<SelectDestination />} />
+              <Route path="/transfer-amount" element={<TransferAmount />} />
+              <Route path="/reciever-details" element={<RecieverDetails />} />
+              <Route path="/authorize-transfer" element={<AuthorizeTransaction />} />
+
+              {/* Treasury Flow Pages */}
+              <Route path="/treasury" element={<TreasuryDefault />} />
             </Routes>
           </BrowserRouter>
         </div>

@@ -1,5 +1,5 @@
 import PageInformation from "../../Components/PageInformation";
-import Events from '../../Components/Events';
+import Events from '../../Components/HomeFlow Components/Events';
 
 const AllActivities = () => {
     const activitiesArrayForEachDay = [

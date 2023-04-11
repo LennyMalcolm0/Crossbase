@@ -1,6 +1,8 @@
 import Inputs from "../../Components/Inputs";
 import PageInformation from "../../Components/PageInformation";
-import SearchCountries from "../../Components/SearchCountries";
+import SearchCountries from "../../Components/HomeFlow Components/SearchCountries";
+import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 const SelectDestination = () => {
     const countriesProfileArray = [
@@ -34,16 +36,37 @@ const SelectDestination = () => {
         },
     ]
 
+    useEffect(() => {
+        const searchBar = document.querySelector("input") as HTMLInputElement,
+        countries = document.querySelectorAll(".country");
+        searchBar.addEventListener("input", () => {
+            const searchBarContent = searchBar.value;
+            countries.forEach(country => {
+                const countryDisplay = country as HTMLElement;
+                if (searchBarContent !== "" && country.textContent && country.textContent.toLowerCase().indexOf(searchBarContent.toLowerCase())) {
+                    countryDisplay.style.display = "none"
+                } else {
+                    countryDisplay.style.display = "flex"
+                }
+            })
+        })
+    })
+
     return (  
+        <>
+        <Helmet>
+            <title>Select Destination</title>
+        </Helmet>
         <div className="h-full">
             <div className="h-[30%] ">
                 <PageInformation main="Select Destination" details="Select the country you're sending money to." /> 
-                <Inputs inputType="text" placeholder="Search Country" imageAfterPlaceholderSource="Icons\search-sm.svg"  />
+                <Inputs inputType="text" placeholder="Search Country" imageBeforePlaceholderSource="Icons\search-sm.svg"  />
             </div>
             <div className="search-countries h-[70%] overflow-auto ">
-                <SearchCountries countriesProfile={countriesProfileArray} />
+                <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
             </div>
         </div>
+        </>
     );
 }
  

@@ -5,7 +5,7 @@ import PageInformation from "../../Components/PageInformation";
 import TransactionPin from "../../Components/TransactionPin";
 import { Helmet } from 'react-helmet';
 
-const AuthorizeWithdrawal = () => {
+const AuthorizeTransaction = () => {
     useEffect(() => {
         const completeTransaction = document.querySelector("a") as HTMLElement;
         completeTransaction.addEventListener("click", () => {
@@ -18,11 +18,11 @@ const AuthorizeWithdrawal = () => {
     return ( 
         <>
         <Helmet>
-            <title>Authorize Withdrawal</title>
+            <title>Authorize Transaction</title>
         </Helmet> 
         <div className="h-full flex flex-col justify-between">
             <div>
-                <PageInformation main="Enter Pin" details="Enter your transaction PIN to authorize this withdrawal." />
+                <PageInformation main="Enter Pin" details="Enter your transaction PIN to authorize this transaction." />
                 <TransactionPin />
             </div>
             <ActionButton buttonText="Complete" link="" />
@@ -30,7 +30,7 @@ const AuthorizeWithdrawal = () => {
                 <TransactionStatusPrompt 
                     transactionStatus={true}
                     transactionResult="Transaction Successful" 
-                    transactionResultDetails="You've successfully withdrawn N58,000 to your account." 
+                    transactionResultDetails="We'll notify you when the money gets to the receiver's bank account or mobile wallet." 
                     redirectLink="/"
                 />
             </div>
@@ -39,4 +39,4 @@ const AuthorizeWithdrawal = () => {
     );
 }
  
-export default AuthorizeWithdrawal;
+export default AuthorizeTransaction;

@@ -1,15 +1,10 @@
-import ActionButton from "../../Components/ActionButton";
-import Inputs from "../../Components/Inputs";
-import PageInformation from "../../Components/PageInformation";
 import { Helmet } from 'react-helmet';
-
-const WithdrawMoney = () => {
-    const withdrawMoneyInputs = [
-        {
-            label: "Amount to Withdrawal",
-            inputType: "number",
-            placeholder: "0.00"
-        },
+import PageInformation from '../../Components/PageInformation';
+import Inputs from '../../Components/Inputs';
+import ActionButton from '../../Components/ActionButton';
+ 
+const RecieverDetails = () => {
+    const recieverDetailsInputs = [
         {
             label: "Bank Name or Network",
             inputType: "text",
@@ -17,40 +12,36 @@ const WithdrawMoney = () => {
         },
         {
             label: "Account Number",
-            inputType: "text",
+            inputType: "number",
             placeholder: "Enter account number"
-        },
-        {
-            label: "Account Name",
-            inputType: "text",
-            placeholder: "Enter account name"
         },
     ]
 
     return (  
         <>
         <Helmet>
-            <title>Withdraw Money</title>
+            <title>Receiver Account Details</title>
         </Helmet>
         <div className="h-full flex flex-col justify-between ">
             <div>
-                <PageInformation main="Withdraw Money" details="Enter the amount you'd like to withdraw to your bank account." />
-                {withdrawMoneyInputs.map((inputDetail, index) => (
+                <PageInformation main="Receiver Account Details" details="Enter the bank or mobile money account details of the receiver." />
+                {recieverDetailsInputs.map((inputDetail, index) => (
                     <div key={index}>
                         <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
                     </div>
                 ))}
+                <label className="text-[12px] text-[#CCFF01] ">Account Name</label>
+                <div className="w-full h-[48px] px-[20px] leading-[48px] rounded-[10px] bg-[#1F1F1E] border border-[#CCFF01] text-[#CCFF01] ">4289548068</div>
             </div>
-
             <div>
                 <div className="text-[12px] leading-[17px] text-[#CCFF01] mb-[35px] " >
                     Kindly verify the above information before proceeding to the next page. Note that this transaction will not be reversed once approved.
                 </div>
-                <ActionButton buttonText="Continue" link="/authorize-withdrawal" />
+                <ActionButton buttonText="Continue" link="/authorize-transfer" />
             </div>
         </div>
         </>
     );
 }
  
-export default WithdrawMoney;
+export default RecieverDetails;
