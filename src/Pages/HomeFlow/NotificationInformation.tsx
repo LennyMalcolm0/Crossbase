@@ -1,4 +1,4 @@
-import PageInformation from '../../Components/PageInformation';
+import PageInformation from '../../Components/General Components/PageInformation';
 
 interface Props {
     notificationInformation: string;

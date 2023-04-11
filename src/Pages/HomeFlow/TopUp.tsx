@@ -1,5 +1,5 @@
 import CopyToClipboard from '../../Components/HomeFlow Components/CopyToClipboard';
-import PageInformation from "../../Components/PageInformation";
+import PageInformation from "../../Components/General Components/PageInformation";
 import { Helmet } from 'react-helmet';
 
 const TopUp = () => {

@@ -1,6 +1,6 @@
-import ActionIcon from '../../Components/ActionIcon';
+import ActionIcon from '../../Components/General Components/ActionIcon';
 import Events from '../../Components/HomeFlow Components/Events';
-import AppNavigationBar from '../../Components/AppNavigationBar';
+import AppNavigationBar from '../../Components/General Components/AppNavigationBar';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 

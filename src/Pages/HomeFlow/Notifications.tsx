@@ -1,4 +1,4 @@
-import PageInformation from "../../Components/PageInformation";
+import PageInformation from "../../Components/General Components/PageInformation";
 import Events from '../../Components/HomeFlow Components/Events';
 import { Helmet } from 'react-helmet';
 

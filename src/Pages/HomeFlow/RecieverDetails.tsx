@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet';
-import PageInformation from '../../Components/PageInformation';
-import Inputs from '../../Components/Inputs';
-import ActionButton from '../../Components/ActionButton';
+import PageInformation from '../../Components/General Components/PageInformation';
+import Inputs from '../../Components/General Components/Inputs';
+import ActionButton from '../../Components/General Components/ActionButton';
  
 const RecieverDetails = () => {
     const recieverDetailsInputs = [
