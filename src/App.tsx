@@ -15,6 +15,8 @@ import WithdrawMoney from './Pages/HomeFlow/WithdrawMoney'
 import AuthorizeWithdrawal from './Pages/HomeFlow/AuthorizeWithdrawal'
 import SelectDestination from './Pages/HomeFlow/SelectDestination'
 import TransferAmount from './Pages/HomeFlow/TransferAmount'
+import RecieverDetails from './Pages/HomeFlow/RecieverDetails'
+import AuthorizeTransaction from './Pages/HomeFlow/AuthorizeTransaction'
 
 function App() {
 
@@ -43,6 +45,8 @@ function App() {
               <Route path="/authorize-withdrawal" element={<AuthorizeWithdrawal />} />
               <Route path="/select-destination" element={<SelectDestination />} />
               <Route path="/transfer-amount" element={<TransferAmount />} />
+              <Route path="/reciever-details" element={<RecieverDetails />} />
+              <Route path="/authorize-transfer" element={<AuthorizeTransaction />} />
             </Routes>
           </BrowserRouter>
         </div>

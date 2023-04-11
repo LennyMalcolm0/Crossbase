@@ -17,8 +17,7 @@ const TransactionStatusPrompt = ({transactionStatus, transactionResult, transact
                 <div>
                     <div className="flex justify-between mb-[15px] ">
                         <div></div>
-                        <Link to={redirectLink} className="cursor-pointer
-                        ">
+                        <Link to={redirectLink} className="cursor-pointer">
                             <ActionIcon imageSource="Icons\x-close.svg" />
                         </Link>
                     </div>
