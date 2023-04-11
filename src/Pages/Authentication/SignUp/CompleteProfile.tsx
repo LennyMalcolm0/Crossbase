@@ -1,6 +1,7 @@
 import ActionButton from "../../../Components/ActionButton";
 import Inputs from "../../../Components/Inputs";
 import PageInformation from "../../../Components/PageInformation";
+import { Helmet } from 'react-helmet';
 
 const CompleteProfile = () => {
     const completeProfileInputs = [
@@ -31,6 +32,10 @@ const CompleteProfile = () => {
     ];
 
     return ( 
+        <>
+        <Helmet>
+            <title>Complete Profile</title>
+        </Helmet>
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Complete Profile" details="Complete the sign up process by completing your profile." />
@@ -43,6 +48,7 @@ const CompleteProfile = () => {
 
             <ActionButton buttonText="Continue" link="/set-transaction-pin" />
         </div>
+        </>
     );
 }
  

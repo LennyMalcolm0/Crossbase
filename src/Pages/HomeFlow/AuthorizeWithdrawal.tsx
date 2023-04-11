@@ -3,10 +3,9 @@ import ActionButton from "../../Components/ActionButton";
 import TransactionStatusPrompt from "../../Components/TransactionStatusPrompt";
 import PageInformation from "../../Components/PageInformation";
 import TransactionPin from "../../Components/TransactionPin";
-import { createBrowserHistory } from "history";
+import { Helmet } from 'react-helmet';
 
 const AuthorizeWithdrawal = () => {
-    const history = createBrowserHistory();
     useEffect(() => {
         const completeTransaction = document.querySelector("a") as HTMLElement;
         completeTransaction.addEventListener("click", () => {
@@ -16,7 +15,11 @@ const AuthorizeWithdrawal = () => {
         })
     })
 
-    return (  
+    return ( 
+        <>
+        <Helmet>
+            <title>Authorize Withdrawal</title>
+        </Helmet> 
         <div className="h-full flex flex-col justify-between">
             <div>
                 <PageInformation main="Enter Pin" details="Enter your transaction PIN to authorize this withdrawal." />
@@ -32,6 +35,7 @@ const AuthorizeWithdrawal = () => {
                 />
             </div>
         </div>
+        </>
     );
 }
  

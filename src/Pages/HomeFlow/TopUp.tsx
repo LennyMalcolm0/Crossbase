@@ -1,5 +1,6 @@
 import CopyToClipboard from '../../Components/CopyToClipboard';
 import PageInformation from "../../Components/PageInformation";
+import { Helmet } from 'react-helmet';
 
 const TopUp = () => {
     const copyToClipboardItemsArray = [
@@ -18,6 +19,10 @@ const TopUp = () => {
     ]
 
     return (  
+        <>
+        <Helmet>
+            <title>Top Up Account</title>
+        </Helmet>
         <div>
             <PageInformation main="Add Money To Wallet" details="Kindly make a bank transfer to the account details below." />
             {copyToClipboardItemsArray.map((item, index) => (
@@ -26,6 +31,7 @@ const TopUp = () => {
                 </div>
             ))}
         </div>
+        </>
     );
 }
  

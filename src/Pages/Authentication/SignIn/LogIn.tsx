@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ActionButton from "../../../Components/ActionButton";
 import Inputs from "../../../Components/Inputs";
 import PageInformation from "../../../Components/PageInformation";
+import { Helmet } from 'react-helmet';
 
 const LogIn = () => {
     const loginInputs = [
@@ -18,6 +19,10 @@ const LogIn = () => {
     ];
 
     return ( 
+        <>
+        <Helmet>
+            <title>Log In</title>
+        </Helmet>
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Login" details="Login to send money or stake to treasury." />
@@ -36,6 +41,7 @@ const LogIn = () => {
                 <ActionButton buttonText="Login" link="/" />
             </div>
         </div>
+        </>
     );
 }
  

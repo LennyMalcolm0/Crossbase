@@ -1,5 +1,6 @@
 import PageInformation from "../../Components/PageInformation";
 import Events from '../../Components/Events';
+import { Helmet } from 'react-helmet';
 
 const Notifications = () => {
     const notificationArrayForEachDay = [
@@ -52,6 +53,10 @@ const Notifications = () => {
     ];
 
     return (  
+        <>
+        <Helmet>
+            <title>Notifications</title>
+        </Helmet>
         <div>
             <PageInformation main="Notifications" />
             <Events eventType="Notification" eventHeader="Mar 31, 2023" eventItemsArray={notificationArrayForEachDay[0]} />
@@ -59,6 +64,7 @@ const Notifications = () => {
                 <Events eventType="Notification" eventHeader="Mar 29, 2023" eventItemsArray={notificationArrayForEachDay[1]} />
             </div>
         </div>
+        </>
     );
 }
  

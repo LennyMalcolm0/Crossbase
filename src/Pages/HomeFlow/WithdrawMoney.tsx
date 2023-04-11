@@ -1,6 +1,7 @@
 import ActionButton from "../../Components/ActionButton";
 import Inputs from "../../Components/Inputs";
 import PageInformation from "../../Components/PageInformation";
+import { Helmet } from 'react-helmet';
 
 const WithdrawMoney = () => {
     const withdrawMoneyInputs = [
@@ -27,6 +28,10 @@ const WithdrawMoney = () => {
     ]
 
     return (  
+        <>
+        <Helmet>
+            <title>Withdraw Money</title>
+        </Helmet>
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Withdraw Money" details="Enter the amount you'd like to withdraw to your bank account." />
@@ -44,6 +49,7 @@ const WithdrawMoney = () => {
                 <ActionButton buttonText="Continue" link="/authorize-withdrawal" />
             </div>
         </div>
+        </>
     );
 }
  

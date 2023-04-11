@@ -3,6 +3,7 @@ import Inputs from "../../../Components/Inputs";
 import PageInformation from "../../../Components/PageInformation";
 import ActionButton from '../../../Components/ActionButton';
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 const CreateAccount = () => {
     const createAccountInputs = [
@@ -24,6 +25,10 @@ const CreateAccount = () => {
     ];
 
     return ( 
+        <>
+        <Helmet>
+            <title>Create Account</title>
+        </Helmet>
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Create Account" details="Begin your journey with Crossbase by signing up." />
@@ -41,6 +46,7 @@ const CreateAccount = () => {
                 <ActionButton buttonText="Create Account" link="/complete-profile" />               
             </div>
         </div>
+        </>
     );
 }
  

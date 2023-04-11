@@ -9,6 +9,7 @@ interface Props {
 const SearchCountries = ({link, countriesProfile}: Props) => {
     return (  
         <div>
+            {/* Expand to fit in Treasury search */}
             {countriesProfile.map((countryProfile, index) => (
                 <Link to={link} key={index} className="country w-full py-[10px] flex items-center justify-between cursor-pointer ">
                     <div className="flex items-center ">

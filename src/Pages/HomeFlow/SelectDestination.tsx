@@ -2,6 +2,7 @@ import Inputs from "../../Components/Inputs";
 import PageInformation from "../../Components/PageInformation";
 import SearchCountries from "../../Components/SearchCountries";
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 
 const SelectDestination = () => {
     const countriesProfileArray = [
@@ -50,7 +51,12 @@ const SelectDestination = () => {
             })
         })
     })
+
     return (  
+        <>
+        <Helmet>
+            <title>Select Destination</title>
+        </Helmet>
         <div className="h-full">
             <div className="h-[30%] ">
                 <PageInformation main="Select Destination" details="Select the country you're sending money to." /> 
@@ -60,6 +66,7 @@ const SelectDestination = () => {
                 <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
             </div>
         </div>
+        </>
     );
 }
  
