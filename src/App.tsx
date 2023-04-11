@@ -41,6 +41,7 @@ function App() {
               <Route path="/withdraw-money" element={<WithdrawMoney />} />
               <Route path="/authorize-withdrawal" element={<AuthorizeWithdrawal />} />
               <Route path="/select-destination" element={<SelectDestination />} />
+              <Route path="/transfer-amount" element={<SelectDestination />} />
             </Routes>
           </BrowserRouter>
         </div>

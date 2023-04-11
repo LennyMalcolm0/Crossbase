@@ -40,6 +40,7 @@ const Home = () => {
         </Helmet>
         <div className="h-full flex flex-col justify-between">
             <div>
+                {/* !!!Make Top Section Sticky!!! */}
                 <div className="w-full flex items-center justify-between ">
                     <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden ">
                         <img src="OtherImages\profile-pic.svg" alt="" className="" />
