@@ -7,12 +7,12 @@ interface Props {
     transactionStatus: boolean;
     transactionResult: string;
     transactionResultDetails: string;
-    promptOpener: string;
+    promptOpenerClassName: string;
     redirectLink: string;
 }
-const TransactionStatusPrompt = ({transactionStatus, transactionResult, transactionResultDetails, promptOpener, redirectLink}: Props) => {
+const TransactionStatusPrompt = ({transactionStatus, transactionResult, transactionResultDetails, promptOpenerClassName, redirectLink}: Props) => {
     useEffect(() => {
-        const completeTransaction = document.querySelector(`${promptOpener}`) as HTMLElement;
+        const completeTransaction = document.querySelector(`${promptOpenerClassName}`) as HTMLElement;
         completeTransaction.addEventListener("click", () => {
             const transactionStatus = document.querySelector(".transaction-status") as HTMLElement;
             transactionStatus.classList.remove("hidden");

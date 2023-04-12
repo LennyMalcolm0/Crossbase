@@ -25,7 +25,7 @@ const AuthorizeWithdrawal = () => {
                     transactionStatus={true}
                     transactionResult="Transaction Successful" 
                     transactionResultDetails="You've successfully withdrawn N58,000 to your account." 
-                    promptOpener="a"
+                    promptOpenerClassName="a"
                     redirectLink="/"
                 />
             </div>

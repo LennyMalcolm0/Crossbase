@@ -3,7 +3,6 @@ import { activeStakes } from './TreasuryData';
 import { Helmet } from 'react-helmet';
 import AppNavigationBar from '../../Components/General Components/AppNavigationBar';
 import TreasuryNavigationBar from '../../Components/TreasuryFlow Components/TreasuryNavigationBar';
-import { useEffect } from 'react';
 
 const MyStakes = () => {
     const activeStakesHomeView = [];
@@ -35,7 +34,7 @@ const MyStakes = () => {
                 <div className="w-full p-[15px] rounded-[20px] border-[3px] border-[#1F1F1E] mt-[15px] ">
                     <div className="flex items-center justify-between text-white mb-[20px] ">
                         <div className="text-[14px] font-bold ">Active Stakes</div>
-                        <Link to="" className="text-[12px] uppercase cursor-pointer ">VIEW All</Link>
+                        <Link to="/active-stakes" className="text-[12px] uppercase cursor-pointer ">VIEW All</Link>
                     </div>
                     <div className="grid grid-cols-2 gap-[10px] mb-[10px] ">
                         {activeStakesHomeView.map((stakeItem, index) => (
@@ -46,7 +45,7 @@ const MyStakes = () => {
                                 </div>
                                 <div className="text-[14px] font-medium mb-[5px] ">{stakeItem.currencyPair}</div>
                                 <div className="text-[10px] text-[#D9D9D9] ">Amount Staked</div>
-                                <div className="text-[14px] text-[#CCFF01] ">{stakeItem.marketVolume}</div>
+                                <div className="text-[14px] text-[#CCFF01] ">{stakeItem.amountStaked}</div>
                             </div>
                         ))}
                     </div>

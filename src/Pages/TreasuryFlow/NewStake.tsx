@@ -50,7 +50,7 @@ const NewStake = () => {
                     transactionStatus={true}
                     transactionResult="Your Stake is Successful" 
                     transactionResultDetails="Sit back and watch your stake earn yield from the transaction fees collected in the treasury." 
-                    promptOpener="a"
+                    promptOpenerClassName="a"
                     redirectLink="/my-stakes"
                 />
             </div>

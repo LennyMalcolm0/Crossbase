@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useEffect } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import MarketPair from "../../Components/TreasuryFlow Components/MarketPair";
-import { activeStakes } from "./TreasuryData";
+import { marketInformation } from "./TreasuryData";
 import AppNavigationBar from "../../Components/General Components/AppNavigationBar";
 import TreasuryNavigationBar from "../../Components/TreasuryFlow Components/TreasuryNavigationBar";
 
@@ -28,6 +28,7 @@ const TreasuryMarket = () => {
             })
         });
 
+        // Expand Inputs to accommodate its TSX code
         const searchMarket = document.querySelector("input") as HTMLInputElement,
         marketPairs = document.querySelectorAll(".market-pair");
         searchMarket.addEventListener("input", () => {
@@ -51,7 +52,10 @@ const TreasuryMarket = () => {
         <div className="h-full flex flex-col justify-between">
             <div>
                 <TreasuryNavigationBar treasuryMarket={true} />
-                <Inputs inputType="text" inputHeight="54px" placeholder="Search currency or currency pair" imageBeforePlaceholderSource="Icons\search-sm.svg" />
+                <Inputs 
+                    inputType="text" inputHeight="54px" placeholder="Search currency or currency pair" 
+                    imageBeforePlaceholderSource="Icons\search-sm.svg" filterItemsClassName=".market-pair"
+                />
                 
                 <div className="w-full flex items-center gap-[5px] overflow-auto my-[20px] text-[12px] font-medium text-[#D9D9D9] ">
                     {currenciesArray.map((currency, index) => (
@@ -61,7 +65,7 @@ const TreasuryMarket = () => {
                     ))}
                 </div>
 
-                <MarketPair marketDetails={activeStakes} />
+                <MarketPair marketDetails={marketInformation} />
             </div>
 
             <AppNavigationBar activePage="treasury" />

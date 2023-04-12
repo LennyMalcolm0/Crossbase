@@ -25,7 +25,7 @@ const AuthorizeTransaction = () => {
                     transactionStatus={true}
                     transactionResult="Transaction Successful" 
                     transactionResultDetails="We'll notify you when the money gets to the receiver's bank account or mobile wallet." 
-                    promptOpener="a"
+                    promptOpenerClassName="a"
                     redirectLink="/"
                 />
             </div>
