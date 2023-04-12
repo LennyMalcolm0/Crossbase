@@ -50,7 +50,7 @@ const Home = () => {
                 <div className="w-full p-[15px] rounded-[20px] bg-[#CCFF01] text-center text-[12px] mt-[15px] ">
                     <div className="text-[#121313] font-bold ">
                         <div>NGN</div>
-                        <div className="text-[28px] leading-[35px] mt-[5px] ">143,456.00</div>
+                        <div className="text-[28px] leading-[35px] mt-[5px] letter-4 ">143,456.00</div>
                     </div>
                     <div className="text-[#1F1F1E] mt-[5px]">My Wallet Balance</div>
                     <div className="w-full flex h-[47px] bg-[#121313] rounded-[10px] py-[8px] mt-[10px] text-white text-[11px] ">

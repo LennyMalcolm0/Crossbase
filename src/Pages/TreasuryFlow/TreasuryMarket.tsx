@@ -26,6 +26,20 @@ const TreasuryMarket = () => {
                 currencyMarket.classList.add("bg-[#CCFF01]");
                 currencyMarket.classList.add("text-[#121313]");
             })
+        });
+
+        const searchMarket = document.querySelector("input") as HTMLInputElement,
+        marketPairs = document.querySelectorAll(".market-pair");
+        searchMarket.addEventListener("input", () => {
+            const searchMarketContent = searchMarket.value;
+            marketPairs.forEach(marketPair => {
+                const currencyMarketDisplay = marketPair as HTMLElement;
+                if (searchMarketContent !== "" && marketPair.textContent && marketPair.textContent.toLowerCase().indexOf(searchMarketContent.toLowerCase())) {
+                    currencyMarketDisplay.style.display = "none"
+                } else {
+                    currencyMarketDisplay.style.display = "flex"
+                }
+            })
         })
     })
 

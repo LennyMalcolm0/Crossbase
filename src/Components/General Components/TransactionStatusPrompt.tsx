@@ -7,12 +7,21 @@ interface Props {
     transactionStatus: boolean;
     transactionResult: string;
     transactionResultDetails: string;
+    promptOpener: string;
     redirectLink: string;
 }
-const TransactionStatusPrompt = ({transactionStatus, transactionResult, transactionResultDetails, redirectLink}: Props) => {
+const TransactionStatusPrompt = ({transactionStatus, transactionResult, transactionResultDetails, promptOpener, redirectLink}: Props) => {
+    useEffect(() => {
+        const completeTransaction = document.querySelector(`${promptOpener}`) as HTMLElement;
+        completeTransaction.addEventListener("click", () => {
+            const transactionStatus = document.querySelector(".transaction-status") as HTMLElement;
+            transactionStatus.classList.remove("hidden");
+            transactionStatus.classList.add("block");
+        })
+    })
 
     return (  
-        <div className="h-screen w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[20px] py-[35px] ">
+        <div className="transaction-status hidden h-screen w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[20px] py-[35px] ">
             <div className="h-full flex items-center">
                 <div>
                     <div className="flex justify-between mb-[15px] ">
@@ -21,7 +30,7 @@ const TransactionStatusPrompt = ({transactionStatus, transactionResult, transact
                             <ActionIcon imageSource="Icons\x-close.svg" />
                         </Link>
                     </div>
-                    <div className="w-full h-[350px] rounded-[20px] bg-[#1F1F1E] px-[30px] pt-[30px] pb-[40px] text-center ">
+                    <div className="w-full h-[350px] rounded-[20px] bg-[#1F1F1E] px-[30px] pt-[30px] pb-[40px] text-center mb-[100px] ">
                         <div className="flex justify-center mb-[20px] ">
                             <img src="OtherImages\Successful-Transaction-Prompt.svg" alt="Transaction Successful" />
                         </div>

@@ -19,6 +19,7 @@ import RecieverDetails from './Pages/HomeFlow/RecieverDetails'
 import AuthorizeTransaction from './Pages/HomeFlow/AuthorizeTransaction'
 import MyStakes from './Pages/TreasuryFlow/MyStakes'
 import TreasuryMarket from './Pages/TreasuryFlow/TreasuryMarket'
+import NewStake from './Pages/TreasuryFlow/NewStake'
 
 function App() {
 
@@ -53,6 +54,7 @@ function App() {
               {/* Treasury Flow Pages */}
               <Route path="/my-stakes" element={<MyStakes />} />
               <Route path="/treasury-market" element={<TreasuryMarket />} />
+              <Route path="/new-stake" element={<NewStake />} />
             </Routes>
           </BrowserRouter>
         </div>

@@ -37,3 +37,7 @@ display: none;
 .search-countries::-webkit-scrollbar-thumb {
   background-color: #1F1F1E;
 }
+
+.letter-4 {
+  letter-spacing: -4%;
+}

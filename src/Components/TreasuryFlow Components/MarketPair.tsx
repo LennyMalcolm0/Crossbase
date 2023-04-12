@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface Props {
     marketDetails: {
         currencyPair: string;
@@ -9,7 +11,7 @@ const MarketPair = ({marketDetails}: Props) => {
     return (  
         <div>
             {marketDetails.map((market, index) => (
-                <div key={index} className="w-full px-[10px] py-[15px] bg-[#1F1F1E] rounded-[10px] mb-[10px] flex items-center justify-between ">
+                <div key={index} className="market-pair w-full px-[10px] py-[15px] bg-[#1F1F1E] rounded-[10px] mb-[10px] flex items-center justify-between ">
                     <div className="flex items-center">
                         <img src={market.currencyPairImageSource} alt="" />
                         <div className="ml-[15px] ">
@@ -18,10 +20,10 @@ const MarketPair = ({marketDetails}: Props) => {
                             {/* <div className="text-[14px] text-[#D9D9D9] ">{`Vol. ${} ${}`}</div> */}
                         </div>
                     </div>
-                    <div className="h-fit px-[10px] py-[5px] rounded-[8px] flex items-center border border-[#CCFF01] text-[12px] text-[#CCFF01] cursor-pointer ">
+                    <Link to="/new-stake" className="h-fit px-[10px] py-[5px] rounded-[8px] flex items-center border border-[#CCFF01] text-[12px] text-[#CCFF01] cursor-pointer ">
                         <img src="Icons\top-up-green.svg" alt="" className="h-[14px] mr-[5px] " />
                         <div>Stake</div>
-                    </div>
+                    </Link>
                 </div>
             ))}
         </div>

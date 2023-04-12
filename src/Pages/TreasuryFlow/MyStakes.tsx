@@ -3,6 +3,7 @@ import { activeStakes } from './TreasuryData';
 import { Helmet } from 'react-helmet';
 import AppNavigationBar from '../../Components/General Components/AppNavigationBar';
 import TreasuryNavigationBar from '../../Components/TreasuryFlow Components/TreasuryNavigationBar';
+import { useEffect } from 'react';
 
 const MyStakes = () => {
     const activeStakesHomeView = [];
@@ -18,16 +19,16 @@ const MyStakes = () => {
         <div className="h-full flex flex-col justify-between">
             <div>
                 <TreasuryNavigationBar myStakes={true} />
-                
+
                 <div className="w-full px-[15px] py-[25px] rounded-[20px] border-[3px] border-[#1F1F1E] flex items-center justify-between ">
                     <div className="text-white">
                         <div className="text-[10px] font-bold uppercase ">NGN</div>
-                        <div className="text-[24px] font-bold ">670,000.00</div>
+                        <div className="text-[24px] font-bold letter-4 ">670,000.00</div>
                         <div className="text-[12px] text-[#D9D9D9] ">Total Stake Value</div>
                     </div>
                     <div className="p-[12px] bg-[#CCFF01] rounded-[10px] flex items-center text-[12px] text-[#121313] ">
                         <img src="Icons\TreasuryPage\cross-black.svg" alt="" />
-                        <Link to="/treasury/treasury-market" className="text-[14px] font-medium text-[#121313] ml-[10px] ">New Stake</Link>
+                        <Link to="/treasury-market" className="text-[14px] font-medium text-[#121313] ml-[10px] ">New Stake</Link>
                     </div>
                 </div>
 
