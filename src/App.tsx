@@ -21,6 +21,7 @@ import MyStakes from './Pages/TreasuryFlow/MyStakes'
 import TreasuryMarket from './Pages/TreasuryFlow/TreasuryMarket'
 import NewStake from './Pages/TreasuryFlow/NewStake'
 import ActiveStakes from './Pages/TreasuryFlow/ActiveStakes'
+import ViewStake from './Pages/TreasuryFlow/ViewStake'
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
               <Route path="/treasury-market" element={<TreasuryMarket />} />
               <Route path="/new-stake" element={<NewStake />} />
               <Route path="/active-stakes" element={<ActiveStakes />} />
+              <Route path="/view-stakes" element={<ViewStake />} />
             </Routes>
           </BrowserRouter>
         </div>
