@@ -72,9 +72,7 @@ const Home = () => {
                 <Events eventType="Activity" eventHeader="Recent Activities" viewMore="View all" viewMoreLink="/all-activities" eventItemsArray={activityEventItemsArray} />
             </div>
 
-            <div className="w-full sticky bottom-[-1px] ">
-                <AppNavigationBar activePage="Home" />
-            </div>
+            <AppNavigationBar activePage="Home" />
         </div>
         </> 
     );

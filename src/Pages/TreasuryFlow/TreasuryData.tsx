@@ -2,49 +2,49 @@ export const activeStakes = [
     {
         currencyPairImageSource: "Countries/NGN-GHS.svg",
         currencyPair: "NGN/GHS",
-        stakeVolume: "Vol. NGN 150.3m",
+        marketVolume: "Vol. NGN 150.3m",
         amountStaked: "NGN 214,000.00",
     },
     {
         currencyPairImageSource: "Countries/NGN-KES.svg",
         currencyPair: "NGN/KES",
-        stakeVolume: "Vol. NGN 120.3m",
+        marketVolume: "Vol. NGN 120.3m",
         amountStaked: "NGN 50,000.00",
     },
     {
         currencyPairImageSource: "Countries/GHS-KES.svg",
         currencyPair: "GHS/KES",
-        stakeVolume: "Vol. NGN 125.6m",
+        marketVolume: "Vol. NGN 125.6m",
         amountStaked: "NGN 175,000.00",
     },
     {
         currencyPairImageSource: "Countries/EGP-RWF.svg",
         currencyPair: "EGP/RWF",
-        stakeVolume: "Vol. NGN 79.7m",
+        marketVolume: "Vol. NGN 79.7m",
         amountStaked: "NGN 143,000.00",
     },
     {
         currencyPairImageSource: "Countries/CFA-GHS.svg",
         currencyPair: "CFA/GHS",
-        stakeVolume: "Vol. NGN 110.5m",
+        marketVolume: "Vol. NGN 110.5m",
         amountStaked: "NGN 83,000.00",
     },
     {
         currencyPairImageSource: "Countries/NGN-EGP.svg",
         currencyPair: "NGN/EGP",
-        stakeVolume: "Vol. NGN 138.4m",
+        marketVolume: "Vol. NGN 138.4m",
         amountStaked: "NGN 79,000.00",
     },
     {
         currencyPairImageSource: "Countries/ZAR-KES.svg",
         currencyPair: "ZAR/KES",
-        stakeVolume: "Vol. NGN 47.9m",
+        marketVolume: "Vol. NGN 47.9m",
         amountStaked: "NGN 150,000.00",
     },
     {
         currencyPairImageSource: "Countries/ZAR-GHS.svg",
         currencyPair: "ZAR/GHS",
-        stakeVolume: "Vol. NGN 67.3m",
+        marketVolume: "Vol. NGN 67.3m",
         amountStaked: "NGN 73,500.00",
     }
 ]

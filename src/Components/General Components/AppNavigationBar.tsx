@@ -28,14 +28,14 @@ const AppNavigationBar = ({activePage}: Props) => {
     }, []);
 
     return (  
-        <div>
+        <div className="w-full sticky bottom-[-1px] ">
             <div className="w-full h-[60px] bg-[#1F1F1E] flex items-center justify-between rounded-[35px] p-[5px] mt-[10px] text-[14px] leading-[20px] text-[#D9D9D9] ">
                 <Link to="/" className="navigation-link grow h-full rounded-[35px] flex items-center justify-center
                 cursor-pointer hover:text-[#CCFF01] hover:bg-[#121313] ">
                     <img src="Icons\home-normal.svg" alt="" className="mr-[10px]" />
                     <span>Home</span>
                 </Link>
-                <Link to="/treasury" className="navigation-link grow h-full rounded-[35px] flex items-center justify-center
+                <Link to="/my-stakes" className="navigation-link grow h-full rounded-[35px] flex items-center justify-center
                 cursor-pointer hover:text-[#CCFF01] hover:bg-[#121313] ">
                     <img src="Icons\treasury-normal.svg" alt="" className="mr-[10px]" />
                     <span>Treasury</span>
