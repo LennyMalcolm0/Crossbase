@@ -32,9 +32,9 @@ const CreateAccount = () => {
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Create Account" details="Begin your journey with Crossbase by signing up." />
-                {createAccountInputs.map((inputDetail, index) => (
+                {createAccountInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
+                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
                     </div>
                 ))}
             </div>

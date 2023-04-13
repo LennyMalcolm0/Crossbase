@@ -35,9 +35,9 @@ const WithdrawMoney = () => {
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Withdraw Money" details="Enter the amount you'd like to withdraw to your bank account." />
-                {withdrawMoneyInputs.map((inputDetail, index) => (
+                {withdrawMoneyInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
+                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
                     </div>
                 ))}
             </div>

@@ -39,9 +39,9 @@ const CompleteProfile = () => {
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Complete Profile" details="Complete the sign up process by completing your profile." />
-                {completeProfileInputs.map((inputDetail, index) => (
+                {completeProfileInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />                 
+                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />                 
                     </div>
                 ))}
             </div>

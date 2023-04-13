@@ -25,9 +25,9 @@ const RecieverDetails = () => {
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Receiver Account Details" details="Enter the bank or mobile money account details of the receiver." />
-                {recieverDetailsInputs.map((inputDetail, index) => (
+                {recieverDetailsInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
+                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
                     </div>
                 ))}
                 <label className="text-[12px] text-[#CCFF01] ">Account Name</label>

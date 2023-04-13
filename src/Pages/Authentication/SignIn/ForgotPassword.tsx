@@ -21,9 +21,9 @@ const ForgotPassword = () => {
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Forgot Password" details="Enter email address to receive a password reset OTP." />
-                {ForgotPasswordInputs.map((inputDetail, index) => (
+                {ForgotPasswordInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
+                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
                     </div>
                 ))}
             </div>

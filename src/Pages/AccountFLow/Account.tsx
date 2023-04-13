@@ -21,7 +21,7 @@ const Account = () => {
             menuIcon: "Icons/AccountPage/change-pin.svg",
             menuTitle: "Change PIN",
             menuSubText: "Update your transaction PIN",
-            link: "/change-pin"
+            link: "/current-pin"
         },
         {
             menuIcon: "Icons/AccountPage/get-help.svg",

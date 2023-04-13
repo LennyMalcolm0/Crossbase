@@ -26,9 +26,9 @@ const LogIn = () => {
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Login" details="Login to send money or stake to treasury." />
-                {loginInputs.map((inputDetail, index) => (
+                {loginInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
+                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
                     </div>
                 ))}
                 <Link to="/forgot-password" className="text-[14px] text-[#CCFF01] ">Forgot password?</Link>

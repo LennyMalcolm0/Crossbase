@@ -27,7 +27,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
     })
 
     return ( 
-        <div className="mb-[8px] ">
+        <div className="mb-[12px] ">
             {label ? <label className="text-[12px] text-[#D9D9D9] ">{label}</label> : <></>}
             <div className="relative">
                 <input type={inputType.toLowerCase()} 

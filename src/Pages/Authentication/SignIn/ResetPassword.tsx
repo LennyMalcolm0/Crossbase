@@ -31,9 +31,9 @@ const ResetPassword = () => {
         <div className="h-full flex flex-col justify-between ">
             <div>
                 <PageInformation main="Reset Password" details="Enter email address to receive a password reset OTP." />
-                {ResetPasswordInputs.map((inputDetail, index) => (
+                {ResetPasswordInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputDetail.label} inputType={inputDetail.inputType} placeholder={inputDetail.placeholder} />
+                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
                     </div>
                 ))}
             </div>

@@ -25,6 +25,11 @@ import ViewStake from './Pages/TreasuryFlow/ViewStake'
 import WithdrawStake from './Pages/TreasuryFlow/WithdrawStake'
 import Account from './Pages/AccountFLow/Account'
 import EditProfile from './Pages/AccountFLow/EditProfile'
+import CompleteKYC from './Pages/AccountFLow/CompleteKYC'
+import ChangePassword from './Pages/AccountFLow/ChangePassword'
+import NewPin from './Pages/AccountFLow/ChangePin/NewPIN'
+import CurrentPin from './Pages/AccountFLow/ChangePin/CurrentPIN'
+import ConfirmPin from './Pages/AccountFLow/ChangePin/ConfirmPIN'
 
 function App() {
 
@@ -67,6 +72,11 @@ function App() {
               {/* Account Flow Pages */}
               <Route path="/account" element={<Account />} />
               <Route path="/edit-profile" element={<EditProfile />} />
+              <Route path="/complete-kyc" element={<CompleteKYC />} />
+              <Route path="/change-password" element={<ChangePassword />} />
+              <Route path="/current-pin" element={<CurrentPin />} />
+              <Route path="/new-pin" element={<NewPin />} />
+              <Route path="/confirm-pin" element={<ConfirmPin />} />
             </Routes>
           </BrowserRouter>
         </div>
