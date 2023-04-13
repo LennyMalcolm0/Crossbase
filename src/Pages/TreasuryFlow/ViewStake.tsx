@@ -38,7 +38,7 @@ const ViewStake = () => {
                     </div>
 
                     <div className="text-[#D9D9D9] mt-[30px] ">
-                        <div className="text-[12px] ">Next Withdrawal Cycle</div>
+                        <div className="text-[12px] font-semibold ">Next Withdrawal Cycle</div>
                         <div className="text-[14px] ">30 April, 2023</div>
                     </div>
                 </div>

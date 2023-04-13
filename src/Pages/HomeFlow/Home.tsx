@@ -41,8 +41,8 @@ const Home = () => {
             <div>
                 {/* !!!Make Top Section Sticky!!! */}
                 <div className="w-full flex items-center justify-between ">
-                    <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden ">
-                        <img src="OtherImages\profile-pic.svg" alt="" className="" />
+                    <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden relative ">
+                        <img src="OtherImages\profile-pic.svg" alt="" className="h-full absolute inset-0 " />
                     </div>
                     <Link to="/notifications"><ActionIcon imageSource="Icons\notification.svg" /></Link>
                 </div>

@@ -48,14 +48,14 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
                 </div>
                 {eventItemsArray.map((eventItem, index) => (
                     <div key={index}>
-                        <div className="event w-full h-[60px] rounded-[10px] bg-[#1F1F1E] px-[15px] flex items-center mb-[10px] cursor-pointer ">
+                        <div className="event w-full p-[15px] rounded-[10px] bg-[#1F1F1E] flex items-center mb-[10px] cursor-pointer ">
                             <div className={`w-[36px] h-[36px] bg-[#121313] ${imageContainerBorderRadius} flex items-center justify-center `}>
                                 <img src={eventItem.imageSource} alt="" />
                             </div>
                             <div className="grow ml-[15px] ">
                                 <div className="flex justify-between text-[14px] ">
-                                    <div className="text-ellipsis whitespace-nowrap max-w-[120px] overflow-hidden ">{eventItem.eventInformation}</div>
-                                    <div className="text-[#CCFF01] text-ellipsis whitespace-nowrap max-w-[70px] overflow-hidden ">{eventItem.eventValue}</div>
+                                    <div className="text-[14px] text-ellipsis whitespace-nowrap max-w-[130px] overflow-hidden ">{eventItem.eventInformation}</div>
+                                    <div className="text-[#CCFF01] text-ellipsis whitespace-nowrap max-w-[90px] overflow-hidden ">{eventItem.eventValue}</div>
                                 </div>
                                 <div className="max-w-[180px] text-ellipsis whitespace-nowrap overflow-hidden text-[10px] text-[#D9D9D9] ">{eventItem.eventDetails}</div>
                             </div>

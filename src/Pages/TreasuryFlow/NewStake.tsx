@@ -28,12 +28,12 @@ const NewStake = () => {
                 <Inputs inputType="text" label="Amount to Stake" placeholder="0.00" textBeforePlaceholder="NGN" />
 
                 <div className="text-[#D9D9D9] mt-[30px] mb-[20px] ">
-                    <div className="text-[12px] ">My Stake</div>
+                    <div className="text-[12px] font-semibold ">My Stake</div>
                     {/* Should reflect Input value */}
                     <div className="text-[14px] ">NGN 0.00</div>
                 </div>
                 <div className="text-[#D9D9D9] ">
-                    <div className="text-[12px] ">Next Withdrawal Cycle</div>
+                    <div className="text-[12px] font-semibold ">Next Withdrawal Cycle</div>
                     <div className="text-[14px] ">30 April, 2023</div>
                 </div>
             </div>
