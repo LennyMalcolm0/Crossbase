@@ -22,6 +22,7 @@ import TreasuryMarket from './Pages/TreasuryFlow/TreasuryMarket'
 import NewStake from './Pages/TreasuryFlow/NewStake'
 import ActiveStakes from './Pages/TreasuryFlow/ActiveStakes'
 import ViewStake from './Pages/TreasuryFlow/ViewStake'
+import WithdrawStake from './Pages/TreasuryFlow/WithdrawStake'
 
 function App() {
 
@@ -59,6 +60,7 @@ function App() {
               <Route path="/new-stake" element={<NewStake />} />
               <Route path="/active-stakes" element={<ActiveStakes />} />
               <Route path="/view-stakes" element={<ViewStake />} />
+              <Route path="/withdraw-stake" element={<WithdrawStake />} />
             </Routes>
           </BrowserRouter>
         </div>

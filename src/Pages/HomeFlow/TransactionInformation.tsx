@@ -31,7 +31,7 @@ const TransactionInformation = ({transactionInformation, transactionDate}: Props
     return (
         <div className="h-screen w-full max-h-[1000px] max-w-[400px] z-[999999999] absolute top-0 left-0 bg-[#121313] px-[20px] py-[35px] ">
             <div className="h-full w-full flex flex-col justify-between "> 
-                <div className="">
+                <div>
                     <PageInformation main="Transaction Info" dontGoBackInHistory={true} />
                     <div className="flex justify-center my-[20px] ">
                         <img src="Countries\NGN-GHS.svg" alt="" className="h-[45px]" />
@@ -61,8 +61,8 @@ const TransactionInformation = ({transactionInformation, transactionDate}: Props
                     ))}
                 </div>
                 <div className="h-[52px] w-full grid grid-cols-2 gap-x-2 text-center leading-[52px] font-bold ">
-                    <div className="w-full h-full rounded-[10px] bg-[#CCFF01] text-[#121313] text-[17px] ">Share</div>
-                    <div className="w-full h-full rounded-[10px] border border-[#CCFF01] text-[#CCFF01] ">Report</div>
+                    <div className="w-full h-full rounded-[10px] bg-[#CCFF01] text-[#121313] text-[17px] cursor-pointer ">Share</div>
+                    <div className="w-full h-full rounded-[10px] border border-[#CCFF01] text-[#CCFF01] cursor-pointer ">Report</div>
                 </div>
             </div>
         </div>
