@@ -24,6 +24,7 @@ import ActiveStakes from './Pages/TreasuryFlow/ActiveStakes'
 import ViewStake from './Pages/TreasuryFlow/ViewStake'
 import WithdrawStake from './Pages/TreasuryFlow/WithdrawStake'
 import Account from './Pages/AccountFLow/Account'
+import EditProfile from './Pages/AccountFLow/EditProfile'
 
 function App() {
 
@@ -65,6 +66,7 @@ function App() {
 
               {/* Account Flow Pages */}
               <Route path="/account" element={<Account />} />
+              <Route path="/edit-profile" element={<EditProfile />} />
             </Routes>
           </BrowserRouter>
         </div>

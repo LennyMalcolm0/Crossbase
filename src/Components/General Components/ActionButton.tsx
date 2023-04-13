@@ -22,7 +22,7 @@ const ActionButton = ({ buttonText, link, inputValues }: Props) => {
     return ( 
         <div>
             <Link to={link} >
-                <div className="w-full h-[48px] leading-[48px] rounded-[10px] bg-[#CCFF01] text-[#121313] font-bold text-center cursor-pointer ">{buttonText}</div>
+                <div className="w-full h-[48px] leading-[48px] rounded-[10px] bg-[#CCFF01] text-[#121313] font-bold text-center cursor-pointer capitalize ">{buttonText}</div>
             </Link>
         </div>
     );
