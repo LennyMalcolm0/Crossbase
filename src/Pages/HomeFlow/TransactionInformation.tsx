@@ -37,11 +37,11 @@ const TransactionInformation = ({transactionInformation, transactionDate}: Props
                         <img src="Countries\NGN-GHS.svg" alt="" className="h-[45px]" />
                     </div>
 
-                    <div className="text-center text-white text-[14px] mb-[30px] ">
+                    <div className="text-center text-white text-[14px] text-14 mb-[30px] ">
                         <div>NGN to GHS</div>
-                        <div className="text-[12px] text-[#D9D9D9] mb-[10px] ">(Nigerian Naira - Ghanaian Cedis)</div>
+                        <div className="text-[12px] text-12 text-[#D9D9D9] mb-[10px] ">(Nigerian Naira - Ghanaian Cedis)</div>
                         <div>
-                            <span className="text-[12px] text-[#D9D9D9] ">Sent to:</span> Alex Kwesi
+                            <span className="text-[12px] text-12 text-[#D9D9D9] ">Sent to:</span> Alex Kwesi
                         </div>
                         <div className="text-[#D9D9D9] flex items-center justify-center ">
                             <span>Sample Bank</span> 
@@ -53,7 +53,7 @@ const TransactionInformation = ({transactionInformation, transactionDate}: Props
                     {transactionDetails.map((transactionDetail, index) => (
                         <div key={index}>
                             <div className="w-full h-[48px] px-[20px] rounded-[10px] bg-[#1F1F1E] flex items-center justify-between 
-                            border border-[#D9D9D9] text-[14px] text-[#D9D9D9] mb-[8px] ">
+                            border border-[#D9D9D9] text-[14px] text-14 text-[#D9D9D9] mb-[8px] ">
                                 <div className="font-semibold text-white ">{transactionDetail.detail}</div>
                                 <div>{transactionDetail.value}</div>
                             </div>

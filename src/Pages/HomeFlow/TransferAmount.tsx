@@ -16,11 +16,11 @@ const TransferAmount = () => {
                 <div className="mt-[30px] mb-[20px] ">
                     <div className="flex items-center ">
                         <span className="h-3 w-3 rounded-full bg-[#CCFF01] mr-[10px] "></span>
-                        <div className="text-[12px] text-[#D9D9D9] ">1 NGN = GHS 0.045</div>
+                        <div className="text-[12px] text-12 text-[#D9D9D9] ">1 NGN = GHS 0.045</div>
                     </div>
                     <div className="flex items-center mt-[10px] ">
                         <span className="h-3 w-3 rounded-full bg-[#CCFF01] mr-[10px] "></span>
-                        <div className="text-[12px] text-[#D9D9D9] ">Fee = NGN 0.00</div>
+                        <div className="text-[12px] text-12 text-[#D9D9D9] ">Fee = NGN 0.00</div>
                     </div>
                 </div>
                 <Inputs label="Receiver Gets" inputType="number" placeholder="0.00" textBeforePlaceholder="GHS" />

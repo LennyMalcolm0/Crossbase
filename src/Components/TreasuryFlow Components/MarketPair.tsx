@@ -19,19 +19,19 @@ const MarketPair = ({link, marketDetails}: Props) => {
                     <div className="flex items-center">
                         <img src={market.currencyPairImageSource} alt="" />
                         <div className="ml-[15px] ">
-                            <div className="text-[14px] ">{market.currencyPair}</div>
+                            <div className="text-[14px] text-14 ">{market.currencyPair}</div>
                             <div className="text-[10px] text-[#D9D9D9] ">{market.marketVolume}</div>
-                            {/* <div className="text-[14px] text-[#D9D9D9] ">{`Vol. ${} ${}`}</div> */}
+                            {/* <div className="text-[14px] text-14 text-[#D9D9D9] ">{`Vol. ${} ${}`}</div> */}
                         </div>
                     </div>
                     {!market.amountStaked ? 
-                        <Link to="/new-stake" className="h-fit px-[10px] py-[5px] rounded-[8px] flex items-center border border-[#CCFF01] text-[12px] text-[#CCFF01] cursor-pointer ">
+                        <Link to="/new-stake" className="h-fit px-[10px] py-[5px] rounded-[8px] flex items-center border border-[#CCFF01] text-[12px] text-12 text-[#CCFF01] cursor-pointer ">
                             <img src="Icons\top-up-green.svg" alt="" className="h-[14px] mr-[5px] " />
                             <div>Stake</div>
                         </Link> :
                         <div className="">
                             <div className="text-[10px] text-[#D9D9D9] text-end ">Amount Staked</div>
-                            <div className="text-[14px] text-[#CCFF01] max-w-[150px] overflow-hidden whitespace-nowrap text-ellipsis ">{market.amountStaked}</div>
+                            <div className="text-[14px] text-14 text-[#CCFF01] max-w-[150px] overflow-hidden whitespace-nowrap text-ellipsis ">{market.amountStaked}</div>
                         </div>
                     }
                 </Link>

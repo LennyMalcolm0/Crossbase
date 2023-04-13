@@ -55,10 +55,10 @@ const Account = () => {
                         </div>
                         <div className="ml-[15px] ">
                             <div className="font-semibold ">Bethel Melariri</div>
-                            <div className="text-[12px] text-[#D9D9D9] ">username@emailsample.com</div>
+                            <div className="text-[12px] text-12 text-[#D9D9D9] ">username@emailsample.com</div>
                         </div>
                     </div>
-                    <Link to="/edit-profile" className="px-[10px] py-[5px] rounded-[8px] border border-[#CCFF01] text-[12px] text-[#CCFF01] cursor-pointer ">Edit Profile</Link>
+                    <Link to="/edit-profile" className="px-[10px] py-[5px] rounded-[8px] border border-[#CCFF01] text-[12px] text-12 text-[#CCFF01] cursor-pointer ">Edit Profile</Link>
                 </div>
 
                 {accountProperties.map((accountProperty, index) => (

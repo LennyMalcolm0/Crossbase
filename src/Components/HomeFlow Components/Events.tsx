@@ -43,8 +43,8 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
         <div>
             <div className="w-full p-[15px] rounded-[20px] border-[3px] border-[#1F1F1E] mt-[15px] ">
                 <div className="flex items-center justify-between text-white mb-[20px] ">
-                    <div className="text-[14px] font-bold ">{eventHeader}</div>
-                    {viewMore && viewMoreLink ? <Link to={viewMoreLink} className="text-[12px] uppercase cursor-pointer ">{viewMore}</Link> : <></>}
+                    <div className="text-[14px] text-14 font-bold ">{eventHeader}</div>
+                    {viewMore && viewMoreLink ? <Link to={viewMoreLink} className="text-[12px] text-12 uppercase cursor-pointer ">{viewMore}</Link> : <></>}
                 </div>
                 {eventItemsArray.map((eventItem, index) => (
                     <div key={index}>
@@ -53,8 +53,8 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
                                 <img src={eventItem.imageSource} alt="" />
                             </div>
                             <div className="grow ml-[15px] ">
-                                <div className="flex justify-between text-[14px] ">
-                                    <div className="text-[14px] text-ellipsis whitespace-nowrap max-w-[130px] overflow-hidden ">{eventItem.eventInformation}</div>
+                                <div className="flex justify-between text-[14px] text-14 ">
+                                    <div className="text-[14px] text-14 text-ellipsis whitespace-nowrap max-w-[100px] overflow-hidden ">{eventItem.eventInformation}</div>
                                     <div className="text-[#CCFF01] text-ellipsis whitespace-nowrap max-w-[90px] overflow-hidden ">{eventItem.eventValue}</div>
                                 </div>
                                 <div className="max-w-[180px] text-ellipsis whitespace-nowrap overflow-hidden text-[10px] text-[#D9D9D9] ">{eventItem.eventDetails}</div>

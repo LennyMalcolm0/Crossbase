@@ -35,7 +35,7 @@ const TransactionStatusPrompt = ({transactionStatus, transactionResult, transact
                             <img src="OtherImages\Successful-Transaction-Prompt.svg" alt="Transaction Successful" />
                         </div>
                         <div className="text-[20px] font-semibold ">{transactionResult}</div>
-                        <div className="text-[12px] text-[#D9D9D9] ">{transactionResultDetails}</div>
+                        <div className="text-[12px] text-12 text-[#D9D9D9] ">{transactionResultDetails}</div>
                     </div>
                 </div>
             </div>

@@ -23,18 +23,18 @@ const MyStakes = () => {
                     <div className="text-white">
                         <div className="text-[10px] font-bold uppercase ">NGN</div>
                         <div className="text-[24px] font-bold letter-4 ">670,000.00</div>
-                        <div className="text-[12px] text-[#D9D9D9] ">Total Stake Value</div>
+                        <div className="text-[12px] text-12 text-[#D9D9D9] ">Total Stake Value</div>
                     </div>
-                    <div className="p-[12px] bg-[#CCFF01] rounded-[10px] flex items-center text-[12px] text-[#121313] ">
+                    <div className="p-[12px] bg-[#CCFF01] rounded-[10px] flex items-center text-[12px] text-12 text-[#121313] ">
                         <img src="Icons\TreasuryPage\cross-black.svg" alt="" />
-                        <Link to="/treasury-market" className="text-[14px] font-medium text-[#121313] ml-[10px] ">New Stake</Link>
+                        <Link to="/treasury-market" className="text-[14px] text-14 font-medium text-[#121313] ml-[10px] ">New Stake</Link>
                     </div>
                 </div>
 
                 <div className="w-full p-[15px] rounded-[20px] border-[3px] border-[#1F1F1E] mt-[15px] ">
                     <div className="flex items-center justify-between text-white mb-[20px] ">
-                        <div className="text-[14px] font-bold ">Active Stakes</div>
-                        <Link to="/active-stakes" className="text-[12px] uppercase cursor-pointer ">VIEW All</Link>
+                        <div className="text-[14px] text-14 font-bold ">Active Stakes</div>
+                        <Link to="/active-stakes" className="text-[12px] text-12 uppercase cursor-pointer ">VIEW All</Link>
                     </div>
                     <div className="grid grid-cols-2 gap-[10px] mb-[10px] ">
                         {activeStakesHomeView.map((stakeItem, index) => (
@@ -43,9 +43,9 @@ const MyStakes = () => {
                                     <img src={stakeItem.currencyPairImageSource} alt="" />
                                     <img src="Icons\TreasuryPage\check.svg" alt="" />
                                 </div>
-                                <div className="text-[14px] font-medium mb-[5px] ">{stakeItem.currencyPair}</div>
+                                <div className="text-[14px] text-14 font-medium mb-[5px] ">{stakeItem.currencyPair}</div>
                                 <div className="text-[10px] text-[#D9D9D9] ">Amount Staked</div>
-                                <div className="text-[14px] text-[#CCFF01] ">{stakeItem.amountStaked}</div>
+                                <div className="text-[14px] text-14 text-[#CCFF01] ">{stakeItem.amountStaked}</div>
                             </div>
                         ))}
                     </div>

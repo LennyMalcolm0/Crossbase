@@ -17,8 +17,8 @@ const WithdrawStake = () => {
                 <Inputs inputType="number" label="Amount to Withdraw" placeholder="0.00" textBeforePlaceholder="NGN" />
 
                 <div className="mt-[30px] ">
-                    <div className="text-[12px] text-[#D9D9D9] font-semibold ">Available Stake</div>
-                    <div className="text-[14px] text-[#CCFF01] ">NGN 214,000.00</div>
+                    <div className="text-[12px] text-12 text-[#D9D9D9] font-semibold ">Available Stake</div>
+                    <div className="text-[14px] text-14 text-[#CCFF01] ">NGN 214,000.00</div>
                 </div>
             </div>
 

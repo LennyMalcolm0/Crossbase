@@ -31,11 +31,11 @@ const LogIn = () => {
                         <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
                     </div>
                 ))}
-                <Link to="/forgot-password" className="text-[14px] text-[#CCFF01] ">Forgot password?</Link>
+                <Link to="/forgot-password" className="text-[14px] text-14 text-[#CCFF01] ">Forgot password?</Link>
             </div>
 
             <div>
-                <div className="text-[14px] mb-[55px] ">
+                <div className="text-[14px] text-14 mb-[55px] ">
                     Don't have an account? <Link to="/create-account" className="text-[#CCFF01] ">Create Account</Link>
                 </div>
                 <ActionButton buttonText="Login" link="/" />

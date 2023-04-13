@@ -40,7 +40,7 @@ const CreateAccount = () => {
             </div>
 
             <div>
-                <div className="text-[14px] mb-[55px] ">
+                <div className="text-[14px] text-14 mb-[55px] ">
                     Already have an account? <Link to="/login" className="text-[#CCFF01] ">Login</Link>
                 </div>
                 <ActionButton buttonText="Create Account" link="/complete-profile" />               

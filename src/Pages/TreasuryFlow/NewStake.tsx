@@ -16,8 +16,8 @@ const NewStake = () => {
 
                 <img src="Countries\NGN-KES.svg" alt="" className="mx-auto h-[45px] " />
                 <div className="text-center my-[30px] ">
-                    <div className="text-[14px] font-medium uppercase ">NGN/KES</div>
-                    <div className="text-[12px] text-[#D9D9D9] ">
+                    <div className="text-[14px] text-14 font-medium uppercase ">NGN/KES</div>
+                    <div className="text-[12px] text-12 text-[#D9D9D9] ">
                         <div className="mb-[10px] ">(Nigerian Naira / Kenyan Shillings)</div>
                         <div> 
                             <span className="font-semibold">Treasury Volume</span> = NGN 150.3m
@@ -28,18 +28,18 @@ const NewStake = () => {
                 <Inputs inputType="text" label="Amount to Stake" placeholder="0.00" textBeforePlaceholder="NGN" />
 
                 <div className="text-[#D9D9D9] mt-[30px] mb-[20px] ">
-                    <div className="text-[12px] font-semibold ">My Stake</div>
+                    <div className="text-[12px] text-12 font-semibold ">My Stake</div>
                     {/* Should reflect Input value */}
-                    <div className="text-[14px] ">NGN 0.00</div>
+                    <div className="text-[14px] text-14 ">NGN 0.00</div>
                 </div>
                 <div className="text-[#D9D9D9] ">
-                    <div className="text-[12px] font-semibold ">Next Withdrawal Cycle</div>
-                    <div className="text-[14px] ">30 April, 2023</div>
+                    <div className="text-[12px] text-12 font-semibold ">Next Withdrawal Cycle</div>
+                    <div className="text-[14px] text-14 ">30 April, 2023</div>
                 </div>
             </div>
 
             <div className="absolute bottom-0 w-full ">
-                <div className="text-[12px] leading-[17px] text-[#CCFF01] mb-[35px] " >
+                <div className="text-[12px] text-12 leading-[17px] text-[#CCFF01] mb-[35px] " >
                     Kindly note that money staked to treasury can only be withdrawn in a 30 day cycle, that is, once in a month. 
                     If you withdraw before the cycle elapse, you'll lose all possible yield (profits) on your stake.
                 </div>

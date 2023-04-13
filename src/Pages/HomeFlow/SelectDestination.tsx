@@ -42,14 +42,16 @@ const SelectDestination = () => {
             <title>Select Destination</title>
         </Helmet>
         <div className="h-full">
-            <div className="h-[30%] ">
+            <div className="h-[200px] ">
                 <PageInformation main="Select Destination" details="Select the country you're sending money to." /> 
                 <Inputs 
                     inputType="text" placeholder="Search Country" 
                     imageBeforePlaceholderSource="Icons\search-sm.svg" filterItemsClassName=".country" 
                 />
             </div>
-            <div className="search-countries h-[70%] overflow-auto ">
+            <div className="search-countries grow overflow-auto ">
+                <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
+                <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
                 <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
             </div>
         </div>

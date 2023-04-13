@@ -27,15 +27,15 @@ import Account from './Pages/AccountFLow/Account'
 import EditProfile from './Pages/AccountFLow/EditProfile'
 import CompleteKYC from './Pages/AccountFLow/CompleteKYC'
 import ChangePassword from './Pages/AccountFLow/ChangePassword'
-import NewPin from './Pages/AccountFLow/ChangePin/NewPIN'
-import CurrentPin from './Pages/AccountFLow/ChangePin/CurrentPIN'
-import ConfirmPin from './Pages/AccountFLow/ChangePin/ConfirmPIN'
+import NewPin from './Pages/AccountFLow/ChangePin/NewPin'
+import CurrentPin from './Pages/AccountFLow/ChangePin/CurrentPin'
+import ConfirmPin from './Pages/AccountFLow/ChangePin/ConfirmPin'
 
 function App() {
 
   return (
     <div className="App-background h-screen w-screen flex justify-center bg-black transition-all duration-300 ">
-      <div className="App h-full max-h-[1000px] w-full max-w-[400px] relative text-white bg-[#121313] px-[20px] py-[35px] ">
+      <div className="App h-full max-h-[1000px] w-full max-w-[350px] relative text-white bg-[#121313] px-[20px] py-[35px] ">
         <div className="h-full w-full overflow-auto ">
           <BrowserRouter>
             <Routes>

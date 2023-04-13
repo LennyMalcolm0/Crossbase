@@ -47,13 +47,13 @@ const Home = () => {
                     <Link to="/notifications"><ActionIcon imageSource="Icons\notification.svg" /></Link>
                 </div>
 
-                <div className="w-full p-[15px] rounded-[20px] bg-[#CCFF01] text-center text-[12px] mt-[15px] ">
+                <div className="w-full p-[15px] rounded-[20px] bg-[#CCFF01] text-center text-[12px] text-12 mt-[15px] ">
                     <div className="text-[#121313] font-bold ">
                         <div>NGN</div>
-                        <div className="text-[28px] leading-[35px] mt-[5px] letter-4 ">143,456.00</div>
+                        <div className="text-[28px] letter-4 ">143,456.00</div>
                     </div>
-                    <div className="text-[#1F1F1E] mt-[5px]">My Wallet Balance</div>
-                    <div className="w-full flex h-[47px] bg-[#121313] rounded-[10px] py-[8px] mt-[10px] text-white text-[11px] ">
+                    <div className="text-[#1F1F1E] ">My Wallet Balance</div>
+                    <div className="w-full flex h-[47px] bg-[#121313] rounded-[10px] py-[8px] mt-[10px] text-white text-[11px] text-11 ">
                         <Link to="/select-destination" className="grow flex items-center justify-center border-r border-white cursor-pointer ">
                             <img src="Icons\send-money.svg" alt="" className="mr-[5px]" />
                             <span>Send Money</span>

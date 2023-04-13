@@ -24,7 +24,7 @@ const PageInformation = ({main, details, dontGoBackInHistory}: Props) => {
                     </div>
                     <div className="mt-[10px] mb-[30px] ">
                         <div className="text-[24px] font-semibold ">{main}</div>
-                        <div className="text-[12px] ">{details}</div>
+                        <div className="text-[12px] text-12 ">{details}</div>
                     </div> 
                 </div>
                 :

@@ -16,7 +16,7 @@ const AccountPageDetail = ({link, accountPropertyTitle, accountPropertyImageSour
                         <img src={accountPropertyImageSource} alt="" />
                     </div>
                     <div className="ml-[15px] ">
-                        <div className="text-[14px] ">{accountPropertyTitle}</div>
+                        <div className="text-[14px] text-14 ">{accountPropertyTitle}</div>
                         {accountPropertySubText ? <div className="text-[10px] text-[#D9D9D9] ">{accountPropertySubText}</div> : <></>}
                     </div>
                 </div>

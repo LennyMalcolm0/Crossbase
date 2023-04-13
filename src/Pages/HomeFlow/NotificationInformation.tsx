@@ -13,7 +13,7 @@ const NotificationInformation = ({notificationInformation, notificationDetails, 
             <div className="h-full w-full ">   
                 <PageInformation main="Notification Info" dontGoBackInHistory={true} />
                 <div className="font-bold mb-[5px] ">{notificationInformation}</div>
-                <div className="text-[12px]">
+                <div className="text-[12px] text-12">
                     <div className="text-[#D9D9D9] ">{notificationDetails}</div>
                     <div className="text-[#CCFF01] uppercase ">{`${notificationTime} - ${notificationDate}`}</div>
                 </div>

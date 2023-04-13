@@ -44,7 +44,7 @@ const EditProfile = () => {
                 <div className="w-[80px] h-[80px] rounded-full mx-auto mt-[30px] mb-[20px] border border-[#CCFF01] object-cover overflow-hidden relative ">
                     <img src="OtherImages\profile-pic.svg" alt="" className="h-full absolute inset-0 " />
                 </div>
-                <div className="w-fit px-[10px] py-[5px] rounded-[8px] mx-auto mb-[30px] border border-[#CCFF01] text-[12px] text-[#CCFF01] cursor-pointer ">Upload Photo</div>
+                <div className="w-fit px-[10px] py-[5px] rounded-[8px] mx-auto mb-[30px] border border-[#CCFF01] text-[12px] text-12 text-[#CCFF01] cursor-pointer ">Upload Photo</div>
 
                 {lockedProfileItemsArray.map((lockedProfileItem, index) => (
                     <LockedProfileItem profileItem={lockedProfileItem.profileItem} profileItemValue={lockedProfileItem.profileItemValue} />

@@ -57,7 +57,7 @@ const TreasuryMarket = () => {
                     imageBeforePlaceholderSource="Icons\search-sm.svg" filterItemsClassName=".market-pair"
                 />
                 
-                <div className="w-full flex items-center gap-[5px] overflow-auto my-[20px] text-[12px] font-medium text-[#D9D9D9] ">
+                <div className="w-full flex items-center gap-[5px] overflow-auto my-[20px] text-[12px] text-12 font-medium text-[#D9D9D9] ">
                     {currenciesArray.map((currency, index) => (
                         <div key={index}>
                             <div className="currency-market px-[10px] py-[5px] rounded-[10px] hover:bg-[#CCFF01] hover:text-[#121313] cursor-pointer "> {currency} </div>
