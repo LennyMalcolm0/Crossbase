@@ -5,11 +5,12 @@ interface Props {
     accountPropertyTitle: string;
     accountPropertySubText?: string;
     accountPropertyImageSource: string;
+    extraClassName?: string;
 }
-const AccountPageDetail = ({link, accountPropertyTitle, accountPropertyImageSource, accountPropertySubText}: Props) => {
+const AccountPageDetail = ({link, accountPropertyTitle, accountPropertyImageSource, accountPropertySubText, extraClassName}: Props) => {
     return (  
         <div>
-            <Link to={link ? link : ""} className="w-full p-[15px] bg-[#1F1F1E] rounded-[10px] mb-[10px] flex items-center justify-between cursor-pointer ">
+            <Link to={link ? link : ""} className={`${extraClassName} w-full p-[15px] bg-[#1F1F1E] rounded-[10px] mb-[10px] flex items-center justify-between cursor-pointer `}>
                 <div className="flex items-center ">
                     <div className="w-[36px] h-[36px] bg-[#121313] rounded-[5px] flex items-center justify-center ">
                         <img src={accountPropertyImageSource} alt="" />

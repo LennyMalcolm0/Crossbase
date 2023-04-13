@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import AccountPageDetail from "../../Components/AccountFlow Components/AccountPageDetail";
 import AppNavigationBar from "../../Components/General Components/AppNavigationBar";
 import { Helmet } from "react-helmet";
+import LogOutPrompt from "./LogOutPrompt";
+import { useEffect } from "react";
 
 const Account = () => {
     const accountProperties = [
@@ -27,17 +29,15 @@ const Account = () => {
             menuIcon: "Icons/AccountPage/get-help.svg",
             menuTitle: "Get Help",
             menuSubText: "Submit a complaint to our customer support",
-            link: ""
         },
         {
             menuIcon: "Icons/AccountPage/invite-a-friend.svg",
             menuTitle: "Invite a Friend",
-            link: ""
         },
         {
             menuIcon: "Icons/AccountPage/log-out.svg",
             menuTitle: "Logout",
-            link: ""
+            extraClassName: "logout-button"
         }
     ]
 
@@ -66,9 +66,12 @@ const Account = () => {
                         <AccountPageDetail  
                             link={accountProperty.link} accountPropertyTitle={accountProperty.menuTitle} 
                             accountPropertySubText={accountProperty.menuSubText} accountPropertyImageSource={accountProperty.menuIcon}
+                            extraClassName={accountProperty.extraClassName}
                         />
                     </div>
                 ))}
+
+                <LogOutPrompt promptOpenerClassName="logout-button" />
             </div>
             
             <AppNavigationBar activePage="Account" />
