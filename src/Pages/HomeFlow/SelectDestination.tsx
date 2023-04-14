@@ -51,8 +51,6 @@ const SelectDestination = () => {
             </div>
             <div className="search-countries grow overflow-auto ">
                 <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
-                <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
-                <SearchCountries link="/transfer-amount" countriesProfile={countriesProfileArray} />
             </div>
         </div>
         </>

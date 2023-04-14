@@ -50,22 +50,26 @@ const TreasuryMarket = () => {
             <title>Treasury Market</title>
         </Helmet>
         <div className="h-full flex flex-col justify-between">
-            <div>
-                <TreasuryNavigationBar treasuryMarket={true} />
-                <Inputs 
-                    inputType="text" inputHeight="54px" placeholder="Search currency or currency pair" 
-                    imageBeforePlaceholderSource="Icons\search-sm.svg" filterItemsClassName=".market-pair"
-                />
-                
-                <div className="w-full flex items-center gap-[5px] overflow-auto my-[20px] text-[12px] text-12 font-medium text-[#D9D9D9] ">
-                    {currenciesArray.map((currency, index) => (
-                        <div key={index}>
-                            <div className="currency-market px-[10px] py-[5px] rounded-[10px] hover:bg-[#CCFF01] hover:text-[#121313] cursor-pointer "> {currency} </div>
-                        </div>
-                    ))}
+            <div className="appHeight-minus-navbarHeight w-full ">
+                <div className="h-[190px]  ">
+                    <TreasuryNavigationBar treasuryMarket={true} />
+                    <Inputs 
+                        inputType="text" inputHeight="54px" placeholder="Search currency or currency pair" 
+                        imageBeforePlaceholderSource="Icons\search-sm.svg" filterItemsClassName=".market-pair"
+                    />
+                    
+                    <div className="w-full flex items-center gap-[5px] overflow-auto my-[20px] text-[12px] text-12 font-medium text-[#D9D9D9] ">
+                        {currenciesArray.map((currency, index) => (
+                            <div key={index}>
+                                <div className="currency-market px-[10px] py-[5px] rounded-[10px] hover:bg-[#CCFF01] hover:text-[#121313] cursor-pointer "> {currency} </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
-                <MarketPair marketDetails={marketInformation} />
+                <div className="treasury-market-scrollable-section overflow-auto ">
+                    <MarketPair marketDetails={marketInformation} />
+                </div>
             </div>
 
             <AppNavigationBar activePage="treasury" />

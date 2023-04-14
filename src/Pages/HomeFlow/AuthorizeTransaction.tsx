@@ -24,7 +24,7 @@ const AuthorizeTransaction = () => {
                 <TransactionStatusPrompt 
                     transactionStatus={true}
                     transactionResult="Transaction Successful" 
-                    transactionResultDetails="We'll notify you when the money gets to the receiver's bank account or mobile wallet." 
+                    transactionResultDetails="" 
                     promptOpenerClassName="a"
                     redirectLink="/"
                 />

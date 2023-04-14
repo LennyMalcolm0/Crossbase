@@ -34,8 +34,8 @@ import ConfirmPin from './Pages/AccountFLow/ChangePin/ConfirmPin'
 function App() {
 
   return (
-    <div className="App-background h-screen w-screen flex justify-center bg-black transition-all duration-300 ">
-      <div className="App h-full max-h-[1000px] w-full max-w-[350px] relative text-white bg-[#121313] px-[20px] py-[35px] ">
+    <div className="App-background h-full absolute inset-0 w-screen flex justify-center bg-black transition-all duration-300 ">
+      <div className="App h-full max-h-[1000px] w-full max-w-[400px] relative text-white bg-[#121313] px-[10px] py-[15px] ">
         <div className="h-full w-full overflow-auto ">
           <BrowserRouter>
             <Routes>
@@ -59,7 +59,7 @@ function App() {
               <Route path="/select-destination" element={<SelectDestination />} />
               <Route path="/transfer-amount" element={<TransferAmount />} />
               <Route path="/reciever-details" element={<RecieverDetails />} />
-              <Route path="/authorize-transfer" element={<AuthorizeTransaction />} />
+              <Route path="/authorize-transaction" element={<AuthorizeTransaction />} />
 
               {/* Treasury Flow Pages */}
               <Route path="/my-stakes" element={<MyStakes />} />

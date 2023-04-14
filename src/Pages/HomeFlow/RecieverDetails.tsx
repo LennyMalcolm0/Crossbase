@@ -37,7 +37,7 @@ const RecieverDetails = () => {
                 <div className="text-[12px] text-12 leading-[17px] text-[#CCFF01] mb-[35px] " >
                     Kindly verify the above information before proceeding to the next page. Note that this transaction will not be reversed once approved.
                 </div>
-                <ActionButton buttonText="Continue" link="/authorize-transfer" />
+                <ActionButton buttonText="Continue" link="/authorize-transaction" />
             </div>
         </div>
         </>

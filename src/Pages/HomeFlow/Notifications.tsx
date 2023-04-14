@@ -57,11 +57,15 @@ const Notifications = () => {
         <Helmet>
             <title>Notifications</title>
         </Helmet>
-        <div>
-            <PageInformation main="Notifications" />
-            <Events eventType="Notification" eventHeader="Mar 31, 2023" eventItemsArray={notificationArrayForEachDay[0]} />
-            <div className="mt-[20px] ">
-                <Events eventType="Notification" eventHeader="Mar 29, 2023" eventItemsArray={notificationArrayForEachDay[1]} />
+        <div className="h-full">
+            <div className="h-[60px] ">
+                <PageInformation main="Notifications" />
+            </div>
+            <div className="notification-activity-scrollable-section overflow-auto ">
+                <Events eventType="Notification" eventHeader="Mar 31, 2023" eventItemsArray={notificationArrayForEachDay[0]} />
+                <div className="mt-[20px] ">
+                    <Events eventType="Notification" eventHeader="Mar 29, 2023" eventItemsArray={notificationArrayForEachDay[1]} />
+                </div>
             </div>
         </div>
         </>

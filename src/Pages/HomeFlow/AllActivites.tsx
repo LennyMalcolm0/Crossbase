@@ -52,11 +52,15 @@ const AllActivities = () => {
     ];
 
     return (  
-        <div>
-            <PageInformation main="All Activities" />
-            <Events eventType="Activity" eventHeader="Mar 31, 2023" eventItemsArray={activitiesArrayForEachDay[0]} />
-            <div className="mt-[20px] ">
-                <Events eventType="Activity" eventHeader="Mar 29, 2023" eventItemsArray={activitiesArrayForEachDay[1]} />
+        <div className="h-full">
+           <div className="h-[60px] ">
+                <PageInformation main="All Activities" />
+            </div>
+            <div className="notification-activity-scrollable-section overflow-auto ">
+                <Events eventType="Activity" eventHeader="Mar 31, 2023" eventItemsArray={activitiesArrayForEachDay[0]} />
+                <div className="mt-[20px] ">
+                    <Events eventType="Activity" eventHeader="Mar 29, 2023" eventItemsArray={activitiesArrayForEachDay[1]} />
+                </div>
             </div>
         </div>
     );

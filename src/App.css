@@ -13,8 +13,22 @@ body {
   letter-spacing: -2%;
 }
 
+:-webkit-full-screen {
+  display: none !important;
+}
+:-moz-full-screen {
+  display: none !important;
+}
+:fullscreen {
+  display: none !important;
+}
+
 a {
   text-decoration: none;
+}
+
+.letter-4 {
+  letter-spacing: -4%;
 }
 
 ::-webkit-scrollbar {
@@ -42,8 +56,24 @@ display: none;
   height: calc(100% - 200px);
 }
 
-.letter-4 {
-  letter-spacing: -4%;
+.appHeight-minus-navbarHeight {
+  height: calc(100% - 75px);
+}
+
+.homepage-scrollable-section {
+  height: calc(100% - 245px);
+}
+
+.notification-activity-scrollable-section {
+  height: calc(100% - 60px);
+}
+
+.my-stakes-scrollable-section {
+  height: calc(100% - 220px);
+}
+
+.treasury-market-scrollable-section {
+  height: calc(100% - 190px);
 }
 
 /* @media screen and (min-width: 600px) {

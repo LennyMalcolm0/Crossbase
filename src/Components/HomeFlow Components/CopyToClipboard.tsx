@@ -23,7 +23,7 @@ const CopyToClipboard = ({copiedTextDescription, copiedText}: Props) => {
                     <div className="copied-text text-[14px] text-14 ">{copiedText}</div>
                 </div>
                 <div className="copy-text px-[10px] py-[5px] rounded-[8px] border border-[#CCFF01] text-[10px] text-[#CCFF01]
-                cursor-pointer opacity-90 hover:opacity-100 ">Copy</div>
+                cursor-pointer select-none opacity-90 hover:opacity-100 ">Copy</div>
             </div>
         </div>
     );

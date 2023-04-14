@@ -9,7 +9,7 @@ interface Props {
 const NotificationInformation = ({notificationInformation, notificationDetails, notificationTime, notificationDate}: Props) => {
 
     return (  
-        <div className="h-screen w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[20px] py-[35px] ">
+        <div className="h-full w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[10px] py-[15px] ">
             <div className="h-full w-full ">   
                 <PageInformation main="Notification Info" dontGoBackInHistory={true} />
                 <div className="font-bold mb-[5px] ">{notificationInformation}</div>

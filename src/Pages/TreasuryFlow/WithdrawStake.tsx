@@ -10,7 +10,7 @@ const WithdrawStake = () => {
         <Helmet>
             <title>New Stake</title>
         </Helmet>
-        <div className="h-full flex flex-col justify-between ">
+        <div className="h-full flex flex-col justify-between relative ">
             <div>
                 <PageInformation main="Withdraw Stake" details="Enter the amount you'd like to withdraw to your wallet." />
     

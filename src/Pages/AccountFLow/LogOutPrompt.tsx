@@ -22,10 +22,10 @@ const LogOutPrompt = ({promptOpenerClassName}: Props) => {
     })
 
     return (  
-        <div className="log-out-prompt hidden h-screen w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[20px] py-[35px] z-[9999999999999] ">
+        <div className="log-out-prompt hidden h-full w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[20px] py-[35px] z-[9999999999999] ">
             <div className="h-full flex items-center ">
                 <div className="w-full rounded-[20px] bg-[#1F1F1E] px-[20px] py-[30px] text-center mb-[100px] ">
-                    <div className="text-[24px] text-white text-center mb-[20px] ">Are you sure you want to logout?</div>
+                    <div className="text-[24px] text-white font-semibold text-center mb-[20px] ">Are you sure you want to logout?</div>
 
                     <div className="h-[52px] w-full grid grid-cols-2 gap-x-2 text-center leading-[52px] font-bold ">
                         <Link to="/login" className="w-full h-full rounded-[10px] bg-[#CCFF01] text-[#121313] text-[17px] cursor-pointer ">Yes</Link>
