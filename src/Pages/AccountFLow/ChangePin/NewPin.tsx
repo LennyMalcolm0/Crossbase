@@ -12,7 +12,7 @@ const NewPin = () => {
         <div className="h-full flex flex-col justify-between">
             <div>
                 <PageInformation main="New PIN" />
-                <div className="mt-[50px] ">
+                <div className="mt-[35px] ">
                     <TransactionPin />
                 </div>
             </div>

@@ -17,7 +17,7 @@ const MyStakes = () => {
         </Helmet>
         <div className="h-full flex flex-col justify-between">
             <div className="appHeight-minus-navbarHeight w-full ">
-                <div className="h-[220px] ">
+                <div className="h-[210px] ">
                     <TreasuryNavigationBar myStakes={true} />
 
                     <div className="w-full px-[15px] py-[25px] rounded-[20px] border-[3px] border-[#1F1F1E] flex items-center justify-between ">

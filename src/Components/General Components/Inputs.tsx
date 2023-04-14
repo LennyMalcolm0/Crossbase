@@ -34,7 +34,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                     className={`w-full h-[48px] ${inputHeight ? `h-[${inputHeight}]` : ""} 
                     px-[20px] ${textBeforePlaceholder ? "pl-[60px]" : ""} ${imageBeforePlaceholderSource ? "pl-[45px]" : ""}    
                     leading-[48px] rounded-[10px] bg-[#1F1F1E] border border-[#D9D9D9] text-[#D9D9D9] placeholder:text-[14px] text-14 
-                    placeholder:opacity-50 focus:outline-none focus:ring-1 focus:ring-[#CCFF01] `} 
+                    placeholder:opacity-50 focus:outline-none `} 
                     placeholder={placeholder}
                 />
                 {textBeforePlaceholder || imageBeforePlaceholderSource ? 

@@ -61,7 +61,7 @@ display: none;
 }
 
 .homepage-scrollable-section {
-  height: calc(100% - 245px);
+  height: calc(100% - 235px);
 }
 
 .notification-activity-scrollable-section {
@@ -69,7 +69,7 @@ display: none;
 }
 
 .my-stakes-scrollable-section {
-  height: calc(100% - 220px);
+  height: calc(100% - 210px);
 }
 
 .treasury-market-scrollable-section {

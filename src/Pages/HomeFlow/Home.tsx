@@ -39,7 +39,7 @@ const Home = () => {
         </Helmet>
         <div className="h-full flex flex-col justify-between">
             <div className="appHeight-minus-navbarHeight w-full ">
-                <div className="h-[245px] ">
+                <div className="h-[235px] ">
                     <div className="w-full flex items-center justify-between ">
                         <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden relative ">
                             <img src="OtherImages\profile-pic.svg" alt="" className="h-full absolute inset-0 " />
