@@ -13,12 +13,12 @@ const ResetPassword = () => {
         },
         {
             label: "New Password",
-            inputType: "text",
+            inputType: "password",
             placeholder: "Enter New Password"
         },
         {
             label: "Confirm password",
-            inputType: "text",
+            inputType: "password",
             placeholder: "Confirm password"
         },
     ];

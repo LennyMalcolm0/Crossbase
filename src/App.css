@@ -61,7 +61,7 @@ display: none;
 }
 
 .homepage-scrollable-section {
-  height: calc(100% - 235px);
+  height: calc(100% - 230px);
 }
 
 .notification-activity-scrollable-section {
@@ -69,11 +69,24 @@ display: none;
 }
 
 .my-stakes-scrollable-section {
-  height: calc(100% - 210px);
+  height: calc(100% - 205px);
 }
 
 .treasury-market-scrollable-section {
-  height: calc(100% - 190px);
+  height: calc(100% - 185px);
+}
+
+.App-animation {
+  animation: newPage 0.5s ease-in 0s 1 normal;
+}
+
+@keyframes newPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* @media screen and (min-width: 600px) {

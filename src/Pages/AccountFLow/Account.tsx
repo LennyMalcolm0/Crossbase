@@ -48,7 +48,7 @@ const Account = () => {
         </Helmet>
         <div className="h-full flex flex-col justify-between">
             <div>
-                <div className="w-full px-[10px] py-[15px] rounded-[10px] mb-[30px] flex items-center justify-between ">
+                <div className="w-full px-[10px] py-[15px] pb-[20px] rounded-[10px] mb-[30px] flex items-center justify-between ">
                     <div className="flex items-center">
                         <div className="w-[50px] h-[50px] rounded-full border border-[#CCFF01] object-cover overflow-hidden relative ">
                             <img src="OtherImages\profile-pic.svg" alt="" className="h-full absolute inset-0 " />

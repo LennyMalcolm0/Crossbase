@@ -30,12 +30,26 @@ import ChangePassword from './Pages/AccountFLow/ChangePassword'
 import NewPin from './Pages/AccountFLow/ChangePin/NewPin'
 import CurrentPin from './Pages/AccountFLow/ChangePin/CurrentPin'
 import ConfirmPin from './Pages/AccountFLow/ChangePin/ConfirmPin'
+import { useEffect } from 'react'
 
 function App() {
+  useEffect(() => {
+    const links = document.querySelectorAll('a[href]');
+    const app = document.querySelector('.App') as HTMLElement;
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        app.classList.add('App-animation');
+        // app.style.animation = "newPage 0.5s ease-in 0s 1 normal"
+      });
+    });
+    app.addEventListener('animationend', () => {
+      app.classList.remove('App-animation');
+    });
+  }, []);
 
   return (
     <div className="App-background h-full absolute inset-0 w-screen flex justify-center bg-black transition-all duration-300 ">
-      <div className="App h-full max-h-[1000px] w-full max-w-[400px] relative text-white bg-[#121313] px-[10px] py-[15px] ">
+      <div className="App h-full max-h-[1000px] w-full max-w-[400px] relative text-white bg-[#121313] px-[10px] py-[15px] pb-[20px] ">
         <div className="h-full w-full overflow-auto ">
           <BrowserRouter>
             <Routes>
@@ -66,7 +80,7 @@ function App() {
               <Route path="/treasury-market" element={<TreasuryMarket />} />
               <Route path="/new-stake" element={<NewStake />} />
               <Route path="/active-stakes" element={<ActiveStakes />} />
-              <Route path="/view-stakes" element={<ViewStake />} />
+              <Route path="/view-stake" element={<ViewStake />} />
               <Route path="/withdraw-stake" element={<WithdrawStake />} />
 
               {/* Account Flow Pages */}

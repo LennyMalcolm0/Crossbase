@@ -29,7 +29,7 @@ const TransactionInformation = ({transactionInformation, transactionDate}: Props
     ]
 
     return (
-        <div className="h-full w-full max-h-[1000px] max-w-[400px] z-[999999999] absolute top-0 left-0 bg-[#121313] px-[10px] py-[15px] ">
+        <div className="h-full w-full max-h-[1000px] max-w-[400px] z-[999999999] absolute top-0 left-0 bg-[#121313] px-[10px] py-[15px] pb-[20px] ">
             <div className="h-full w-full flex flex-col justify-between "> 
                 <div>
                     <PageInformation main="Transaction Info" dontGoBackInHistory={true} />

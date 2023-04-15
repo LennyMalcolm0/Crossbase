@@ -16,14 +16,14 @@ const CompleteProfile = () => {
             placeholder: "Enter last name"
         },
         {
-            label: "Phone Number",
-            inputType: "number",
-            placeholder: "Enter Phone number"
-        },
-        {
             label: "Country",
             inputType: "text",
             placeholder: "Select country"
+        },
+        {
+            label: "Phone Number",
+            inputType: "number",
+            placeholder: "Enter Phone number"
         },
         {
             label: "Date of Birth",

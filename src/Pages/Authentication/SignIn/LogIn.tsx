@@ -13,7 +13,7 @@ const LogIn = () => {
         },
         {
             label: "Password",
-            inputType: "text",
+            inputType: "password",
             placeholder: "Enter password"
         },
     ];

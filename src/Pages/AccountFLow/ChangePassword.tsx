@@ -8,17 +8,17 @@ const ChangePassword = () => {
     const changePasswordInputs = [
         {
             label: "Enter Current Password",
-            inputType: "text",
+            inputType: "password",
             placeholder: "Current Password"
         },
         {
             label: "New Password",
-            inputType: "text",
+            inputType: "password",
             placeholder: "Enter New Password"
         },
         {
             label: "Confirm password",
-            inputType: "text",
+            inputType: "password",
             placeholder: "Confirm password"
         },
     ];

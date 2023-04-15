@@ -21,7 +21,7 @@ const TransactionStatusPrompt = ({transactionStatus, transactionResult, transact
     })
 
     return (  
-        <div className="transaction-status hidden h-full w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[10px] py-[15px] ">
+        <div className="transaction-status hidden h-full w-full max-h-[1000px] max-w-[400px] absolute top-0 left-0 bg-[#121313] px-[10px] py-[15px] pb-[20px] ">
             <div className="h-full w-full flex items-center">
                 <div className="w-full">
                     <div className="flex justify-between mb-[15px] ">

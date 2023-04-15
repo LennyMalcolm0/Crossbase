@@ -41,7 +41,7 @@ const MyStakes = () => {
                         </div>
                         <div className="grid grid-cols-2 gap-[10px] mb-[10px] ">
                             {activeStakesHomeView.map((stakeItem, index) => (
-                                <div key={index} className="p-[15px] bg-[#1F1F1E] rounded-[10px] cursor-pointer ">
+                                <Link to="/view-stake" key={index} className="p-[15px] bg-[#1F1F1E] rounded-[10px] cursor-pointer ">
                                     <div className="flex items-start justify-between mb-[10px] ">
                                         <img src={stakeItem.currencyPairImageSource} alt="" />
                                         <img src="Icons\TreasuryPage\check.svg" alt="" />
@@ -49,7 +49,7 @@ const MyStakes = () => {
                                     <div className="text-[14px] text-14 font-medium mb-[5px] ">{stakeItem.currencyPair}</div>
                                     <div className="text-[10px] text-[#D9D9D9] ">Amount Staked</div>
                                     <div className="text-[14px] text-14 text-[#CCFF01] whitespace-nowrap ">{stakeItem.amountStaked}</div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

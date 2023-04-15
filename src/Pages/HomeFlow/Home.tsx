@@ -3,6 +3,7 @@ import Events from '../../Components/HomeFlow Components/Events';
 import AppNavigationBar from '../../Components/General Components/AppNavigationBar';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { useEffect } from 'react';
 
 const Home = () => {
     const activityEventItemsArray = [

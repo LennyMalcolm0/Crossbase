@@ -14,7 +14,7 @@ const MarketPair = ({link, marketDetails}: Props) => {
         <div>
             {marketDetails.map((market, index) => (
                 <Link to={link ? link : ""} key={index} 
-                className={`market-pair w-full px-[10px] py-[15px] bg-[#1F1F1E] rounded-[10px] mb-[10px] 
+                className={`market-pair w-full px-[10px] py-[15px] pb-[20px] bg-[#1F1F1E] rounded-[10px] mb-[10px] 
                 flex items-center justify-between ${market.amountStaked ? "cursor-pointer" : "cursor-default"} `}>
                     <div className="flex items-center">
                         <img src={market.currencyPairImageSource} alt="" />

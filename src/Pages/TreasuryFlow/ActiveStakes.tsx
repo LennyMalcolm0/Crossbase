@@ -17,7 +17,7 @@ const ActiveStakes = () => {
                 imageBeforePlaceholderSource="Icons\search-sm.svg" filterItemsClassName=".market-pair" 
             />
             <div className="mt-[30px] ">
-                <MarketPair marketDetails={activeStakes} link="/view-stakes" />
+                <MarketPair marketDetails={activeStakes} link="/view-stake" />
             </div>
         </div>
         </>

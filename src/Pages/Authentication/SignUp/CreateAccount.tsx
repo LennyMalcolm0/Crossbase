@@ -14,12 +14,12 @@ const CreateAccount = () => {
         },
         {
             label: "Password",
-            inputType: "text",
+            inputType: "password",
             placeholder: "Create password"
         },
         {
             label: "Confirm Password",
-            inputType: "text",
+            inputType: "password",
             placeholder: "Confirm password"
         },
     ];
