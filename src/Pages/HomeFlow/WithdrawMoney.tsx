@@ -17,13 +17,8 @@ const WithdrawMoney = () => {
         },
         {
             label: "Account Number",
-            inputType: "text",
+            inputType: "number",
             placeholder: "Enter account number"
-        },
-        {
-            label: "Account Name",
-            inputType: "text",
-            placeholder: "Enter account name"
         },
     ]
 
@@ -40,6 +35,8 @@ const WithdrawMoney = () => {
                         <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
                     </div>
                 ))}
+                <label className="text-[12px] text-12 text-[#CCFF01] ">Account Name</label>
+                <div className="w-full h-[48px] px-[20px] leading-[48px] rounded-[10px] bg-[#1F1F1E] border border-[#CCFF01] text-[#CCFF01] ">4289548068</div>
             </div>
 
             <div>
