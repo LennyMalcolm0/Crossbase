@@ -76,7 +76,7 @@ display: none;
   height: calc(100% - 185px);
 }
 
-.App-animation {
+.animate {
   animation: newPage 0.5s ease-in 0s 1 normal;
 }
 

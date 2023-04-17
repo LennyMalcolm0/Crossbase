@@ -1,6 +1,6 @@
-import ActionButton from "../../../Components/General Components/ActionButton";
-import PageInformation from "../../../Components/General Components/PageInformation";
-import TransactionPin from "../../../Components/General Components/TransactionPin";
+import ActionButton from "../../../Global Components/ActionButton";
+import PageInformation from "../../../Global Components/PageInformation";
+import TransactionPin from "../../../Global Components/TransactionPin";
 import { Helmet } from 'react-helmet';
 
 const ConfirmTransactionPin = () => {

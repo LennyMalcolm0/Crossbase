@@ -1,6 +1,6 @@
-import ActionIcon from '../../Components/General Components/ActionIcon';
-import Events from '../../Components/HomeFlow Components/Events';
-import AppNavigationBar from '../../Components/General Components/AppNavigationBar';
+import ActionIcon from '../../Global Components/ActionIcon';
+import Events from './Components/Events';
+import AppNavigationBar from '../../Global Components/AppNavigationBar';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import { useEffect } from 'react';
@@ -8,7 +8,7 @@ import { useEffect } from 'react';
 const Home = () => {
     const activityEventItemsArray = [
         {
-            imageSource: "Icons/activity-transfer-green.svg",
+            imageSource: "Icons/HomeFlowIcons/activity-transfer.svg",
             eventInformation: "To: Alex Kwesi",
             eventDetails: "08:33 PM - 2/3/2023",
             eventValue: "- N56,789", 
@@ -20,7 +20,7 @@ const Home = () => {
             eventValue: "+ N120,400", 
         },
         {
-            imageSource: "Icons/treasury-stake-green.svg",
+            imageSource: "Icons/HomeFlowIcons/treasury-stake-green.svg",
             eventInformation: "NGN/GHS Treasury Stake",
             eventDetails: "09:14 AM - 28/2/2023",
             eventValue: "- N82,000", 
@@ -45,7 +45,7 @@ const Home = () => {
                         <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden relative ">
                             <img src="OtherImages\profile-pic.svg" alt="" className="h-full absolute inset-0 " />
                         </div>
-                        <Link to="/notifications"><ActionIcon imageSource="Icons\notification.svg" /></Link>
+                        <Link to="/notifications"><ActionIcon imageSource="Icons\HomeFlowIcons/notification.svg" /></Link>
                     </div>
 
                     <div className="w-full p-[15px] rounded-[20px] bg-[#CCFF01] text-center text-[12px] text-12 mt-[15px] ">
@@ -56,15 +56,15 @@ const Home = () => {
                         <div className="text-[#1F1F1E] ">My Wallet Balance</div>
                         <div className="w-full flex h-[47px] bg-[#121313] rounded-[10px] py-[8px] mt-[10px] text-white text-[11px] text-11 ">
                             <Link to="/select-destination" className="grow flex items-center justify-center border-r border-white cursor-pointer ">
-                                <img src="Icons\send-money.svg" alt="" className="mr-[5px]" />
+                                <img src="Icons\HomeFlowIcons\send-money.svg" alt="" className="mr-[5px]" />
                                 <span>Send Money</span>
                             </Link>
                             <Link to="/top-up" className="grow flex items-center justify-center border-r border-white cursor-pointer ">
-                                <img src="Icons\top-up-white.svg" alt="" className="mr-[5px]" />
+                                <img src="Icons\HomeFlowIcons\top-up-white.svg" alt="" className="mr-[5px]" />
                                 <span>Top Up</span>
                             </Link>
                             <Link to="/withdraw-money" className="grow flex items-center justify-center border-white cursor-pointer ">
-                                <img src="Icons\withdraw-white.svg" alt="" className="mr-[5px]" />
+                                <img src="Icons\HomeFlowIcons\withdraw-white.svg" alt="" className="mr-[5px]" />
                                 <span>Withdraw</span>
                             </Link>
                         </div>

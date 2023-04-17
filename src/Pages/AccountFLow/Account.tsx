@@ -1,41 +1,41 @@
 import { Link } from "react-router-dom";
-import AccountPageDetail from "../../Components/AccountFlow Components/AccountPageDetail";
-import AppNavigationBar from "../../Components/General Components/AppNavigationBar";
+import AccountPageDetail from "./Components/AccountPageDetail";
+import AppNavigationBar from "../../Global Components/AppNavigationBar";
 import { Helmet } from "react-helmet";
-import LogOutPrompt from "./LogOutPrompt";
+import LogOutPrompt from "./Features/LogOutPrompt";
 import { useEffect } from "react";
 
 const Account = () => {
     const accountProperties = [
         {
-            menuIcon: "Icons/AccountPage/complete-kyc.svg",
+            menuIcon: "Icons/AccountFlowIcons/complete-kyc.svg",
             menuTitle: "Complete KYC",
             menuSubText: "Verify your identity to unlock full app functionality",
             link: "/complete-kyc"
         },
         {
-            menuIcon: "Icons/AccountPage/change-password.svg",
+            menuIcon: "Icons/AccountFlowIcons/change-password.svg",
             menuTitle: "Change Password",
             menuSubText: "Update your login password",
             link: "/change-password"
         },
         {
-            menuIcon: "Icons/AccountPage/change-pin.svg",
+            menuIcon: "Icons/AccountFlowIcons/change-pin.svg",
             menuTitle: "Change PIN",
             menuSubText: "Update your transaction PIN",
             link: "/current-pin"
         },
         {
-            menuIcon: "Icons/AccountPage/get-help.svg",
+            menuIcon: "Icons/AccountFlowIcons/get-help.svg",
             menuTitle: "Get Help",
             menuSubText: "Submit a complaint to our customer support",
         },
         {
-            menuIcon: "Icons/AccountPage/invite-a-friend.svg",
+            menuIcon: "Icons/AccountFlowIcons/invite-a-friend.svg",
             menuTitle: "Invite a Friend",
         },
         {
-            menuIcon: "Icons/AccountPage/log-out.svg",
+            menuIcon: "Icons/AccountFlowIcons/log-out.svg",
             menuTitle: "Logout",
             extraClassName: "logout-button"
         }

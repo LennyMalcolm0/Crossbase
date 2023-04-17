@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { activeStakes } from './TreasuryData';
+import { activeStakes } from '../../Data/TreasuryFlowData';
 import { Helmet } from 'react-helmet';
-import AppNavigationBar from '../../Components/General Components/AppNavigationBar';
-import TreasuryNavigationBar from '../../Components/TreasuryFlow Components/TreasuryNavigationBar';
+import AppNavigationBar from '../../Global Components/AppNavigationBar';
+import TreasuryNavigationBar from './Components/TreasuryNavigationBar';
 
 const MyStakes = () => {
     const activeStakesHomeView = [];
@@ -27,7 +27,7 @@ const MyStakes = () => {
                              <div className="text-[12px] text-12 text-[#D9D9D9] ">Total Stake Value</div>
                         </div>
                         <div className="p-[12px] bg-[#CCFF01] rounded-[10px] flex items-center text-[12px] text-12 text-[#121313] ">
-                            <img src="Icons\TreasuryPage\cross-black.svg" alt="" />
+                            <img src="Icons\TreasuryFlowIcons\cross-black.svg" alt="" />
                             <Link to="/treasury-market" className="text-[14px] text-14 font-medium text-[#121313] ml-[10px] ">New Stake</Link>
                         </div>
                     </div>
@@ -44,7 +44,7 @@ const MyStakes = () => {
                                 <Link to="/view-stake" key={index} className="p-[15px] bg-[#1F1F1E] rounded-[10px] cursor-pointer ">
                                     <div className="flex items-start justify-between mb-[10px] ">
                                         <img src={stakeItem.currencyPairImageSource} alt="" />
-                                        <img src="Icons\TreasuryPage\check.svg" alt="" />
+                                        <img src="Icons\TreasuryFlowIcons\check.svg" alt="" />
                                     </div>
                                     <div className="text-[14px] text-14 font-medium mb-[5px] ">{stakeItem.currencyPair}</div>
                                     <div className="text-[10px] text-[#D9D9D9] ">Amount Staked</div>

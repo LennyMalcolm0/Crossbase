@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import ActionButton from "../../../Components/General Components/ActionButton";
-import Inputs from "../../../Components/General Components/Inputs";
-import PageInformation from "../../../Components/General Components/PageInformation";
+import ActionButton from "../../../Global Components/ActionButton";
+import Inputs from "../../../Global Components/Inputs";
+import PageInformation from "../../../Global Components/PageInformation";
 import { Helmet } from 'react-helmet';
 
 const ResetPassword = () => {

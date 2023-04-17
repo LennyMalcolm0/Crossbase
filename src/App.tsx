@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import CreateAccount from './Pages/Authentication/SignUp/CreateAccount'
 import CompleteProfile from './Pages/Authentication/SignUp/CompleteProfile'
 import SetTransactionPin from './Pages/Authentication/SignUp/SetTransactionPin'
@@ -8,48 +8,55 @@ import LogIn from './Pages/Authentication/SignIn/LogIn'
 import ForgotPassword from './Pages/Authentication/SignIn/ForgotPassword'
 import ResetPassword from './Pages/Authentication/SignIn/ResetPassword'
 import Home from './Pages/HomeFlow/Home'
-import AllActivities from './Pages/HomeFlow/AllActivites'
-import Notifications from './Pages/HomeFlow/Notifications'
-import TopUp from './Pages/HomeFlow/TopUp'
-import WithdrawMoney from './Pages/HomeFlow/WithdrawMoney'
-import AuthorizeWithdrawal from './Pages/HomeFlow/AuthorizeWithdrawal'
-import SelectDestination from './Pages/HomeFlow/SelectDestination'
-import TransferAmount from './Pages/HomeFlow/TransferAmount'
-import RecieverDetails from './Pages/HomeFlow/RecieverDetails'
-import AuthorizeTransaction from './Pages/HomeFlow/AuthorizeTransaction'
+import AllActivities from './Pages/HomeFlow/Features/Notifications & Activities/AllActivites'
+import Notifications from './Pages/HomeFlow/Features/Notifications & Activities/Notifications'
+import TopUp from './Pages/HomeFlow/Features/TopUp'
+import WithdrawMoney from './Pages/HomeFlow/Features/Transactions/WithdrawMoney'
+import AuthorizeWithdrawal from './Pages/HomeFlow/Features/Transactions/AuthorizeWithdrawal'
+import SelectDestination from './Pages/HomeFlow/Features/Transactions/SelectDestination'
+import TransferAmount from './Pages/HomeFlow/Features/Transactions/TransferAmount'
+import RecieverDetails from './Pages/HomeFlow/Features/Transactions/RecieverDetails'
+import AuthorizeTransaction from './Pages/HomeFlow/Features/Transactions/AuthorizeTransaction'
 import MyStakes from './Pages/TreasuryFlow/MyStakes'
-import TreasuryMarket from './Pages/TreasuryFlow/TreasuryMarket'
-import NewStake from './Pages/TreasuryFlow/NewStake'
-import ActiveStakes from './Pages/TreasuryFlow/ActiveStakes'
-import ViewStake from './Pages/TreasuryFlow/ViewStake'
-import WithdrawStake from './Pages/TreasuryFlow/WithdrawStake'
+import TreasuryMarket from './Pages/TreasuryFlow/Features/TreasuryMarket'
+import NewStake from './Pages/TreasuryFlow/Features/NewStake'
+import ActiveStakes from './Pages/TreasuryFlow/Features/ActiveStakes'
+import ViewStake from './Pages/TreasuryFlow/Features/ViewStake'
+import WithdrawStake from './Pages/TreasuryFlow/Features/WithdrawStake'
 import Account from './Pages/AccountFLow/Account'
-import EditProfile from './Pages/AccountFLow/EditProfile'
-import CompleteKYC from './Pages/AccountFLow/CompleteKYC'
-import ChangePassword from './Pages/AccountFLow/ChangePassword'
-import NewPin from './Pages/AccountFLow/ChangePin/NewPin'
-import CurrentPin from './Pages/AccountFLow/ChangePin/CurrentPin'
-import ConfirmPin from './Pages/AccountFLow/ChangePin/ConfirmPin'
-import { useEffect } from 'react'
+import EditProfile from './Pages/AccountFLow/Features/EditProfile'
+import CompleteKYC from './Pages/AccountFLow/Features/CompleteKYC'
+import ChangePassword from './Pages/AccountFLow/Features/ChangePassword'
+import NewPin from './Pages/AccountFLow/Features/ChangePin/NewPin'
+import CurrentPin from './Pages/AccountFLow/Features/ChangePin/CurrentPin'
+import ConfirmPin from './Pages/AccountFLow/Features/ChangePin/ConfirmPin'
+import { useEffect, useState } from 'react'
+import { createBrowserHistory } from 'history'
 
 function App() {
+  const [animationState, setAnimationState] = useState(false);
+  const [location, setLocation] = useState(window.location.pathname);
+  // const location = useLocation();
+  
   useEffect(() => {
-    const links = document.querySelectorAll('a[href]');
+    const links = document.querySelectorAll('a');
     const app = document.querySelector('.App') as HTMLElement;
     links.forEach(link => {
       link.addEventListener('click', () => {
-        app.classList.add('App-animation');
-        // app.style.animation = "newPage 0.5s ease-in 0s 1 normal"
+        setAnimationState(true);
+        setLocation(window.location.pathname);
+
+        setTimeout(() => {
+          setAnimationState(false);
+        }, 500);
+
       });
     });
-    app.addEventListener('animationend', () => {
-      app.classList.remove('App-animation');
-    });
-  }, []);
+  }, [animationState, location]);
 
   return (
     <div className="App-background h-full absolute inset-0 w-screen flex justify-center bg-black transition-all duration-300 ">
-      <div className="App h-full max-h-[1000px] w-full max-w-[400px] relative text-white bg-[#121313] px-[10px] py-[15px] pb-[20px] ">
+      <div className={`App ${animationState ? 'animate' : ''} h-full max-h-[1000px] w-full max-w-[400px] relative text-white bg-[#121313] px-[10px] py-[15px] pb-[20px] `}>
         <div className="h-full w-full overflow-auto ">
           <BrowserRouter>
             <Routes>
