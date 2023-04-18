@@ -73,7 +73,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                 }
                 {inputType.toLowerCase() === "password" ? 
                     <i className="fas fa-eye absolute top-0 right-[20px] text-[#D9D9D9] leading-[48px] cursor-pointer " 
-                    onClick={(event) => viewPassword(event)}></i>
+                    onMouseOver={(event) => viewPassword(event)}></i>
                      : <></>
                 }
             </div>
