@@ -7,23 +7,34 @@ interface Props {
     inputValues?: string[];
 }
 const ActionButton = ({ buttonText, link, inputValues }: Props) => {
-    const [validLink, setValidLink] = useState<boolean>(false)
+    const [validLink, setValidLink] = useState<boolean>(false);
     useEffect(() => {
-        if (inputValues) {
-            inputValues.every(inputValue => {
-                if (inputValue !== "") {
-                    setValidLink(true);
-                } else {
-                    setValidLink(false);
-                }
+        const inputFields = document.querySelectorAll("input");
+        function checkInputs() {
+            const allFieldsValid = Array.from(inputFields).every(InputField => {
+                return InputField.value !== "";
             });
-        } 
+            setValidLink(allFieldsValid);
+        }
+        inputFields.forEach(inputField => {
+            inputField.addEventListener("keyup", checkInputs)
+            inputField.addEventListener("change", checkInputs)
+        })
+        
+        // Clean up event listeners on unmount
+        return () => {
+            inputFields.forEach((inputField) => {
+            inputField.removeEventListener("keyup", checkInputs);
+            inputField.removeEventListener("change", checkInputs); // remove change event
+            });
+        };
     }, [])
 
     return ( 
         <div>
             <Link to={validLink ? link : ""} >
-                <div className="w-full h-[48px] leading-[48px] rounded-[10px] bg-[#CCFF01] text-[#121313] font-bold text-center cursor-pointer capitalize ">{buttonText}</div>
+                <div className={`w-full h-[48px] leading-[48px] rounded-[10px] bg-[#CCFF01] text-[#121313] font-bold text-center 
+                cursor-pointer capitalize ${validLink ? "opacity-100" : "opacity-50"} `}>{buttonText}</div>
             </Link>
         </div>
     );
