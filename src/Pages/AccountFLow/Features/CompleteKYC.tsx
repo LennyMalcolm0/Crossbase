@@ -11,7 +11,7 @@ const CompleteKYC = () => {
         <div className="h-full flex flex-col justify-between">
             <PageInformation main="Complete KYC" />
             <img src="Icons\AccountFlowIcons\kyc gif.svg" alt="" className="mb-[100px] " />
-            <ActionButton buttonText="Start Verification" link="" />
+            <ActionButton buttonText="Start Verification" link="/account" />
         </div>
         </>
     );

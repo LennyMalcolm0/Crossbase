@@ -9,6 +9,9 @@ interface Props {
 const ActionButton = ({ buttonText, link, inputValues }: Props) => {
     const [validLink, setValidLink] = useState<boolean>(false);
     useEffect(() => {
+        const inputExists = Boolean(document.querySelector('input'));
+        if (!inputExists) return setValidLink(true);
+
         const inputFields = document.querySelectorAll("input");
         function checkInputs() {
             const allFieldsValid = Array.from(inputFields).every(InputField => {
