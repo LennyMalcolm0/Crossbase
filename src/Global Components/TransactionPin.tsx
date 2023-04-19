@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const TransactionPin = () => {
     useEffect(() => {
@@ -9,21 +9,28 @@ const TransactionPin = () => {
         inputs.forEach(input => {
             const nextInput = input.nextElementSibling as HTMLInputElement;
             const previousInput = input.previousElementSibling as HTMLInputElement;
-            input.addEventListener('keyup', (event) => {
+            input.addEventListener('change', (event) => {
                 if (input.value.length > 1) {
                     input.value = input.value.slice(0, 1);
                 }
                 if (input.value !== "") {
-                    nextInput.focus();
+                    nextInput?.focus();
                 }
+                // Navigate to next page once all values are entered.
+                inputs.forEach(input => {
+                    const allValuesEntered = Array.from(inputs).every(input => {
+                        return input.value !== "";
+                    });
+                })
             });
             input.addEventListener('keyup', (event) => {
-                if (event.key === "Backspace" && input.value === "") {
-                    previousInput.focus();
+                if (input.value !== "") return;
+                if (event.key === "Backspace") {
+                    previousInput?.focus();
                 }
             });
         });
-    })
+    }, [])
 
     return ( 
         <div>

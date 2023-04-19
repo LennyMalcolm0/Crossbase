@@ -1,19 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
     copiedTextDescription: string;
     copiedText: string;
 }
 const CopyToClipboard = ({copiedTextDescription, copiedText}: Props) => {
-    useEffect(() => {
-        const copyButton = document.querySelector(".copy-text") as HTMLElement;
-        const textToCopy = document.querySelector(".copied-text") as HTMLElement;
-        copyButton.addEventListener("click", (e) => {
-            const textToCopy = `${copiedText}`;
-            navigator.clipboard.writeText(textToCopy)
-            // if (textToCopy.textContent) navigator.clipboard.writeText(`${textToCopy.textContent}`)
-        })
-    })
+    const [textToCopy, setTextToCopy] = useState(copiedText);
+    function copyText() {
+        navigator.clipboard.writeText(textToCopy)
+    }
 
     return (  
         <div>
@@ -23,7 +18,7 @@ const CopyToClipboard = ({copiedTextDescription, copiedText}: Props) => {
                     <div className="copied-text text-[14px] text-14 ">{copiedText}</div>
                 </div>
                 <div className="copy-text px-[10px] py-[5px] rounded-[8px] border border-[#CCFF01] text-[10px] text-[#CCFF01]
-                cursor-pointer select-none opacity-90 hover:opacity-100 ">Copy</div>
+                cursor-pointer select-none opacity-90 hover:opacity-100 " onClick={copyText} >Copy</div>
             </div>
         </div>
     );
