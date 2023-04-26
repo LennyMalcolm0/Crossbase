@@ -9,25 +9,30 @@ const TransactionPin = () => {
         inputs.forEach(input => {
             const nextInput = input.nextElementSibling as HTMLInputElement;
             const previousInput = input.previousElementSibling as HTMLInputElement;
-            input.addEventListener('change', (event) => {
+            const buttonToNextPage = document.querySelector("a") as HTMLElement;
+
+            input.addEventListener('input', (event) => {
                 if (input.value.length > 1) {
                     input.value = input.value.slice(0, 1);
                 }
                 if (input.value !== "") {
                     nextInput?.focus();
                 }
-                // Navigate to next page once all values are entered.
-                inputs.forEach(input => {
-                    const allValuesEntered = Array.from(inputs).every(input => {
-                        return input.value !== "";
-                    });
-                })
             });
+
             input.addEventListener('keyup', (event) => {
                 if (input.value !== "") return;
                 if (event.key === "Backspace") {
                     previousInput?.focus();
                 }
+                
+                // Navigate to next page once all values are entered.
+                // inputs.forEach(input => {
+                //     const allValuesEntered = Array.from(inputs).every(input => {
+                //         return input.value !== "";
+                //     });
+                //     if (allValuesEntered) buttonToNextPage.click();
+                // })
             });
         });
     }, [])

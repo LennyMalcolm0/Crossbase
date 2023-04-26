@@ -80,6 +80,14 @@ display: none;
   animation: newPage 0.5s ease-in 0s 1 normal;
 }
 
+.valid-password-character {
+  opacity: 0.8;
+}
+
+.valid-password-character i {
+  color: rgb(8, 255, 8);
+}
+
 @keyframes newPage {
   from {
     opacity: 0;

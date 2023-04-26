@@ -1,5 +1,4 @@
 import React, { ChangeEvent, useEffect } from "react";
-import './gc.css'
 interface Props {
     label?: string;
     inputType: string;
