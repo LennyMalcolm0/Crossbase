@@ -15,7 +15,8 @@ const CreateAccount = () => {
         {
             label: "Password",
             inputType: "password",
-            placeholder: "Create password"
+            placeholder: "Create password",
+            passwordCharacterFilter: true
         },
         {
             label: "Confirm Password",
@@ -34,7 +35,12 @@ const CreateAccount = () => {
                 <PageInformation main="Create Account" details="Begin your journey with Crossbase by signing up." />
                 {createAccountInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
+                        <Inputs 
+                            label={inputItem.label} 
+                            inputType={inputItem.inputType} 
+                            placeholder={inputItem.placeholder} 
+                            passwordCharacterFilter={inputItem.passwordCharacterFilter} 
+                        />
                     </div>
                 ))}
             </div>

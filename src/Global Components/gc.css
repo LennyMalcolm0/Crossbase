@@ -1,0 +1,7 @@
+.valid-password-character {
+    opacity: 0.8;
+}
+
+.valid-password-character i {
+    color: rgb(8, 255, 8);
+}

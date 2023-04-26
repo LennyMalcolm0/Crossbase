@@ -14,7 +14,8 @@ const ChangePassword = () => {
         {
             label: "New Password",
             inputType: "password",
-            placeholder: "Enter New Password"
+            placeholder: "Enter New Password",
+            passwordCharacterFilter: true
         },
         {
             label: "Confirm password",
@@ -34,7 +35,12 @@ const ChangePassword = () => {
                 <div className="mt-[40px] ">
                     {changePasswordInputs.map((inputItem, index) => (
                         <div key={index}>
-                            <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />
+                            <Inputs 
+                                label={inputItem.label} 
+                                inputType={inputItem.inputType} 
+                                placeholder={inputItem.placeholder}
+                                passwordCharacterFilter={inputItem.passwordCharacterFilter}
+                            />
                         </div>
                     ))}
                 </div>
