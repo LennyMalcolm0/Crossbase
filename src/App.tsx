@@ -38,21 +38,21 @@ function App() {
   const [location, setLocation] = useState(window.location.pathname);
   // const location = useLocation();
   
-  useEffect(() => {
-    const links = document.querySelectorAll('a');
-    const app = document.querySelector('.App') as HTMLElement;
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        setAnimationState(true);
-        setLocation(window.location.pathname);
+  // useEffect(() => {
+  //   const links = document.querySelectorAll('a');
+  //   const app = document.querySelector('.App') as HTMLElement;
+  //   links.forEach(link => {
+  //     link.addEventListener('click', () => {
+  //       setAnimationState(true);
+  //       setLocation(window.location.pathname);
 
-        setTimeout(() => {
-          setAnimationState(false);
-        }, 500);
+  //       setTimeout(() => {
+  //         setAnimationState(false);
+  //       }, 500);
 
-      });
-    });
-  }, [animationState, location]);
+  //     });
+  //   });
+  // }, [animationState, location]);
 
   return (
     <div className="App-background h-full absolute inset-0 w-screen flex justify-center bg-black transition-all duration-300 ">

@@ -37,7 +37,7 @@ const ActionButton = ({ buttonText, link, inputValues }: Props) => {
 
     return ( 
         <div>
-            <Link to={validLink ? link : ""} >
+            <Link to={validLink ? link : ""} className="action-button" >
                 <div className={`w-full h-[48px] leading-[48px] rounded-[10px] bg-[#CCFF01] text-[#121313] font-bold text-center 
                 cursor-pointer capitalize ${validLink ? "opacity-100" : "opacity-50"} `}>{buttonText}</div>
             </Link>
