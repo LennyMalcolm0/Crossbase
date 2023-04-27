@@ -23,13 +23,15 @@ const ActionButton = ({ buttonText, link, inputValues }: Props) => {
             inputField.addEventListener("keyup", checkInputs)
             inputField.addEventListener("change", checkInputs)
         })
+        window.addEventListener("click", checkInputs);
         
         // Clean up event listeners on unmount
         return () => {
             inputFields.forEach((inputField) => {
-            inputField.removeEventListener("keyup", checkInputs);
-            inputField.removeEventListener("change", checkInputs); // remove change event
+                inputField.removeEventListener("keyup", checkInputs);
+                inputField.removeEventListener("change", checkInputs);
             });
+            window.removeEventListener("click", checkInputs);
         };
     }, [])
 
