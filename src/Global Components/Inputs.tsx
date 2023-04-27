@@ -11,6 +11,7 @@ interface Props {
     passwordCharacterFilter?: boolean;
 }
 const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBeforePlaceholderSource, placeholder, min, filterItemsClassName, passwordCharacterFilter}: Props) => {
+    // For cases where input field would be used for search
     useEffect(() => {
         const InputField = document.querySelector("input") as HTMLInputElement,
         searchItems = document.querySelectorAll(`${filterItemsClassName}`);
@@ -29,6 +30,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
         });
     });
 
+    // For cases where input field is of type "password"
     const viewPassword = (event: React.MouseEvent<HTMLElement>) => {
         const eye = event.target as HTMLElement;
         if (eye && eye.parentElement) {
@@ -56,6 +58,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
         }
     };
 
+    // For cases where input field is of type "password" and it is the main password field where required characters are noted
     const eligibleCharacters: {type: RegExp, index: number}[] = [
         {type: /.{8,}/, index: 0},
         {type: /[a-z]/, index: 1},
@@ -63,7 +66,6 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
         {type: /[^A-Za-z0-9]/, index: 3},
         {type: /[0-9]/, index: 4},
     ];
-    
     const checkPasswordCharacters = (e: React.ChangeEvent<HTMLInputElement>) => {
         const requiredCharacters = document.querySelectorAll("li") as NodeListOf<HTMLElement>;
         const input = e.target as HTMLInputElement;

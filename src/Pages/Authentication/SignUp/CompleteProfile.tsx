@@ -2,6 +2,7 @@ import ActionButton from "../../../Global Components/ActionButton";
 import Inputs from "../../../Global Components/Inputs";
 import PageInformation from "../../../Global Components/PageInformation";
 import { Helmet } from 'react-helmet';
+import SelectItems from "../../../Global Components/SelectItems";
 
 const CompleteProfile = () => {
     const completeProfileInputs = [
@@ -16,22 +17,14 @@ const CompleteProfile = () => {
             placeholder: "Enter last name"
         },
         {
-            label: "Country",
-            inputType: "text",
-            placeholder: "Select country"
-        },
-        {
-            label: "Phone Number",
-            inputType: "number",
-            placeholder: "Enter Phone number"
-        },
-        {
             label: "Date of Birth",
             inputType: "date",
             placeholder: "dd/mm/yyyy",
             min: "22/04/2005"
         },
     ];
+
+    const countryOptions = ["Nigeria", "Ghana"];
 
     return ( 
         <>
@@ -50,6 +43,7 @@ const CompleteProfile = () => {
                             min={inputItem.min} />                 
                     </div>
                 ))}
+                <SelectItems label="Country" placeholder="Select Country" optionsList={countryOptions} /> 
             </div>
 
             <ActionButton buttonText="Continue" link="/set-transaction-pin" />
