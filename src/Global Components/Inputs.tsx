@@ -6,10 +6,11 @@ interface Props {
     textBeforePlaceholder?: string | number;
     imageBeforePlaceholderSource?: string;
     placeholder?: string;
+    min?: string | number;
     filterItemsClassName?: string;
     passwordCharacterFilter?: boolean;
 }
-const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBeforePlaceholderSource, placeholder, filterItemsClassName, passwordCharacterFilter}: Props) => {
+const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBeforePlaceholderSource, placeholder, min, filterItemsClassName, passwordCharacterFilter}: Props) => {
     useEffect(() => {
         const InputField = document.querySelector("input") as HTMLInputElement,
         searchItems = document.querySelectorAll(`${filterItemsClassName}`);
@@ -96,7 +97,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                         ${inputHeight ? `h-[${inputHeight}]` : ""} ${textBeforePlaceholder ? "pl-[60px]" : ""} 
                         ${imageBeforePlaceholderSource ? "pl-[45px]" : ""} ${inputType.toLowerCase() === "password" ? "text font-bold" : ""}
                     `} 
-                    placeholder={placeholder}
+                    placeholder={placeholder} min={min}
                     onChange={passwordCharacterFilter ? (e) => checkPasswordCharacters(e) : nothing}
                 />
 

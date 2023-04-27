@@ -15,7 +15,7 @@ const ConfirmTransactionPin = () => {
                 <PageInformation main="Confirm Transaction PIN" details="Re-enter your PIN for authorizing a transaction on Crossbase." />
                 <TransactionPin />
             </div>
-            <ActionButton buttonText="Complete" link="/login" />
+            <ActionButton buttonText="Complete" link="/" />
         </div>
         </>
     );

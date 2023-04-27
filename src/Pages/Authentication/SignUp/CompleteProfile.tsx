@@ -28,6 +28,8 @@ const CompleteProfile = () => {
         {
             label: "Date of Birth",
             inputType: "date",
+            placeholder: "dd/mm/yyyy",
+            min: "22/04/2005"
         },
     ];
 
@@ -41,7 +43,11 @@ const CompleteProfile = () => {
                 <PageInformation main="Complete Profile" details="Complete the sign up process by completing your profile." />
                 {completeProfileInputs.map((inputItem, index) => (
                     <div key={index}>
-                        <Inputs label={inputItem.label} inputType={inputItem.inputType} placeholder={inputItem.placeholder} />                 
+                        <Inputs 
+                            label={inputItem.label} 
+                            inputType={inputItem.inputType} 
+                            placeholder={inputItem.placeholder}
+                            min={inputItem.min} />                 
                     </div>
                 ))}
             </div>
