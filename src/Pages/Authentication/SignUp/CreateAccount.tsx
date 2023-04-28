@@ -28,15 +28,25 @@ const CreateAccount = () => {
         },
     ];
 
-    const [ linkToNextPage, setLinkToNextPage ] = useState("");
+    const animatePage = (answer: boolean) => {
+        const pageBody = document.querySelector(".create-account") as HTMLElement;
+        if (answer) {
+            pageBody.classList.add("page-loading");
+        } else {
+            pageBody.classList.remove("page-loading");
+        }
+    }
 
     const signUpUser = () => {
-        const pageBody = document.querySelector(".create-account") as HTMLElement;
-        // pageBody.classList.add("page-loading");
+        animatePage(true);
 
         const inputFields = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>,
         errorMessageDisplay = document.querySelector(".error-message") as HTMLElement,
-        actionButton = document.querySelector(".action-button") as HTMLElement;
+        linkToNextPage = document.querySelector(".next-page") as HTMLAnchorElement;
+
+        inputFields.forEach(inputField => {
+            inputField.style.borderColor = "#D9D9D9";
+        });
 
         const emailAddress = inputFields[0],
         createdPassword = inputFields[1],
@@ -50,13 +60,22 @@ const CreateAccount = () => {
         });
         if (!emptyInputField) {
             errorMessageDisplay.textContent = errorMessages.emptyInputField;
+            inputFields.forEach(inputField => {
+                if (inputField.value === "") {
+                    inputField.style.borderColor = "red";
+                }
+            });
+
+            animatePage(false);
         }
         if(!emptyInputField) return;
 
         // Checking if the email address entered is valid
         const invalidEmailAddress = eligibleEmailAddress.test(emailAddress.value)
         if (!invalidEmailAddress) {
+            emailAddress.style.borderColor = "red";
             errorMessageDisplay.textContent = errorMessages.invalidEmail;
+            animatePage(false);
         }
         if(!invalidEmailAddress) return;
 
@@ -67,6 +86,7 @@ const CreateAccount = () => {
         if (!validPassword) {
             createdPassword.style.borderColor = "red";
             errorMessageDisplay.textContent = errorMessages.invalidPassword;
+            animatePage(false);
         }
         if (!validPassword) return;
 
@@ -74,18 +94,18 @@ const CreateAccount = () => {
         if (createdPassword.value !== confirmedPassword.value) {
             confirmedPassword.style.borderColor = "red";
             errorMessageDisplay.textContent = errorMessages.passwordsDontMatch;
+            animatePage(false);
         }
         if (createdPassword.value !== confirmedPassword.value) return;
 
 
         createUserWithEmailAndPassword(auth, emailAddress.value, createdPassword.value)
         .then(() => {
-            setLinkToNextPage("/complete-profile");
-            pageBody.classList.remove("page-loading");
-            
-            actionButton.click();
+            animatePage(false);
+            linkToNextPage.click();
         })
         .catch(err => {
+            animatePage(false);
             console.log(err)
         })
     }
@@ -115,8 +135,9 @@ const CreateAccount = () => {
                 <div className="text-[14px] text-14 mb-[55px] ">
                     Already have an account? <Link to="/login" className="text-[#CCFF01] ">Login</Link>
                 </div>
-                <div onClick={signUpUser}>
-                    <ActionButton buttonText="Create Account" link={linkToNextPage} />   
+                <div>
+                    <ActionButton buttonText="Create Account" link="" functionOnClick={signUpUser} />   
+                    <Link to="/complete-profile" className="next-page"></Link>
                 </div>           
             </div>
         </div>
@@ -126,5 +147,5 @@ const CreateAccount = () => {
  
 export default CreateAccount;
 
-// leonardmalcolm00@gmail.com
-// Lenny2004#
+// jesse@gmail.com
+// Jesse2004#

@@ -5,8 +5,9 @@ interface Props {
     buttonText: string;
     link: string;
     inputValues?: string[];
+    functionOnClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
-const ActionButton = ({ buttonText, link, inputValues }: Props) => {
+const ActionButton = ({ buttonText, link, inputValues, functionOnClick }: Props) => {
     const [validLink, setValidLink] = useState<boolean>(false);
     useEffect(() => {
         const inputExists = Boolean(document.querySelector('input'));
@@ -37,7 +38,7 @@ const ActionButton = ({ buttonText, link, inputValues }: Props) => {
 
     return ( 
         <div>
-            <Link to={validLink ? link : ""} className="action-button" >
+            <Link to={validLink ? link : ""} onClick={functionOnClick} className="action-button" >
                 <div className={`w-full h-[48px] leading-[48px] rounded-[10px] bg-[#CCFF01] text-[#121313] font-bold text-center 
                 cursor-pointer capitalize ${validLink ? "opacity-100" : "opacity-50"} `}>{buttonText}</div>
             </Link>
