@@ -35,7 +35,19 @@ const CreateAccount = () => {
         } else {
             pageBody.classList.remove("page-loading");
         }
-    }
+    };
+
+    useEffect(() => {
+        const createdPassword = document.querySelectorAll("input")[1] as HTMLInputElement;
+        const confirmPassword = document.querySelectorAll("input")[2] as HTMLInputElement;
+        confirmPassword.addEventListener("input", () => {
+            if (createdPassword.value === confirmPassword.value) {
+                confirmPassword.style.borderColor = "green";
+            } else {
+                confirmPassword.style.borderColor = "#D9D9D9";
+            }
+        })
+    })
 
     const signUpUser = () => {
         animatePage(true);
