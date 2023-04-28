@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useEffect } from "react";
+import { inputFocused } from "../Data/GlobalData";
 interface Props {
     label?: string;
     inputType: string;
@@ -11,7 +12,7 @@ interface Props {
     passwordCharacterFilter?: boolean;
 }
 const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBeforePlaceholderSource, placeholder, min, filterItemsClassName, passwordCharacterFilter}: Props) => {
-    // For cases where input field would be used for search
+    // For cases where input field would be used for search (change code to onClick={function})
     useEffect(() => {
         const InputField = document.querySelector("input") as HTMLInputElement,
         searchItems = document.querySelectorAll(`${filterItemsClassName}`);
@@ -100,6 +101,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                         ${imageBeforePlaceholderSource ? "pl-[45px]" : ""} ${inputType.toLowerCase() === "password" ? "text font-bold" : ""}
                     `} 
                     placeholder={placeholder} min={min}
+                    onFocus={inputFocused}
                     onChange={passwordCharacterFilter ? (e) => checkPasswordCharacters(e) : nothing}
                 />
 

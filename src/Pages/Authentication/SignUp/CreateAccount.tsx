@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { auth } from "../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { errorMessages, eligibleEmailAddress } from "../../../Data/GlobalData";
+import { errorFeedbacks, eligibleEmailAddress, authenticationErrors } from "../../../Data/GlobalData";
 
 const CreateAccount = () => {
     const createAccountInputs = [
@@ -41,12 +41,13 @@ const CreateAccount = () => {
         animatePage(true);
 
         const inputFields = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>,
-        errorMessageDisplay = document.querySelector(".error-message") as HTMLElement,
+        errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement,
         linkToNextPage = document.querySelector(".next-page") as HTMLAnchorElement;
 
         inputFields.forEach(inputField => {
             inputField.style.borderColor = "#D9D9D9";
         });
+        errorFeedbackDisplay.textContent = "";
 
         const emailAddress = inputFields[0],
         createdPassword = inputFields[1],
@@ -59,7 +60,7 @@ const CreateAccount = () => {
             return inputField.value !== ""
         });
         if (!emptyInputField) {
-            errorMessageDisplay.textContent = errorMessages.emptyInputField;
+            errorFeedbackDisplay.textContent = errorFeedbacks.emptyInputField;
             inputFields.forEach(inputField => {
                 if (inputField.value === "") {
                     inputField.style.borderColor = "red";
@@ -74,7 +75,7 @@ const CreateAccount = () => {
         const invalidEmailAddress = eligibleEmailAddress.test(emailAddress.value)
         if (!invalidEmailAddress) {
             emailAddress.style.borderColor = "red";
-            errorMessageDisplay.textContent = errorMessages.invalidEmail;
+            errorFeedbackDisplay.textContent = errorFeedbacks.invalidEmail;
             animatePage(false);
         }
         if(!invalidEmailAddress) return;
@@ -85,7 +86,7 @@ const CreateAccount = () => {
         });
         if (!validPassword) {
             createdPassword.style.borderColor = "red";
-            errorMessageDisplay.textContent = errorMessages.invalidPassword;
+            errorFeedbackDisplay.textContent = errorFeedbacks.invalidPassword;
             animatePage(false);
         }
         if (!validPassword) return;
@@ -93,7 +94,7 @@ const CreateAccount = () => {
         // Checking if both password fields are the same
         if (createdPassword.value !== confirmedPassword.value) {
             confirmedPassword.style.borderColor = "red";
-            errorMessageDisplay.textContent = errorMessages.passwordsDontMatch;
+            errorFeedbackDisplay.textContent = errorFeedbacks.passwordsDontMatch;
             animatePage(false);
         }
         if (createdPassword.value !== confirmedPassword.value) return;
@@ -106,7 +107,13 @@ const CreateAccount = () => {
         })
         .catch(err => {
             animatePage(false);
-            console.log(err)
+            const errorMessage = err.message;
+            if (errorMessage === authenticationErrors.existingUser) {
+                emailAddress.style.borderColor = "red";
+                errorFeedbackDisplay.textContent = errorFeedbacks.existingUser;
+            };
+
+            console.log(err);
         })
     }
 
