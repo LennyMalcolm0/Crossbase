@@ -1,5 +1,5 @@
 import CopyToClipboard from '../Components/CopyToClipboard';
-import PageInformation from "../../../Global Components/PageInformation";
+import PageInformation from "../../../GlobalComponents/PageInformation";
 import { Helmet } from 'react-helmet';
 
 const TopUp = () => {

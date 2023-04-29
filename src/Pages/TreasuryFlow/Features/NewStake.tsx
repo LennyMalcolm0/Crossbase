@@ -1,7 +1,7 @@
-import ActionButton from "../../../Global Components/ActionButton";
-import Inputs from "../../../Global Components/Inputs";
-import PageInformation from "../../../Global Components/PageInformation";
-import TransactionStatusPrompt from "../../../Global Components/TransactionStatusPrompt";
+import ActionButton from "../../../GlobalComponents/ActionButton";
+import Inputs from "../../../GlobalComponents/Inputs";
+import PageInformation from "../../../GlobalComponents/PageInformation";
+import TransactionStatusPrompt from "../../../GlobalComponents/TransactionStatusPrompt";
 import { Helmet } from 'react-helmet';
 
 const NewStake = () => {

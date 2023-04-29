@@ -5,7 +5,7 @@ interface Props {
     buttonText: string;
     link: string;
     inputValues?: string[];
-    functionOnClick?: React.MouseEventHandler<HTMLAnchorElement>;
+    functionOnClick?: React.MouseEventHandler<HTMLElement>;
 }
 const ActionButton = ({ buttonText, link, inputValues, functionOnClick }: Props) => {
     const [validLink, setValidLink] = useState<boolean>(false);

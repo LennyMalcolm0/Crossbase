@@ -1,9 +1,9 @@
-import Inputs from "../../../Global Components/Inputs";
+import Inputs from "../../../GlobalComponents/Inputs";
 import { Helmet } from 'react-helmet';
 import { useEffect } from 'react';
 import MarketPair from "../Components/MarketPair";
 import { currenciesArray, marketInformation } from "../TreasuryFlowData";
-import AppNavigationBar from "../../../Global Components/AppNavigationBar";
+import AppNavigationBar from "../../../GlobalComponents/AppNavigationBar";
 import TreasuryNavigationBar from "../Components/TreasuryNavigationBar";
 
 const TreasuryMarket = () => {

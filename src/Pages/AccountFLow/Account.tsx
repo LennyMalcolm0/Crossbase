@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import AccountPageDetail from "./Components/AccountPageDetail";
-import AppNavigationBar from "../../Global Components/AppNavigationBar";
+import AppNavigationBar from "../../GlobalComponents/AppNavigationBar";
 import { Helmet } from "react-helmet";
 import LogOutPrompt from "./Features/LogOutPrompt";
 import { useEffect } from "react";

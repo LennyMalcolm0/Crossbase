@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
-import PageInformation from "../../../Global Components/PageInformation";
-import Inputs from "../../../Global Components/Inputs";
-import ActionButton from "../../../Global Components/ActionButton";
+import PageInformation from "../../../GlobalComponents/PageInformation";
+import Inputs from "../../../GlobalComponents/Inputs";
+import ActionButton from "../../../GlobalComponents/ActionButton";
 
 const ChangePassword = () => {
     const changePasswordInputs = [

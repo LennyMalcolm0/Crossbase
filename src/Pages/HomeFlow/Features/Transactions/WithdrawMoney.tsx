@@ -1,6 +1,6 @@
-import ActionButton from "../../../../Global Components/ActionButton";
-import Inputs from "../../../../Global Components/Inputs";
-import PageInformation from "../../../../Global Components/PageInformation";
+import ActionButton from "../../../../GlobalComponents/ActionButton";
+import Inputs from "../../../../GlobalComponents/Inputs";
+import PageInformation from "../../../../GlobalComponents/PageInformation";
 import { Helmet } from 'react-helmet';
 
 const WithdrawMoney = () => {

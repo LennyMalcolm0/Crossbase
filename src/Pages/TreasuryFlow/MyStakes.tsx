@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { activeStakes } from './TreasuryFlowData';
 import { Helmet } from 'react-helmet';
-import AppNavigationBar from '../../Global Components/AppNavigationBar';
+import AppNavigationBar from '../../GlobalComponents/AppNavigationBar';
 import TreasuryNavigationBar from './Components/TreasuryNavigationBar';
 
 const MyStakes = () => {

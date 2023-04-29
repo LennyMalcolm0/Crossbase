@@ -1,5 +1,5 @@
 import React, { ChangeEvent, useEffect } from "react";
-import { inputFocused } from "../Data/GlobalData";
+import { inputFocused } from "../Data/GlobalFunctionsAndData";
 interface Props {
     label?: string;
     inputType: string;

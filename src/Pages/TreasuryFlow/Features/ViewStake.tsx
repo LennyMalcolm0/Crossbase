@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import PageInformation from "../../../Global Components/PageInformation";
+import PageInformation from "../../../GlobalComponents/PageInformation";
 import { Helmet } from "react-helmet";
 
 const ViewStake = () => {

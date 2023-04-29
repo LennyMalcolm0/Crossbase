@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import ActionButton from "../../../../Global Components/ActionButton";
-import TransactionStatusPrompt from "../../../../Global Components/TransactionStatusPrompt";
-import PageInformation from "../../../../Global Components/PageInformation";
-import TransactionPin from "../../../../Global Components/TransactionPin";
+import ActionButton from "../../../../GlobalComponents/ActionButton";
+import TransactionStatusPrompt from "../../../../GlobalComponents/TransactionStatusPrompt";
+import PageInformation from "../../../../GlobalComponents/PageInformation";
+import TransactionPin from "../../../../GlobalComponents/TransactionPin";
 import { Helmet } from 'react-helmet';
 
 const AuthorizeWithdrawal = () => {

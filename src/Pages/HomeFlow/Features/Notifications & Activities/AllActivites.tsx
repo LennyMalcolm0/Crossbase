@@ -1,4 +1,4 @@
-import PageInformation from "../../../../Global Components/PageInformation";
+import PageInformation from "../../../../GlobalComponents/PageInformation";
 import Events from '../../Components/Events';
 
 const AllActivities = () => {

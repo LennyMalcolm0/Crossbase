@@ -1,5 +1,5 @@
-import ActionButton from "../../../Global Components/ActionButton";
-import PageInformation from "../../../Global Components/PageInformation";
+import ActionButton from "../../../GlobalComponents/ActionButton";
+import PageInformation from "../../../GlobalComponents/PageInformation";
 import { Helmet } from "react-helmet";
 
 const CompleteKYC = () => {

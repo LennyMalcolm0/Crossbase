@@ -5,16 +5,26 @@ export const inputFocused = () => {
         const inputElement = input as HTMLInputElement;
         inputElement.style.borderColor = "#D9D9D9";
     })
-}
+};
 
-export const errorFeedbacks = {
+export const animatePage = (answer: boolean) => {
+    const pageBody = document.querySelector(".App") as HTMLElement;
+    if (answer) {
+        pageBody.classList.add("page-loading");
+    } else {
+        pageBody.classList.remove("page-loading");
+    }
+};
+
+export const authenticationErrorsFeedbacks = {
     emptyInputField: "Fill empty fields.",
     invalidEmail: "Enter a valid email address.",
     invalidPassword: "Password must meet all requirements.",
     passwordsDontMatch: "Passwords don't match.",
     existingUser: "Email already in use.",
     invalidUser: "Enter valid login details Or sign up if you don't have an account.",
-    wrongPassword: "Wrong passwprd.",
+    wrongPassword: "Wrong password.",
+    noCountrySelected: "Select country.",
 };
 
 export const authenticationErrors = {
@@ -24,4 +34,3 @@ export const authenticationErrors = {
 }
 
 export const eligibleEmailAddress = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-

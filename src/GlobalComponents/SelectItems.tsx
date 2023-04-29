@@ -8,6 +8,7 @@ interface Props {
 }
 const SelectItems = ({label, placeholder, optionsList, optionListSearchable}: Props) => {
     const [ dropdownOpened, setDropdownOpened ] = useState<boolean>(false);
+    const [ inputValue, setInputValue ] = useState<any>("");
     const [ invalidValue, setInvalidValue ] = useState<boolean>(true);
     const sortedOptionsList = optionsList.sort();
 
@@ -21,6 +22,7 @@ const SelectItems = ({label, placeholder, optionsList, optionListSearchable}: Pr
         const currentValue = document.querySelector(".current-value") as HTMLElement;
 
         currentValue.textContent = optionValue.textContent;
+        setInputValue(optionValue.textContent?.toString());
         setDropdownOpened(false);
     }
 
@@ -43,7 +45,7 @@ const SelectItems = ({label, placeholder, optionsList, optionListSearchable}: Pr
                     <></>
                 }
             </div>
-            <input type="text" className="w-[0px] overflow-hidden " value={invalidValue ? "" : "country selected"} />
+            <input type="text" className="w-0 h-0 overflow-hidden " value={inputValue} />
         </div>
     );
 }

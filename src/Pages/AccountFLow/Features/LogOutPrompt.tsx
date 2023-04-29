@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import ActionIcon from "../../../Global Components/ActionIcon";
+import ActionIcon from "../../../GlobalComponents/ActionIcon";
 
 interface Props {
     promptOpenerClassName: string;

@@ -1,6 +1,6 @@
 import LockedProfileItem from "../Components/LockedProfileItem";
-import ActionButton from "../../../Global Components/ActionButton";
-import PageInformation from "../../../Global Components/PageInformation";
+import ActionButton from "../../../GlobalComponents/ActionButton";
+import PageInformation from "../../../GlobalComponents/PageInformation";
 import { Helmet } from "react-helmet";
 import ChangeableProfileItem from '../Components/ChangeableProfileItem';
 

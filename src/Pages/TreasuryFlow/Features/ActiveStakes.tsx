@@ -1,5 +1,5 @@
-import Inputs from "../../../Global Components/Inputs";
-import PageInformation from "../../../Global Components/PageInformation";
+import Inputs from "../../../GlobalComponents/Inputs";
+import PageInformation from "../../../GlobalComponents/PageInformation";
 import MarketPair from "../Components/MarketPair";
 import { activeStakes } from "../TreasuryFlowData";
 import { Helmet } from "react-helmet";
