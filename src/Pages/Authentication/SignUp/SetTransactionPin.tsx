@@ -5,7 +5,7 @@ import TransactionPin from '../../../GlobalComponents/TransactionPin';
 import { Helmet } from 'react-helmet';
 import { doc, updateDoc } from "firebase/firestore";
 import { auth, database,  } from "../../../firebase";
-import { animatePage, authenticationErrorsFeedbacks } from "../../../utils/GlobalFunctionsAndData";
+import { animatePage, formErrorsFeedbacks } from "../../../utils/FunctionsAndData";
 
 const SetTransactionPin = () => {
     const navigate = useNavigate();
@@ -26,7 +26,7 @@ const SetTransactionPin = () => {
             return inputField.value;
         });
         if (!emptyInputField) {
-            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.emptyInputField;
+            errorFeedbackDisplay.textContent = formErrorsFeedbacks.emptyInputField;
             inputFields.forEach(inputField => {
                 if (!inputField.value) {
                     inputField.style.borderColor = "red";

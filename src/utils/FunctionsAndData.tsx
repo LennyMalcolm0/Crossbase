@@ -16,7 +16,7 @@ export const animatePage = (answer: boolean) => {
     }
 };
 
-export const authenticationErrorsFeedbacks = {
+export const formErrorsFeedbacks = {
     emptyInputField: "Fill empty fields.",
     invalidEmail: "Enter a valid email address.",
     invalidPassword: "Password must meet all requirements.",
@@ -31,7 +31,6 @@ export const authenticationErrorsFeedbacks = {
 
 export const authenticationErrors = {
     existingUser: "Firebase: Error (auth/email-already-in-use).",
-    invalidUser: "",
     wrongPassword: "Firebase: Error (auth/wrong-password).",
 }
 

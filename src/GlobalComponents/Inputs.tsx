@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { inputFocused } from "../utils/GlobalFunctionsAndData";
+import { inputFocused } from "../utils/FunctionsAndData";
 interface Props {
     label?: string;
     inputType: string;

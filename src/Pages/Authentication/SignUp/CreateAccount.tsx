@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { auth } from "../../../firebase";
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import { authenticationErrorsFeedbacks, eligibleEmailAddress, authenticationErrors, animatePage } from "../../../utils/GlobalFunctionsAndData";
+import { formErrorsFeedbacks, eligibleEmailAddress, authenticationErrors, animatePage } from "../../../utils/FunctionsAndData";
 
 const CreateAccount = () => {
     const createAccountInputs = [
@@ -42,16 +42,11 @@ const CreateAccount = () => {
         })
     }, [])
 
-    const signUpUser = () => {
+    const signUp = () => {
         animatePage(true);
 
         const inputFields = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>,
         errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement;
-
-        inputFields.forEach(inputField => {
-            inputField.style.borderColor = "#D9D9D9";
-        });
-        errorFeedbackDisplay.textContent = "";
 
         const emailAddress = inputFields[0],
         createdPassword = inputFields[1],
@@ -64,7 +59,7 @@ const CreateAccount = () => {
             return inputField.value;
         });
         if (!emptyInputField) {
-            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.emptyInputField;
+            errorFeedbackDisplay.textContent = formErrorsFeedbacks.emptyInputField;
             inputFields.forEach(inputField => {
                 if (!inputField.value) {
                     inputField.style.borderColor = "red";
@@ -79,7 +74,7 @@ const CreateAccount = () => {
         const invalidEmailAddress = eligibleEmailAddress.test(emailAddress.value)
         if (!invalidEmailAddress) {
             emailAddress.style.borderColor = "red";
-            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.invalidEmail;
+            errorFeedbackDisplay.textContent = formErrorsFeedbacks.invalidEmail;
 
             animatePage(false);
             return;
@@ -91,7 +86,7 @@ const CreateAccount = () => {
         });
         if (!validPassword) {
             createdPassword.style.borderColor = "red";
-            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.invalidPassword;
+            errorFeedbackDisplay.textContent = formErrorsFeedbacks.invalidPassword;
             animatePage(false);
             return;
         };
@@ -99,7 +94,7 @@ const CreateAccount = () => {
         // Checking if both password fields are the same
         if (createdPassword.value !== confirmedPassword.value) {
             confirmedPassword.style.borderColor = "red";
-            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.passwordsDontMatch;
+            errorFeedbackDisplay.textContent = formErrorsFeedbacks.passwordsDontMatch;
             animatePage(false);
             return;
         };
@@ -123,7 +118,7 @@ const CreateAccount = () => {
             const errorMessage = err.message;
             if (errorMessage === authenticationErrors.existingUser) {
                 emailAddress.style.borderColor = "red";
-                errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.existingUser;
+                errorFeedbackDisplay.textContent = formErrorsFeedbacks.existingUser;
             };
         })
     };
@@ -154,7 +149,7 @@ const CreateAccount = () => {
                     Already have an account? <Link to="/login" className="text-[#CCFF01] ">Login</Link>
                 </div>
                 <div>
-                    <ActionButton buttonText="Create Account" link="" functionOnClick={signUpUser} />
+                    <ActionButton buttonText="Create Account" link="" functionOnClick={signUp} />
                 </div>           
             </div>
         </div>

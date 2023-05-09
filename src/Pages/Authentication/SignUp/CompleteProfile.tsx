@@ -6,7 +6,7 @@ import SelectItems from "../../../GlobalComponents/SelectItems";
 import { useNavigate } from "react-router-dom";
 import { auth, database } from "../../../firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
-import { animatePage, authenticationErrorsFeedbacks } from "../../../utils/GlobalFunctionsAndData";
+import { animatePage, formErrorsFeedbacks } from "../../../utils/FunctionsAndData";
 
 const CompleteProfile = () => {
     const completeProfileInputs = [
@@ -47,7 +47,7 @@ const CompleteProfile = () => {
             return inputField.value;
         });
         if (!emptyInputField) {
-            errorFeedbackDisplay.textContent = !country ? authenticationErrorsFeedbacks.noCountrySelected : authenticationErrorsFeedbacks.emptyInputField;
+            errorFeedbackDisplay.textContent = !country ? formErrorsFeedbacks.noCountrySelected : formErrorsFeedbacks.emptyInputField;
             inputFields.forEach(inputField => {
                 if (!inputField.value) {
                     inputField.style.borderColor = "red";

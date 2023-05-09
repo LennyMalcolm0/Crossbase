@@ -2,7 +2,7 @@ import ActionButton from "../../../GlobalComponents/ActionButton";
 import PageInformation from "../../../GlobalComponents/PageInformation";
 import TransactionPin from "../../../GlobalComponents/TransactionPin";
 import { Helmet } from 'react-helmet';
-import { animatePage, authenticationErrorsFeedbacks } from "../../../utils/GlobalFunctionsAndData";
+import { animatePage, formErrorsFeedbacks } from "../../../utils/FunctionsAndData";
 import { useNavigate } from "react-router-dom";
 
 const ConfirmTransactionPin = () => {
@@ -24,7 +24,7 @@ const ConfirmTransactionPin = () => {
             return inputField.value;
         });
         if (!emptyInputField) {
-            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.emptyInputField;
+            errorFeedbackDisplay.textContent = formErrorsFeedbacks.emptyInputField;
             inputFields.forEach(inputField => {
                 if (!inputField.value) {
                     inputField.style.borderColor = "red";
@@ -45,7 +45,7 @@ const ConfirmTransactionPin = () => {
             }, 100);
         } else {
             animatePage(false)
-            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.pinsDontMatch;
+            errorFeedbackDisplay.textContent = formErrorsFeedbacks.pinsDontMatch;
         }
     };
 

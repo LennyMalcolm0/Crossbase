@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { inputFocused } from "../utils/GlobalFunctionsAndData";
+import { useEffect } from "react";
+import { inputFocused } from "../utils/FunctionsAndData";
 
 const TransactionPin = () => {
     const numberOfInputs = [1, 2, 3, 4];
