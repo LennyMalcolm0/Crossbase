@@ -27,6 +27,7 @@ export const formErrorsFeedbacks = {
     noCountrySelected: "Please select your country.",
     invalidTransactionPin: "Please set a valid pin.",
     pinsDontMatch: "Pins don't match.",
+    others: "Failed. Try again."
 };
 
 export const authenticationErrors = {

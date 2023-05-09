@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 interface Props {
     buttonText: string;
-    link: string;
+    link?: string;
     inputValues?: string[];
     functionOnClick?: React.MouseEventHandler<HTMLElement>;
 }
@@ -21,8 +21,8 @@ const ActionButton = ({ buttonText, link, inputValues, functionOnClick }: Props)
             setValidLink(allFieldsValid);
         }
         inputFields.forEach(inputField => {
-            inputField.addEventListener("keyup", checkInputs)
-            inputField.addEventListener("change", checkInputs)
+            inputField.addEventListener("keyup", checkInputs);
+            inputField.addEventListener("change", checkInputs);
         })
         window.addEventListener("click", checkInputs);
         
@@ -38,7 +38,7 @@ const ActionButton = ({ buttonText, link, inputValues, functionOnClick }: Props)
 
     return ( 
         <div>
-            <Link to={validLink ? link : ""} onClick={functionOnClick} className="action-button" >
+            <Link to={link && validLink ? link : ""} onClick={functionOnClick} className="action-button" >
                 <div className={`w-full h-[48px] leading-[48px] rounded-[10px] bg-[#CCFF01] text-[#121313] font-bold text-center 
                 cursor-pointer capitalize ${validLink ? "opacity-100" : "opacity-50"} `}>{buttonText}</div>
             </Link>

@@ -43,7 +43,7 @@ const NewStake = () => {
                     Kindly note that money staked to treasury can only be withdrawn in a 30 day cycle, that is, once in a month. 
                     If you withdraw before the cycle elapse, you'll lose all possible yield (profits) on your stake.
                 </div>
-                <ActionButton buttonText="Stake" link="" />
+                <ActionButton buttonText="Stake" />
             </div>
             <div >
                 <TransactionStatusPrompt 

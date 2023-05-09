@@ -22,7 +22,7 @@ const WithdrawStake = () => {
                 </div>
             </div>
 
-            <ActionButton buttonText="Withdraw to Wallet" link="" />
+            <ActionButton buttonText="Withdraw to Wallet" />
 
             <TransactionStatusPrompt 
                 transactionStatus={true}

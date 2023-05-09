@@ -60,7 +60,7 @@ const ConfirmTransactionPin = () => {
                 <TransactionPin />
                 <div className="error-message text-red-600 mt-[10px] "></div>
             </div>
-            <ActionButton buttonText="Complete" link=""  functionOnClick={confirmPin} />
+            <ActionButton buttonText="Complete"  functionOnClick={confirmPin} />
         </div>
         </>
     );

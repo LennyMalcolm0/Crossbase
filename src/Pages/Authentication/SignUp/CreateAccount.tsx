@@ -149,7 +149,7 @@ const CreateAccount = () => {
                     Already have an account? <Link to="/login" className="text-[#CCFF01] ">Login</Link>
                 </div>
                 <div>
-                    <ActionButton buttonText="Create Account" link="" functionOnClick={signUp} />
+                    <ActionButton buttonText="Create Account" functionOnClick={signUp} />
                 </div>           
             </div>
         </div>

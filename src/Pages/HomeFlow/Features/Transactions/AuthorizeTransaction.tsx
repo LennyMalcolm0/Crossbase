@@ -18,7 +18,7 @@ const AuthorizeTransaction = () => {
                 <TransactionPin />
             </div>
             <div className="absolute bottom-0 w-full ">
-                <ActionButton buttonText="Complete" link="" />
+                <ActionButton buttonText="Complete" />
             </div>
             <div >
                 <TransactionStatusPrompt 

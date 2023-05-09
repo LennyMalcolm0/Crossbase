@@ -66,7 +66,7 @@ const SetTransactionPin = () => {
                 <div className="error-message text-red-600 mt-[10px] "></div>
             </div>
             <div>
-                <ActionButton buttonText="Continue" link="" functionOnClick={saveTransactionPin} />
+                <ActionButton buttonText="Continue" functionOnClick={saveTransactionPin} />
             </div>
         </div>
         </>

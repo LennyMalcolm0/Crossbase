@@ -100,7 +100,7 @@ const CompleteProfile = () => {
             </div>
 
             <div>
-                <ActionButton buttonText="Continue" link="" functionOnClick={uploadUserData} />
+                <ActionButton buttonText="Continue" functionOnClick={uploadUserData} />
             </div>
         </div>
         </>

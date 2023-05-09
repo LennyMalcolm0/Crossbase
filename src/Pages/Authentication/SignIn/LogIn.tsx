@@ -46,10 +46,9 @@ const LogIn = () => {
         };
     
         signInWithEmailAndPassword(auth, email, password)
-        .then(userCredentials => {
+        .then(() => {
             animatePage(false);
             navigate("/")
-            console.log(userCredentials);
         })
         .catch(err => {
             animatePage(false);
@@ -89,7 +88,7 @@ const LogIn = () => {
                 <div className="text-[14px] text-14 mb-[55px] ">
                     Don't have an account? <Link to="/create-account" className="text-[#CCFF01] ">Create Account</Link>
                 </div>
-                <ActionButton buttonText="Login" link="" functionOnClick={signIn} />
+                <ActionButton buttonText="Login" functionOnClick={signIn} />
             </div>
         </div>
         </>
