@@ -1,5 +1,5 @@
-import React, { ChangeEvent, useEffect } from "react";
-import { inputFocused } from "../Data/GlobalFunctionsAndData";
+import React, { useState, useEffect} from "react";
+import { inputFocused } from "../utils/GlobalFunctionsAndData";
 interface Props {
     label?: string;
     inputType: string;
@@ -100,7 +100,8 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                         ${inputHeight ? `h-[${inputHeight}]` : ""} ${textBeforePlaceholder ? "pl-[60px]" : ""} 
                         ${imageBeforePlaceholderSource ? "pl-[45px]" : ""} ${inputType.toLowerCase() === "password" ? "text font-bold" : ""}
                     `} 
-                    placeholder={placeholder} min={min}
+                    placeholder={placeholder} 
+                    min={min}
                     onFocus={inputFocused}
                     onChange={passwordCharacterFilter ? (e) => checkPasswordCharacters(e) : nothing}
                 />

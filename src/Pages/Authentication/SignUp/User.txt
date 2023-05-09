@@ -1,0 +1,103 @@
+jesse@gmail.com
+Jesse2004#
+
+spice@gmail.com
+Spice2004#
+
+walter@gmail.com
+Walter2004#
+
+saul@gmail.com
+Saul2004#
+
+justin@gmail.com
+Justin2004#
+
+dalton@gmail.com
+Dalton2004#
+
+michael@gmail.com
+Michael2004#
+
+rose@gmail.com
+Rose2004#
+
+harden@gmail.com
+Harden2004#
+
+
+
+
+const inputFields = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>,
+        errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement;
+
+        const firstNameInput = inputFields[0],
+        lastNameInput = inputFields[1],
+        dateOfBirthInput = inputFields[2],
+        countryInput = inputFields[3];
+
+        // Checking if there are any empty Input fields
+        const emptyInputField = Array.from(inputFields).every(inputField => {
+            return inputField.value;
+        });
+        if (!emptyInputField) {
+            errorFeedbackDisplay.textContent = !countryInput.value ? authenticationErrorsFeedbacks.noCountrySelected : authenticationErrorsFeedbacks.emptyInputField;
+            inputFields.forEach(inputField => {
+                if (!inputField.value) {
+                    inputField.style.borderColor = "red";
+                }
+            });
+
+            animatePage(false);
+            return;
+        }
+
+        const path = doc(database, "userData", user.uid);
+        setDoc(path, {
+            firstName: firstNameInput.value,
+            lastName: lastNameInput.value,
+            dateOfBirth: dateOfBirthInput.value,
+            country: countryInput.value,
+        })
+        .then(() => {
+            animatePage(false); 
+            console.log("completed profile");
+
+            navigate("/set-transaction-pin");
+        })
+        .catch(err => {
+            animatePage(false);
+            console.log(err);
+        })
+    };
+
+    return ( 
+        <>
+        <Helmet>
+            <title>Complete Profile</title>
+        </Helmet>
+        <div className="h-full flex flex-col justify-between ">
+            <div>
+                <PageInformation main="Complete Profile" details="Complete the sign up process by completing your profile." />
+                {completeProfileInputs.map((inputItem, index) => (
+                    <div key={index}>
+                        <Inputs 
+                            label={inputItem.label} 
+                            inputType={inputItem.inputType} 
+                            placeholder={inputItem.placeholder}
+                            min={inputItem.min} />                 
+                    </div>
+                ))}
+                <SelectItems label="Country" placeholder="Select Country" optionsList={countryOptions} />
+                <div className="error-message text-red-600 "></div>
+            </div>
+
+            <div>
+                <ActionButton buttonText="Continue" link="" functionOnClick={uploadUserData} />
+            </div>
+        </div>
+        </>
+    );
+}
+ 
+export default CompleteProfile;

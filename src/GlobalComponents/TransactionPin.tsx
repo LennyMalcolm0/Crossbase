@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import { inputFocused } from "../utils/GlobalFunctionsAndData";
 
 const TransactionPin = () => {
+    const numberOfInputs = [1, 2, 3, 4];
+
     useEffect(() => {
         const inputs = document.querySelectorAll("input");
         const firstInput = inputs[0] as HTMLInputElement;
@@ -40,26 +43,14 @@ const TransactionPin = () => {
     return ( 
         <div>
             <div className="w-full grid grid-cols-4 gap-x-7 ">
-                <input type="number" pattern="[0-9]*" max="9"
-                    className="py-[10px] rounded-[15px] text-center bg-[#1F1F1E] border border-[#D9D9D9] text-[#D9D9D9] 
-                    text-[32px] font-medium placeholder:text-[50px] placeholder:relative placeholder:bottom-[8px] focus:outline-none " 
-                    placeholder="."
-                />
-                <input type="number" pattern="[0-9]*" max="9"
-                    className="py-[10px] rounded-[15px] text-center bg-[#1F1F1E] border border-[#D9D9D9] text-[#D9D9D9] 
-                    text-[32px] font-medium placeholder:text-[50px] placeholder:relative placeholder:bottom-[8px] focus:outline-none " 
-                    placeholder="."
-                />
-                <input type="number" pattern="[0-9]*" max="9"
-                    className="py-[10px] rounded-[15px] text-center bg-[#1F1F1E] border border-[#D9D9D9] text-[#D9D9D9] 
-                    text-[32px] font-medium placeholder:text-[50px] placeholder:relative placeholder:bottom-[8px] focus:outline-none " 
-                    placeholder="."
-                />
-                <input type="number" pattern="[0-9]*" max={9}
-                    className="py-[10px] rounded-[15px] text-center bg-[#1F1F1E] border border-[#D9D9D9] text-[#D9D9D9] 
-                    text-[32px] font-medium placeholder:text-[50px] placeholder:relative placeholder:bottom-[8px] focus:outline-none " 
-                    placeholder="."
-                />
+                {numberOfInputs.map((input, index) => (
+                    <input key={index} type="number" pattern="[0-9]*" max="9"
+                        className="py-[10px] rounded-[15px] text-center bg-[#1F1F1E] border border-[#D9D9D9] text-[#D9D9D9] 
+                        text-[32px] font-medium placeholder:text-[50px] placeholder:relative placeholder:bottom-[8px] focus:outline-none " 
+                        placeholder="."
+                        onFocus={inputFocused}
+                    />
+                ))}
             </div>
         </div>
     );

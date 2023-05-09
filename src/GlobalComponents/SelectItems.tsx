@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 interface Props {
     label: string;
     placeholder: string;
@@ -45,7 +44,12 @@ const SelectItems = ({label, placeholder, optionsList, optionListSearchable}: Pr
                     <></>
                 }
             </div>
-            <input type="text" className="w-0 h-0 overflow-hidden " value={inputValue} />
+            <input
+                type="text"
+                className="w-0 h-0 overflow-hidden"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+            />
         </div>
     );
 }

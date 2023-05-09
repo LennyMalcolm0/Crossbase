@@ -2,8 +2,52 @@ import ActionButton from "../../../GlobalComponents/ActionButton";
 import PageInformation from "../../../GlobalComponents/PageInformation";
 import TransactionPin from "../../../GlobalComponents/TransactionPin";
 import { Helmet } from 'react-helmet';
+import { animatePage, authenticationErrorsFeedbacks } from "../../../utils/GlobalFunctionsAndData";
+import { useNavigate } from "react-router-dom";
 
 const ConfirmTransactionPin = () => {
+    const navigate = useNavigate();
+
+    const confirmPin = () => {
+        animatePage(true);
+
+        const inputFields = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>,
+        errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement;
+
+        let pin = "";
+        inputFields.forEach(inputField => {
+            pin += inputField.value;
+        })
+
+        // Checking if there are any empty Input fields
+        const emptyInputField = Array.from(inputFields).every(inputField => {
+            return inputField.value;
+        });
+        if (!emptyInputField) {
+            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.emptyInputField;
+            inputFields.forEach(inputField => {
+                if (!inputField.value) {
+                    inputField.style.borderColor = "red";
+                }
+            });
+
+            animatePage(false);
+            return;
+        };
+
+        const createdPin = localStorage.getItem("createdPin");
+
+        if (createdPin === pin) {
+            setTimeout(() => {
+                animatePage(false);
+                localStorage.removeItem("createdPin");
+                navigate("/");
+            }, 100);
+        } else {
+            animatePage(false)
+            errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.pinsDontMatch;
+        }
+    };
 
     return ( 
         <>
@@ -14,8 +58,9 @@ const ConfirmTransactionPin = () => {
             <div>
                 <PageInformation main="Confirm Transaction PIN" details="Re-enter your PIN for authorizing a transaction on Crossbase." />
                 <TransactionPin />
+                <div className="error-message text-red-600 mt-[10px] "></div>
             </div>
-            <ActionButton buttonText="Complete" link="/" />
+            <ActionButton buttonText="Complete" link=""  functionOnClick={confirmPin} />
         </div>
         </>
     );

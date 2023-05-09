@@ -3,10 +3,10 @@ import Inputs from "../../../GlobalComponents/Inputs";
 import PageInformation from "../../../GlobalComponents/PageInformation";
 import { Helmet } from 'react-helmet';
 import SelectItems from "../../../GlobalComponents/SelectItems";
-import { Link } from "react-router-dom";
-import { auth, database, user } from "../../../firebase";
-import { doc, setDoc, Timestamp } from "firebase/firestore";
-import { animatePage, authenticationErrorsFeedbacks } from "../../../Data/GlobalFunctionsAndData";
+import { useNavigate } from "react-router-dom";
+import { auth, database } from "../../../firebase";
+import { doc, setDoc, serverTimestamp } from "firebase/firestore";
+import { animatePage, authenticationErrorsFeedbacks } from "../../../utils/GlobalFunctionsAndData";
 
 const CompleteProfile = () => {
     const completeProfileInputs = [
@@ -29,24 +29,25 @@ const CompleteProfile = () => {
     ];
     const countryOptions = ["Nigeria", "Ghana"];
 
+    const navigate = useNavigate();
+
     const uploadUserData = () => {
         animatePage(true);
 
         const inputFields = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>,
-        errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement,
-        linkToNextPage = document.querySelector(".next-page") as HTMLAnchorElement;
+        errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement;
 
-        const firstNameInput = inputFields[0],
-        lastNameInput = inputFields[1],
-        dateOfBirthInput = inputFields[2],
-        countryInput = inputFields[3];
+        const firstName = inputFields[0].value,
+        lastName = inputFields[1].value,
+        dateOfBirth = inputFields[2].value,
+        country = inputFields[3].value;
 
         // Checking if there are any empty Input fields
         const emptyInputField = Array.from(inputFields).every(inputField => {
             return inputField.value;
         });
         if (!emptyInputField) {
-            errorFeedbackDisplay.textContent = !countryInput.value ? authenticationErrorsFeedbacks.noCountrySelected : authenticationErrorsFeedbacks.emptyInputField;
+            errorFeedbackDisplay.textContent = !country ? authenticationErrorsFeedbacks.noCountrySelected : authenticationErrorsFeedbacks.emptyInputField;
             inputFields.forEach(inputField => {
                 if (!inputField.value) {
                     inputField.style.borderColor = "red";
@@ -54,19 +55,22 @@ const CompleteProfile = () => {
             });
 
             animatePage(false);
-        }
-        if(!emptyInputField) return;
-
+            return;
+        };
+        
+        const user: any | null = auth.currentUser;
         const path = doc(database, "userData", user.uid);
+
         setDoc(path, {
-            firstName: firstNameInput.value,
-            lastName: lastNameInput.value,
-            dateOfBirth: dateOfBirthInput.value,
-            country: countryInput.value,
+            firstName,
+            lastName,
+            dateOfBirth,
+            country,
+            createdAt: serverTimestamp()
         })
         .then(() => {
-            animatePage(false); 
-            linkToNextPage.click();
+            animatePage(false);
+            navigate("/set-transaction-pin");
         })
         .catch(err => {
             animatePage(false);
@@ -97,7 +101,6 @@ const CompleteProfile = () => {
 
             <div>
                 <ActionButton buttonText="Continue" link="" functionOnClick={uploadUserData} />
-                <Link to="/set-transaction-pin" className="next-page"></Link>
             </div>
         </div>
         </>

@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import Inputs from "../../../GlobalComponents/Inputs";
 import PageInformation from "../../../GlobalComponents/PageInformation";
 import ActionButton from '../../../GlobalComponents/ActionButton';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import { auth } from "../../../firebase";
 import { createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
-import { authenticationErrorsFeedbacks, eligibleEmailAddress, authenticationErrors, animatePage } from "../../../Data/GlobalFunctionsAndData";
+import { authenticationErrorsFeedbacks, eligibleEmailAddress, authenticationErrors, animatePage } from "../../../utils/GlobalFunctionsAndData";
 
 const CreateAccount = () => {
     const createAccountInputs = [
@@ -28,6 +28,8 @@ const CreateAccount = () => {
         },
     ];
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         const createdPassword = document.querySelectorAll("input")[1] as HTMLInputElement;
         const confirmPassword = document.querySelectorAll("input")[2] as HTMLInputElement;
@@ -38,14 +40,13 @@ const CreateAccount = () => {
                 confirmPassword.style.borderColor = "#D9D9D9";
             }
         })
-    })
+    }, [])
 
     const signUpUser = () => {
         animatePage(true);
 
         const inputFields = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>,
-        errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement,
-        linkToNextPage = document.querySelector(".next-page") as HTMLAnchorElement;
+        errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement;
 
         inputFields.forEach(inputField => {
             inputField.style.borderColor = "#D9D9D9";
@@ -71,17 +72,18 @@ const CreateAccount = () => {
             });
 
             animatePage(false);
-        }
-        if(!emptyInputField) return;
+            return;
+        };
 
         // Checking if the email address entered is valid
         const invalidEmailAddress = eligibleEmailAddress.test(emailAddress.value)
         if (!invalidEmailAddress) {
             emailAddress.style.borderColor = "red";
             errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.invalidEmail;
+
             animatePage(false);
-        }
-        if(!invalidEmailAddress) return;
+            return;
+        };
 
         // Checking if password meets all requirements
         const validPassword = eligiblePasswordCharacters.every(character => {
@@ -91,26 +93,25 @@ const CreateAccount = () => {
             createdPassword.style.borderColor = "red";
             errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.invalidPassword;
             animatePage(false);
-        }
-        if (!validPassword) return;
+            return;
+        };
 
         // Checking if both password fields are the same
         if (createdPassword.value !== confirmedPassword.value) {
             confirmedPassword.style.borderColor = "red";
             errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.passwordsDontMatch;
             animatePage(false);
-        }
-        if (createdPassword.value !== confirmedPassword.value) return;
+            return;
+        };
 
         createUserWithEmailAndPassword(auth, emailAddress.value, createdPassword.value)
         .then(() => {
-            animatePage(false);
-
             const user: any | null = auth.currentUser;
             
             sendEmailVerification(user)
             .then(() => {
-                linkToNextPage.click();
+                animatePage(false);
+                navigate("/complete-profile");
             })
             .catch(err => {
                 console.log(err);
@@ -125,7 +126,7 @@ const CreateAccount = () => {
                 errorFeedbackDisplay.textContent = authenticationErrorsFeedbacks.existingUser;
             };
         })
-    }
+    };
 
     return ( 
         <>
@@ -154,7 +155,6 @@ const CreateAccount = () => {
                 </div>
                 <div>
                     <ActionButton buttonText="Create Account" link="" functionOnClick={signUpUser} />
-                    <Link to="/complete-profile" className="next-page"></Link>
                 </div>           
             </div>
         </div>

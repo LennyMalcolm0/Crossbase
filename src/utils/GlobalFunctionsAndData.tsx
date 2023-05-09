@@ -24,7 +24,9 @@ export const authenticationErrorsFeedbacks = {
     existingUser: "Email already in use.",
     invalidUser: "Enter valid login details Or sign up if you don't have an account.",
     wrongPassword: "Wrong password.",
-    noCountrySelected: "Select country.",
+    noCountrySelected: "Please select your country.",
+    invalidTransactionPin: "Please set a valid pin.",
+    pinsDontMatch: "Pins don't match.",
 };
 
 export const authenticationErrors = {
