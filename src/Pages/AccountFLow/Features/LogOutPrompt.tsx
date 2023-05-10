@@ -9,6 +9,7 @@ interface Props {
 }
 const LogOutPrompt = ({promptOpenerClassName}: Props) => {
     const [promptOpened, setPromptOpened] = useState(false);
+
     useEffect(() => {
         const logOut = document.querySelector(`.${promptOpenerClassName}`) as HTMLElement;
         logOut.addEventListener("click", () => {
@@ -24,9 +25,12 @@ const LogOutPrompt = ({promptOpenerClassName}: Props) => {
         signOut(auth)
         .then(() => {
             animatePage(false);
+            localStorage.setItem("loggedIn", "false");
+
             navigate("/login");
         })
         .catch(err => {
+            animatePage(false);
             console.log(err);
         })
     };

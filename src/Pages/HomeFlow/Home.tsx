@@ -1,9 +1,11 @@
 import ActionIcon from '../../GlobalComponents/ActionIcon';
 import Events from './Components/Events';
 import AppNavigationBar from '../../GlobalComponents/AppNavigationBar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import { auth } from '../../firebase';
 import { useEffect } from 'react';
+import { onAuthStateChanged } from 'firebase/auth';
 
 const Home = () => {
     const activityEventItemsArray = [
@@ -31,7 +33,16 @@ const Home = () => {
             eventDetails: "08:20 PM - 27/2/2023",
             eventValue: "+ N68,550", 
         },
-    ]
+    ];
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const userState = localStorage.getItem("loggedIn");
+        if (userState !== "true") {
+            navigate("/login");
+        }
+    }, []);
 
     return (
         <>

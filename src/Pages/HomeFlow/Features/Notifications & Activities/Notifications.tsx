@@ -1,3 +1,4 @@
+import Inputs from "../../../../GlobalComponents/Inputs";
 import PageInformation from "../../../../GlobalComponents/PageInformation";
 import Events from '../../Components/Events';
 import { Helmet } from 'react-helmet';
@@ -61,11 +62,16 @@ const Notifications = () => {
             <div className="h-[60px] ">
                 <PageInformation main="Notifications" />
             </div>
+
+            <Inputs 
+                inputType="text" inputHeight="54px" placeholder="Search activities" 
+                imageBeforePlaceholderSource="Icons\search-sm.svg" filterItemsClassName=".market-pair"
+            />
+
             <div className="notification-activity-scrollable-section overflow-auto ">
                 <Events eventType="Notification" eventHeader="Mar 31, 2023" eventItemsArray={notificationArrayForEachDay[0]} />
-                <div className="mt-[20px] ">
-                    <Events eventType="Notification" eventHeader="Mar 29, 2023" eventItemsArray={notificationArrayForEachDay[1]} />
-                </div>
+                <Events eventType="Notification" eventHeader="Mar 29, 2023" eventItemsArray={notificationArrayForEachDay[1]} />
+                <Events eventType="Notification" eventHeader="Mar 29, 2023" eventItemsArray={notificationArrayForEachDay[1]} />
             </div>
         </div>
         </>

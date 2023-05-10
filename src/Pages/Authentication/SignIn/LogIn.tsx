@@ -48,7 +48,9 @@ const LogIn = () => {
         signInWithEmailAndPassword(auth, email, password)
         .then(() => {
             animatePage(false);
-            navigate("/")
+            localStorage.setItem("loggedIn", "true");
+            
+            navigate("/");
         })
         .catch(err => {
             animatePage(false);

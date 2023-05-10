@@ -2,7 +2,7 @@ import Inputs from "../../../GlobalComponents/Inputs";
 import { Helmet } from 'react-helmet';
 import { useEffect } from 'react';
 import MarketPair from "../Components/MarketPair";
-import { currenciesArray, marketInformation } from "../TreasuryFlowData";
+import { currenciesArray, marketInformation } from "../data";
 import AppNavigationBar from "../../../GlobalComponents/AppNavigationBar";
 import TreasuryNavigationBar from "../Components/TreasuryNavigationBar";
 

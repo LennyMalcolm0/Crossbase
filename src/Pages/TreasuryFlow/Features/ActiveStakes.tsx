@@ -1,7 +1,7 @@
 import Inputs from "../../../GlobalComponents/Inputs";
 import PageInformation from "../../../GlobalComponents/PageInformation";
 import MarketPair from "../Components/MarketPair";
-import { activeStakes } from "../TreasuryFlowData";
+import { activeStakes } from "../data";
 import { Helmet } from "react-helmet";
 
 const ActiveStakes = () => {

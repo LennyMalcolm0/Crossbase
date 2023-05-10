@@ -65,7 +65,7 @@ display: none;
 }
 
 .notification-activity-scrollable-section {
-  height: calc(100% - 60px);
+  height: calc(100% - 130px);
 }
 
 .my-stakes-scrollable-section {

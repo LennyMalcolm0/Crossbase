@@ -1,3 +1,4 @@
+import Inputs from "../../../../GlobalComponents/Inputs";
 import PageInformation from "../../../../GlobalComponents/PageInformation";
 import Events from '../../Components/Events';
 
@@ -56,11 +57,16 @@ const AllActivities = () => {
            <div className="h-[60px] ">
                 <PageInformation main="All Activities" />
             </div>
+
+            <Inputs 
+                inputType="text" inputHeight="54px" placeholder="Search activities" 
+                imageBeforePlaceholderSource="Icons\search-sm.svg" filterItemsClassName=".market-pair"
+            />
+
             <div className="notification-activity-scrollable-section overflow-auto ">
                 <Events eventType="Activity" eventHeader="Mar 31, 2023" eventItemsArray={activitiesArrayForEachDay[0]} />
-                <div className="mt-[20px] ">
-                    <Events eventType="Activity" eventHeader="Mar 29, 2023" eventItemsArray={activitiesArrayForEachDay[1]} />
-                </div>
+                <Events eventType="Activity" eventHeader="Mar 29, 2023" eventItemsArray={activitiesArrayForEachDay[1]} />
+                <Events eventType="Activity" eventHeader="Mar 29, 2023" eventItemsArray={activitiesArrayForEachDay[1]} />
             </div>
         </div>
     );

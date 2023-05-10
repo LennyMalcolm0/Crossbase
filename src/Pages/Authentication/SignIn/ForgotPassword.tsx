@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ActionButton from "../../../GlobalComponents/ActionButton";
 import Inputs from "../../../GlobalComponents/Inputs";
 import PageInformation from "../../../GlobalComponents/PageInformation";

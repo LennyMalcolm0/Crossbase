@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, Route, Routes, useParams } from "react-router-dom";
-import NotificationInformation from "../Features/Notifications & Activities/NotificationInformation";
+import NotificationDetails from "../Features/Notifications & Activities/NotificationDetails";
 import TransactionInformation from "../Features/Notifications & Activities/TransactionInformation";
 
 interface Props {
@@ -41,7 +41,7 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
 
     return (  
         <div>
-            <div className="w-full p-[15px] rounded-[20px] border-[3px] border-[#1F1F1E] ">
+            <div className="w-full p-[15px] rounded-[20px] border-[3px] border-[#1F1F1E] mb-[20px] ">
                 <div className="flex items-center justify-between text-white mb-[20px] ">
                     <div className="text-[14px] text-14 font-bold ">{eventHeader}</div>
                     {viewMore && viewMoreLink ? <Link to={viewMoreLink} className="text-[12px] text-12 uppercase cursor-pointer ">{viewMore}</Link> : <></>}
@@ -67,7 +67,7 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
                                     transactionInformation={eventItem.eventInformation} 
                                     transactionDate={eventItem.eventDetails} 
                                 /> :
-                                <NotificationInformation 
+                                <NotificationDetails 
                                     notificationInformation={eventItem.eventInformation} 
                                     notificationDetails={eventItem.eventDetails} 
                                     notificationTime={eventItem.eventValue}

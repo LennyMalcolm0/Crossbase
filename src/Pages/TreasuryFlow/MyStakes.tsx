@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { activeStakes } from './TreasuryFlowData';
+import { activeStakes } from './data';
 import { Helmet } from 'react-helmet';
 import AppNavigationBar from '../../GlobalComponents/AppNavigationBar';
 import TreasuryNavigationBar from './Components/TreasuryNavigationBar';
