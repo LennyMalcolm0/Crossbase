@@ -33,13 +33,17 @@ const CreateAccount = () => {
     useEffect(() => {
         const createdPassword = document.querySelectorAll("input")[1] as HTMLInputElement;
         const confirmPassword = document.querySelectorAll("input")[2] as HTMLInputElement;
-        confirmPassword.addEventListener("input", () => {
-            if (createdPassword.value === confirmPassword.value) {
+
+        const matchingPassword = () => {
+            if (confirmPassword.value !== "" && createdPassword.value === confirmPassword.value) {
                 confirmPassword.style.borderColor = "green";
             } else {
                 confirmPassword.style.borderColor = "#D9D9D9";
             }
-        })
+        };
+
+        createdPassword.addEventListener("input", matchingPassword);
+        confirmPassword.addEventListener("input", matchingPassword);
     }, [])
 
     const signUp = () => {
@@ -51,6 +55,8 @@ const CreateAccount = () => {
         const emailAddress = inputFields[0],
         createdPassword = inputFields[1],
         confirmedPassword = inputFields[2];
+
+        const email = emailAddress;
         
         const eligiblePasswordCharacters: RegExp[] = [ /[a-z]/, /[A-Z]/, /.{8,}/, /[0-9]/, /[^A-Za-z0-9]/ ];
 
@@ -71,7 +77,7 @@ const CreateAccount = () => {
         };
 
         // Checking if the email address entered is valid
-        const invalidEmailAddress = eligibleEmailAddress.test(emailAddress.value)
+        const invalidEmailAddress = eligibleEmailAddress.test(emailAddress.value.trim())
         if (!invalidEmailAddress) {
             emailAddress.style.borderColor = "red";
             errorFeedbackDisplay.textContent = formErrorsFeedbacks.invalidEmail;
@@ -82,7 +88,7 @@ const CreateAccount = () => {
 
         // Checking if password meets all requirements
         const validPassword = eligiblePasswordCharacters.every(character => {
-            return character.test(createdPassword.value);
+            return character.test(createdPassword.value.trim());
         });
         if (!validPassword) {
             createdPassword.style.borderColor = "red";
@@ -99,13 +105,15 @@ const CreateAccount = () => {
             return;
         };
 
-        createUserWithEmailAndPassword(auth, emailAddress.value, createdPassword.value)
+        createUserWithEmailAndPassword(auth, emailAddress.value.toLowerCase().trim(), createdPassword.value.trim())
         .then(() => {
             const user: any | null = auth.currentUser;
             
             sendEmailVerification(user)
             .then(() => {
                 animatePage(false);
+                localStorage.setItem("loggedIn", "true");
+                
                 navigate("/complete-profile");
             })
             .catch(err => {

@@ -118,15 +118,14 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                     <></>
                 }
 
-                {inputType.toLowerCase() === "password" ? 
+                {inputType.toLowerCase() === "password" &&
                     <i className="fas fa-eye view-password absolute top-0 right-[20px] text-[#D9D9D9] leading-[48px] cursor-pointer " 
                         onMouseOver={(event) => viewPassword(event)}>
                     </i>
-                    : <></>
                 }
             </div>
             
-            {passwordCharacterFilter ?
+            {passwordCharacterFilter &&
                 <ul className="must-have mt-[5px] text-[12px] text-[#D9D9D9] ">
                     <li className="flex items-center ">
                         <i className="fa-solid fa-circle text-[5px] mr-[5px] "></i>
@@ -148,8 +147,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                         <i className="fa-solid fa-circle text-[5px] mr-[5px] "></i>
                         <span>Must contain 1 number (0...9) </span>
                     </li>
-                </ul> :
-                <></>
+                </ul>
             }
         </div>
     );

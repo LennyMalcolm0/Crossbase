@@ -32,8 +32,8 @@ const LogIn = () => {
         const emailInput = inputFields[0];
         const passwordInput = inputFields[1];
         
-        const email = emailInput.value;
-        const password = passwordInput.value;
+        const email = emailInput.value.trim().toLowerCase();
+        const password = passwordInput.value.trim();
 
         // Checking if the email address entered is valid
         const invalidEmailAddress = eligibleEmailAddress.test(email)

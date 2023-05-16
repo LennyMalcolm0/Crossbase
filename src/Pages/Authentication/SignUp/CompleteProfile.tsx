@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, database } from "../../../firebase";
 import { doc, setDoc, serverTimestamp } from "firebase/firestore";
 import { animatePage, formErrorsFeedbacks } from "../../../utils/FunctionsAndData";
+import { updateProfile } from "firebase/auth";
 
 const CompleteProfile = () => {
     const completeProfileInputs = [
@@ -37,8 +38,10 @@ const CompleteProfile = () => {
         const inputFields = document.querySelectorAll("input") as NodeListOf<HTMLInputElement>,
         errorFeedbackDisplay = document.querySelector(".error-message") as HTMLElement;
 
-        const firstName = inputFields[0].value,
-        lastName = inputFields[1].value,
+        // Sample: "leonard" and "   leonard   " === "Leonard"
+        const firstName = `${inputFields[0].value.trim().charAt(0).toUpperCase()}${inputFields[0].value.trim().slice(1).toLowerCase()}`,
+        lastName = `${inputFields[1].value.trim().charAt(0).toUpperCase()}${inputFields[1].value.trim().slice(1).toLowerCase()}`,
+
         dateOfBirth = inputFields[2].value,
         country = inputFields[3].value;
 
@@ -47,11 +50,19 @@ const CompleteProfile = () => {
             return inputField.value;
         });
         if (!emptyInputField) {
-            errorFeedbackDisplay.textContent = !country ? formErrorsFeedbacks.noCountrySelected : formErrorsFeedbacks.emptyInputField;
-            inputFields.forEach(inputField => {
-                if (!inputField.value) {
-                    inputField.style.borderColor = "red";
+            if (!country) {
+                if (firstName && lastName && dateOfBirth) {
+                    errorFeedbackDisplay.textContent = formErrorsFeedbacks.noCountrySelected;
+                } else {
+                    errorFeedbackDisplay.textContent = formErrorsFeedbacks.emptyInputField;
                 }
+            } else {
+                errorFeedbackDisplay.textContent = formErrorsFeedbacks.emptyInputField;
+            }
+
+            inputFields.forEach(inputField => {
+                if (inputField.value) return;
+                inputField.style.borderColor = "red";
             });
 
             animatePage(false);
@@ -69,8 +80,14 @@ const CompleteProfile = () => {
             createdAt: serverTimestamp()
         })
         .then(() => {
-            animatePage(false);
-            navigate("/set-transaction-pin");
+            updateProfile(user, {
+                displayName: firstName
+            }).then(() => {
+                animatePage(false);
+                navigate("/set-transaction-pin");
+            }).catch((error) => {
+                animatePage(false);
+            });
         })
         .catch(err => {
             animatePage(false);
