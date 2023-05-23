@@ -4,14 +4,15 @@ interface Props {
     countriesProfile: {
         country: string;
         countryFlagImageSource: string;
-    }[]
+        active?: boolean;
+    }[];
 }
 const SearchCountries = ({link, countriesProfile}: Props) => {
 
     return (  
         <div>
             {countriesProfile.map((countryProfile, index) => (
-                <Link to={link} key={index} className="country w-full py-[10px] flex items-center justify-between cursor-pointer hover:bg-[#1F1F1E] ">
+                <Link to={countryProfile.active ? link : ""} key={index} className={`country w-full py-[10px] flex items-center justify-between cursor-pointer hover:bg-[#1F1F1E] ${!countryProfile.active && "opacity-30"} `}>
                     <div className="flex items-center ">
                         <img src={countryProfile.countryFlagImageSource} alt="" />
                         <div className="country-name text-[14px] text-14 text-[#D9D9D9] capitalize ml-[15px] ">{countryProfile.country}</div>

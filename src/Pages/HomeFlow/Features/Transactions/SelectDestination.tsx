@@ -8,7 +8,8 @@ const SelectDestination = () => {
     const countriesProfileArray = [
         {
             country: "Nigeria",
-            countryFlagImageSource: "Countries/nigeria.svg"
+            countryFlagImageSource: "Countries/nigeria.svg",
+            active: true
         },
         {
             country: "Ghana",

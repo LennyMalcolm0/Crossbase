@@ -67,6 +67,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
         {type: /[^A-Za-z0-9]/, index: 3},
         {type: /[0-9]/, index: 4},
     ];
+
     const checkPasswordCharacters = (e: React.ChangeEvent<HTMLInputElement>) => {
         const requiredCharacters = document.querySelectorAll("li") as NodeListOf<HTMLElement>;
         const input = e.target as HTMLInputElement;
@@ -100,8 +101,8 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                         ${inputHeight ? `h-[${inputHeight}]` : ""} ${textBeforePlaceholder ? "pl-[60px]" : ""} 
                         ${imageBeforePlaceholderSource ? "pl-[45px]" : ""} ${inputType.toLowerCase() === "password" ? "text font-bold" : ""}
                     `} 
-                    placeholder={placeholder} 
                     min={min}
+                    placeholder={placeholder}
                     onFocus={inputFocused}
                     onChange={passwordCharacterFilter ? (e) => checkPasswordCharacters(e) : nothing}
                 />
