@@ -10,7 +10,7 @@ const NewStake = () => {
         <Helmet>
             <title>New Stake</title>
         </Helmet>
-        <div className="h-full w-full relative ">
+        <div className="h-full w-full relative flex flex-col justify-between ">
             <div>
                 <PageInformation main="New Stake" />
 
@@ -25,11 +25,15 @@ const NewStake = () => {
                     </div>
                 </div>
 
-                <Inputs inputType="text" label="Amount to Stake" placeholder="0.00" textBeforePlaceholder="NGN" />
+                <Inputs 
+                    inputType="number" 
+                    label="Amount to Stake" 
+                    placeholder="0.00" 
+                    textBeforePlaceholder="NGN" 
+                />
 
                 <div className="text-[#D9D9D9] mt-[30px] mb-[20px] ">
                     <div className="text-[12px] text-12 font-semibold ">My Stake</div>
-                    {/* Should reflect Input value */}
                     <div className="text-[14px] text-14 ">NGN 0.00</div>
                 </div>
                 <div className="text-[#D9D9D9] ">
@@ -38,22 +42,22 @@ const NewStake = () => {
                 </div>
             </div>
 
-            <div className="absolute bottom-0 w-full ">
+            <div>
                 <div className="text-[12px] text-12 leading-[17px] text-[#CCFF01] mb-[35px] " >
                     Kindly note that money staked to treasury can only be withdrawn in a 30 day cycle, that is, once in a month. 
                     If you withdraw before the cycle elapse, you'll lose all possible yield (profits) on your stake.
                 </div>
                 <ActionButton buttonText="Stake" />
             </div>
-            <div >
-                <TransactionStatusPrompt 
-                    transactionStatus={true}
-                    transactionResult="Your Stake is Successful" 
-                    transactionResultDetails="Sit back and watch your stake earn yield from the transaction fees collected in the treasury." 
-                    promptOpenerClassName="a"
-                    redirectLink="/my-stakes"
-                />
-            </div>
+
+            {/* Pin should be required here */}
+            <TransactionStatusPrompt 
+                transactionStatus={true}
+                transactionResult="Your Stake is Successful" 
+                transactionResultDetails="Sit back and watch your stake earn yield from the transaction fees collected in the treasury." 
+                promptOpenerClassName="a"
+                redirectLink="/my-stakes"
+            />
         </div>
         </>
     );

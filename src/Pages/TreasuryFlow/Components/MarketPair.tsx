@@ -21,7 +21,6 @@ const MarketPair = ({link, marketDetails}: Props) => {
                         <div className="ml-[15px] ">
                             <div className="text-[14px] text-14 ">{market.currencyPair}</div>
                             <div className="text-[10px] text-[#D9D9D9] ">{market.marketVolume}</div>
-                            {/* <div className="text-[14px] text-14 text-[#D9D9D9] ">{`Vol. ${} ${}`}</div> */}
                         </div>
                     </div>
                     {!market.amountStaked ? 

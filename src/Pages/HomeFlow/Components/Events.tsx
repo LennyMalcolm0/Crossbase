@@ -24,7 +24,7 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
         events.forEach(event => {
             event.addEventListener("click", () => {
                 const eventBreakdown = event.nextElementSibling as HTMLElement;
-                eventBreakdown.classList.remove("hidden");
+                eventBreakdown?.classList.remove("hidden");
             })
         })
 
@@ -32,7 +32,7 @@ const Events = ({ eventType, eventHeader, viewMore, viewMoreLink, eventItemsArra
         goBackButton.forEach(button => {
             button.addEventListener("click", () => {
                 const eventBreakdown = button.closest('div.event-breakdown') as HTMLElement;
-                eventBreakdown.classList.add("hidden");
+                eventBreakdown?.classList.add("hidden");
             })
         })
     });

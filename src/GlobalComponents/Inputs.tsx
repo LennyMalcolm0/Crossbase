@@ -9,31 +9,41 @@ interface Props {
     placeholder?: string;
     min?: string | number;
     filterItemsClassName?: string;
+    filterItemsDisplay?: string;
     passwordCharacterFilter?: boolean;
 }
-const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBeforePlaceholderSource, placeholder, min, filterItemsClassName, passwordCharacterFilter}: Props) => {
-    // For cases where input field would be used for search (change code to onClick={function})
-    useEffect(() => {
-        const InputField = document.querySelector("input") as HTMLInputElement,
-        searchItems = document.querySelectorAll(`${filterItemsClassName}`);
+const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBeforePlaceholderSource, placeholder, min, filterItemsClassName, filterItemsDisplay, passwordCharacterFilter}: Props) => {
 
-        InputField.addEventListener("input", () => {
-            const InputFieldContent = InputField.value;
+    // For cases where input field would be used as a search bar
+    const searchItems = (e: React.FormEvent<HTMLInputElement>) => {
+        if (!filterItemsClassName) return;
 
-            searchItems.forEach(searchItem => {
-                const searchItemDisplay = searchItem as HTMLElement;
-                if (InputFieldContent !== "" && searchItem.textContent && searchItem.textContent.toLowerCase().indexOf(InputFieldContent.toLowerCase())) {
-                    searchItemDisplay.style.display = "none"
-                } else {
-                    searchItemDisplay.style.display = "flex"
-                }
-            })
-        });
-    });
+        const InputField = e.target as HTMLInputElement;
+        const searchItems = document.querySelectorAll(`${filterItemsClassName}`);
+
+        searchItems.forEach(searchItem => {
+            const searchItemDisplay = searchItem as HTMLElement;
+            if (InputField?.value !== "" && searchItem.textContent && searchItem.textContent.toLowerCase().indexOf(InputField?.value.toLowerCase())) {
+                searchItemDisplay.style.display = "none";
+            } else {
+                searchItemDisplay.style.display = `${filterItemsDisplay ? filterItemsDisplay : "flex"}`;
+            };
+
+            // const noMatch = Array.from(searchItems).every(searchItem => {
+            //     const searchItemDisplay = searchItem as HTMLElement;
+            //     searchItemDisplay.style.display !== "none";
+            // });
+
+            // if (noMatch) {
+            //     const searchItemParent = searchItem.parentElement as HTMLElement;
+            //     searchItemParent.textContent = "No match found";
+            // }
+        })
+    };
 
     // For cases where input field is of type "password"
-    const viewPassword = (event: React.MouseEvent<HTMLElement>) => {
-        const eye = event.target as HTMLElement;
+    const viewPassword = (e: React.MouseEvent<HTMLElement>) => {
+        const eye = e.target as HTMLElement;
         if (eye && eye.parentElement) {
             const passwordInput = eye.parentElement.querySelector("input[type='password']") as HTMLInputElement;
             
@@ -67,6 +77,7 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
         {type: /[^A-Za-z0-9]/, index: 3},
         {type: /[0-9]/, index: 4},
     ];
+    const [requirements, setRequirements] = useState(false);
 
     const checkPasswordCharacters = (e: React.ChangeEvent<HTMLInputElement>) => {
         const requiredCharacters = document.querySelectorAll("li") as NodeListOf<HTMLElement>;
@@ -89,7 +100,6 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
             }
         })
     };
-    function nothing() {};
 
     return ( 
         <div className="mb-[12px] ">
@@ -103,8 +113,10 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
                     `} 
                     min={min}
                     placeholder={placeholder}
-                    onFocus={inputFocused}
-                    onChange={passwordCharacterFilter ? (e) => checkPasswordCharacters(e) : nothing}
+                    onFocus={() => {inputFocused; setRequirements(true)}}
+                    onBlur={() => {setRequirements(false)}}
+                    onInput={(e) => searchItems(e)}
+                    onChange={(e) => {passwordCharacterFilter && checkPasswordCharacters(e)}}
                 />
 
                 {textBeforePlaceholder || imageBeforePlaceholderSource ? 
@@ -121,12 +133,12 @@ const Inputs = ({label, inputType, inputHeight, textBeforePlaceholder, imageBefo
 
                 {inputType.toLowerCase() === "password" &&
                     <i className="fas fa-eye view-password absolute top-0 right-[20px] text-[#D9D9D9] leading-[48px] cursor-pointer " 
-                        onMouseOver={(event) => viewPassword(event)}>
+                        onMouseOver={(e) => viewPassword(e)}>
                     </i>
                 }
             </div>
             
-            {passwordCharacterFilter &&
+            {passwordCharacterFilter && requirements &&
                 <ul className="must-have mt-[5px] text-[12px] text-[#D9D9D9] ">
                     <li className="flex items-center ">
                         <i className="fa-solid fa-circle text-[5px] mr-[5px] "></i>

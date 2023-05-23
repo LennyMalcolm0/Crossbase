@@ -73,7 +73,7 @@ display: none;
 }
 
 .treasury-market-scrollable-section {
-  height: calc(100% - 185px);
+  height: calc(100% - 135px);
 }
 
 .valid-password-character {

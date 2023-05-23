@@ -25,11 +25,6 @@ const EditProfile = () => {
             profileItem: "Email Address",
             profileItemValue: "username@emailsample.com"
         },
-        {
-            profileItem: "Phone Number",
-            profileItemValue: "9012345678",
-            countryCode: "+234"
-        },
     ]
 
     return (  
@@ -47,12 +42,21 @@ const EditProfile = () => {
                 <div className="w-fit px-[10px] py-[5px] rounded-[8px] mx-auto mb-[30px] border border-[#CCFF01] text-[12px] text-12 text-[#CCFF01] cursor-pointer ">Upload Photo</div>
 
                 {lockedProfileItemsArray.map((lockedProfileItem, index) => (
-                    <LockedProfileItem profileItem={lockedProfileItem.profileItem} profileItemValue={lockedProfileItem.profileItemValue} />
+                    <div key={index}>
+                        <LockedProfileItem 
+                            profileItem={lockedProfileItem.profileItem} 
+                            profileItemValue={lockedProfileItem.profileItemValue} 
+                        />
+                    </div>
                 ))}
 
                 {changeableProfileItemsArray.map((changeableProfileItem, index) => (
-                    <ChangeableProfileItem profileItem={changeableProfileItem.profileItem} profileItemValue={changeableProfileItem.profileItemValue} 
-                    countryCode={changeableProfileItem.countryCode} />
+                    <div key={index}>
+                        <ChangeableProfileItem 
+                            profileItem={changeableProfileItem.profileItem} 
+                            profileItemValue={changeableProfileItem.profileItemValue} 
+                        />
+                    </div>
                 ))}
             </div>
 
