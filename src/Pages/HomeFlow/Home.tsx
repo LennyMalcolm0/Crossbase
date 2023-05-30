@@ -54,9 +54,11 @@ const Home = () => {
                 <div className="h-[235px] ">
                     <div className="w-full flex items-center justify-between ">
                         <div className="w-[40px] h-[40px] rounded-full border border-[#CCFF01] object-cover overflow-hidden relative ">
-                            <img src="OtherImages\profile-pic.svg" alt="" className="h-full absolute inset-0 " />
+                            <img src="OtherImages\profile-pic.svg" alt="" className="h-full " />
                         </div>
-                        <Link to="/notifications"><ActionIcon imageSource="Icons\HomeFlowIcons/notification.svg" /></Link>
+                        <Link to="/notifications">
+                            <ActionIcon imageSource="Icons\HomeFlowIcons/notification.svg" />
+                        </Link>
                     </div>
 
                     <div className="w-full p-[15px] rounded-[20px] bg-[#CCFF01] text-center text-[12px] text-12 mt-[15px] ">
@@ -83,7 +85,13 @@ const Home = () => {
                 </div>
 
                 <div className="homepage-scrollable-section overflow-auto ">
-                    <Events eventType="Activity" eventHeader="Recent Activities" viewMore="View all" viewMoreLink="/all-activities" eventItemsArray={activityEventItemsArray} />
+                    <Events 
+                        eventType="Activity" 
+                        eventHeader="Recent Activities" 
+                        viewMore="View all" 
+                        viewMoreLink="/all-activities" 
+                        eventItemsArray={activityEventItemsArray} 
+                    />
                 </div>
             </div>
 
