@@ -34,29 +34,9 @@ import { useEffect, useState } from 'react'
 import { createBrowserHistory } from 'history'
 
 function App() {
-  const [animationState, setAnimationState] = useState(false);
-  const [location, setLocation] = useState(window.location.pathname);
-  // const location = useLocation();
-  
-  // useEffect(() => {
-  //   const links = document.querySelectorAll('a');
-  //   const app = document.querySelector('.App') as HTMLElement;
-  //   links.forEach(link => {
-  //     link.addEventListener('click', () => {
-  //       setAnimationState(true);
-  //       setLocation(window.location.pathname);
-
-  //       setTimeout(() => {
-  //         setAnimationState(false);
-  //       }, 500);
-
-  //     });
-  //   });
-  // }, [animationState, location]);
-
   return (
     <div className="App-background h-full absolute inset-0 w-screen flex justify-center bg-black transition-all duration-300 ">
-      <div className={`App ${animationState ? 'animate' : ''} h-full max-h-[1000px] w-full max-w-[400px] relative text-white bg-[#121313] px-[10px] py-[15px] pb-[20px] `}>
+      <div className="App h-full max-h-[1000px] w-full max-w-[400px] relative text-white bg-[#121313] px-[10px] py-[15px] pb-[20px] ">
         <div className="h-full w-full overflow-auto ">
           <BrowserRouter>
             <Routes>

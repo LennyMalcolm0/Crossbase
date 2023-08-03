@@ -25,7 +25,6 @@ const LogOutPrompt = ({promptOpenerClassName}: Props) => {
         signOut(auth)
         .then(() => {
             animatePage(false);
-            localStorage.setItem("loggedIn", "false");
 
             navigate("/login");
         })

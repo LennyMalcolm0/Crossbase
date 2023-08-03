@@ -3,9 +3,10 @@ import Events from './Components/Events';
 import AppNavigationBar from '../../GlobalComponents/AppNavigationBar';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import { auth } from '../../firebase';
-import { useEffect } from 'react';
+import { auth, database } from '../../firebase';
+import { useState } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
+import { collection, doc, getDoc } from 'firebase/firestore';
 
 const Home = () => {
     const activityEventItemsArray = [
@@ -36,19 +37,23 @@ const Home = () => {
     ];
 
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        const userState = localStorage.getItem("loggedIn");
-        if (userState !== "true") {
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            setLoading(false);
+        } else {
             navigate("/login");
         }
-    }, []);
+    });
 
     return (
         <>
         <Helmet>
             <title>Home</title>
         </Helmet>
+        {loading ? 
+            <div className='text-white text-[55px]'>Loading...</div> :
         <div className="h-full flex flex-col justify-between">
             <div className="appHeight-minus-navbarHeight w-full ">
                 <div className="h-[235px] ">
@@ -97,6 +102,8 @@ const Home = () => {
 
             <AppNavigationBar activePage="Home" />
         </div>
+        
+    }
         </> 
     );
 }
